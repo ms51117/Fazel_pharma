@@ -132,28 +132,3 @@ class User(UserBase, BaseDates, table=True):
 # ------------------------------SCHEMAS------------------------------------------
 
 
-
-#
-# class UserCreate(UserBase):
-#     """Schema for creating a new user"""
-#     password: str = Field(min_length=8, max_length=100)
-#     role_id: int
-#
-#
-# class UserUpdate(SQLModel):
-#     """Schema for updating user information"""
-#     full_name: Optional[str] = None
-#     mobile_number: Optional[str] = None
-#     address: Optional[str] = None
-#     is_active: Optional[bool] = None
-#     is_verified: Optional[bool] = None
-#
-#
-# class UserRead(UserBase):
-#     """Schema for reading user information (API response)"""
-#     user_id: int
-#     created_at: datetime
-#     updated_at: Optional[datetime]
-#     last_login: Optional[datetime]
-#     role: Optional["UserRole"] = None
-#
