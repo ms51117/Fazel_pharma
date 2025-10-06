@@ -6,18 +6,20 @@ from app.models.base import BaseDates
 
 if TYPE_CHECKING:
     from app.models.user import User
+    from app.models.patient import Patient
 
 
 class MessageBase(SQLModel):
     """Base model for Message shared properties"""
     user_id: int = Field(
-        # foreign_key="tbl_user.user_id",
-        nullable=False,
+        foreign_key="tbl_User.user_id",
+        nullable=True,
         description="User ID"
     )
     telegram_id: str = Field(
+        foreign_key="tbl_User.telegram_id",
         max_length=100,
-        nullable=False,
+        nullable=True,
         description="Telegram ID of sender/receiver"
     )
     messages: str = Field(
@@ -29,6 +31,15 @@ class MessageBase(SQLModel):
         default=None,
         max_length=500,
         description="Path to attachment file (voice, image, etc.)"
+    )
+    messages_seen: Optional[bool] = Field(
+        default=False,
+        nullable=False,
+        description="Seen messages , if seen == T if not seen == F"
+    )
+    messages_sender: Optional[bool] = Field(
+        nullable=False,
+        description="messages sender , if sender == patient then T if sender == user then F"
     )
 
 
@@ -43,4 +54,5 @@ class Message(MessageBase, BaseDates, table=True):
     )
 
     # Relationships
-    # user: "User" = Relationship(back_populates="messages")
+    user: "User" = Relationship(back_populates="messages")
+    patient: "Patient" = Relationship(back_populates="messages")

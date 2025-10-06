@@ -2,6 +2,8 @@
 # app/models/user.py
 
 from typing import Optional, TYPE_CHECKING, List
+
+from sqlalchemy.orm import relationship
 from sqlmodel import Field, Relationship, SQLModel
 from datetime import datetime
 from app.models.base import BaseDates
@@ -9,6 +11,8 @@ from app.models.base import BaseDates
 # Prevent circular imports
 if TYPE_CHECKING:
     from app.models.user_role import UserRole
+    from app.models.payment_list import PaymentList
+    from app.models.order import Order
     from app.models.patient import Patient
     from app.models.message import Message
 
@@ -104,31 +108,10 @@ class User(UserBase, BaseDates, table=True):
     )
 
     # # Relationships
-    role: Optional["UserRole"] = Relationship(back_populates="user")
-    # patients: List["Patient"] = Relationship(back_populates="consultant")
-    # sent_messages: List["Message"] = Relationship(
-    #     back_populates="sender",
-    #     sa_relationship_kwargs={"foreign_keys": "[Message.sender_id]"}
-    # )
-    # received_messages: List["Message"] = Relationship(
-    #     back_populates="receiver",
-    #     sa_relationship_kwargs={"foreign_keys": "[Message.receiver_id]"}
-    # )
+    role: "UserRole" = Relationship(back_populates="user")
+    payment_list : Optional["PaymentList"]=Relationship(back_populates="user")
+    order: Optional["Order"]=Relationship(back_populates="user")
+    messages: Optional["Message"] = Relationship(back_populates="user")
 
-    # class Config:
-    #     # Example for API documentation
-    #     schema_extra = {
-    #         "example": {
-    #             "telegram_id": "123456789",
-    #             "full_name": "محمد رضایی",
-    #             "national_code": "0012345678",
-    #             "mobile_number": "09123456789",
-    #             "address": "تهران، خیابان ولیعصر",
-    #             "is_active": True,
-    #             "is_verified": True
-    #         }
-    #     }
-
-# ------------------------------SCHEMAS------------------------------------------
 
 

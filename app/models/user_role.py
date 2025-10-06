@@ -6,6 +6,7 @@ from app.models.base import BaseDates
 
 if TYPE_CHECKING:
     from app.models.user import User
+    from app.models.user_role_permission import UserRolePermission
 
 
 class UserRoleBase(SQLModel):
@@ -16,6 +17,7 @@ class UserRoleBase(SQLModel):
         description="Role name"
     )
     role_type: int = Field(
+        # foreign_key="tbl_UserRolePermission.permission_id",
         nullable=False,
         description="Role type: 0=Moshaver, 1=Sandogh, 2=Admin"
     )
@@ -33,4 +35,5 @@ class UserRole(UserRoleBase, BaseDates, table=True):
 
     # Relationships
     user: List["User"] = Relationship(back_populates="role")
+    user_role_permission: List["UserRolePermission"] = Relationship(back_populates="user_role")
 

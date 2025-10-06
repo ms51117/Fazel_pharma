@@ -5,8 +5,9 @@ from sqlmodel import Field, Relationship, SQLModel
 from decimal import Decimal
 from app.models.base import BaseDates
 
+from app.models.drug_map import DrugMap
+
 if TYPE_CHECKING:
-    from app.models.drug_map import DrugMap
     from app.models.order_list import OrderList
     from app.models.disease_type import DiseaseType
 
@@ -57,7 +58,6 @@ class Drug(DrugBase, BaseDates, table=True):
     )
 
     # Relationships
-    # drug_maps: List["DrugMap"] = Relationship(back_populates="drug")
-    # order_lists: List["OrderList"] = Relationship(back_populates="drug")
-    # diseases: list["DiseaseType"] = Relationship(back_populates="drugs", link_model=DrugMap)
+    order_list: List["OrderList"] = Relationship(back_populates="drug")
+    disease_type: list["DiseaseType"] = Relationship(back_populates="drug", link_model=DrugMap)
 

@@ -12,16 +12,12 @@ if TYPE_CHECKING:
 
 class PatientBase(SQLModel):
     """Base model for Patient shared properties"""
-    fname: str = Field(
+    full_name: str = Field(
         max_length=50,
         nullable=False,
-        description="First name"
+        description="Full name"
     )
-    lname: str = Field(
-        max_length=50,
-        nullable=False,
-        description="Last name"
-    )
+
     sex: Optional[str] = Field(
         default=None,
         max_length=10,
@@ -60,11 +56,13 @@ class PatientBase(SQLModel):
         index=True,
         description="Telegram ID"
     )
+
     specific_diseases: Optional[str] = Field(
         default=None,
         max_length=1000,
         description="Specific diseases or conditions"
     )
+
 
 
 class Patient(PatientBase, BaseDates, table=True):
@@ -78,5 +76,5 @@ class Patient(PatientBase, BaseDates, table=True):
     )
 
     # Relationships
-    # orders: List["Order"] = Relationship(back_populates="patient")
-    # messages: List["Message"] = Relationship(back_populates="patient")
+    order: List["Order"] = Relationship(back_populates="patient")
+    messages: Optional["Message"] = Relationship(back_populates="patient")

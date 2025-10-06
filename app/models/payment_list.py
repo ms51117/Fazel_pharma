@@ -5,11 +5,18 @@ from sqlmodel import Field, Relationship, SQLModel
 from datetime import datetime
 from decimal import Decimal
 from app.models.base import BaseDates
+import enum
 
 if TYPE_CHECKING:
     from app.models.order import Order
     from app.models.user import User
 
+
+class PaymentStatusEnum(str, enum.Enum):
+    """Enum for payment status"""
+    NOT_SEEN = "Not Seen"
+    ACCEPTED = "Accepted"
+    REJECTED = "Rejected"
 
 class PaymentListBase(SQLModel):
     """Base model for PaymentList shared properties"""
@@ -44,10 +51,10 @@ class PaymentListBase(SQLModel):
         nullable=False,
         description="Payment amount in Rials"
     )
-    payment_status: int = Field(
-        default=0,
+    payment_status: PaymentStatusEnum = Field(
+        default=PaymentStatusEnum.NOT_SEEN,
         nullable=False,
-        description="Payment status: 0=NotSeen, 1=Accepted, 2=Rejected"
+        description="Payment status"
     )
     payment_status_explain: Optional[str] = Field(
         default=None,
@@ -67,46 +74,7 @@ class PaymentList(PaymentListBase, BaseDates, table=True):
     )
 
     # Relationships
-    # order: "Order" = Relationship(back_populates="payment_lists")
-    # user: "User" = Relationship(back_populates="payment_lists")
+    order: "Order" = Relationship(back_populates="payment_list")
+    user: "User" = Relationship(back_populates="payment_list")
 
 
-
-    # ---------------------------------------------------schemas---------------------------------
-
-
-
-    # Helper property to get payment status text
-#     @property
-#     def payment_status_text(self) -> str:
-#         """Return human-readable payment status"""
-#         status_map = {
-#             0: "NotSeen",
-#             1: "Accepted",
-#             2: "Rejected"
-#         }
-#         return status_map.get(self.payment_status, "Unknown")
-#
-#
-# class PaymentListCreate(PaymentListBase):
-#     """Schema for creating a new payment"""
-#     pass
-#
-#
-# class PaymentListRead(PaymentListBase):
-#     """Schema for reading payment data"""
-#     payment_list_id: int
-#     created_at: datetime
-#     updated_at: Optional[datetime]
-#
-#     class Config:
-#         from_attributes = True
-#
-#
-# class PaymentListUpdate(SQLModel):
-#     """Schema for updating payment data"""
-#     payment_refer_code: Optional[str] = None
-#     payment_path_file: Optional[str] = None
-#     payment_value: Optional[Decimal] = None
-#     payment_status: Optional[int] = None
-#     payment_status_explain: Optional[str] = None

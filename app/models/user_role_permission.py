@@ -1,14 +1,19 @@
 # app/models/user_role_permission.py
 
-from typing import Optional
-from sqlmodel import Field, SQLModel
+from typing import Optional,TYPE_CHECKING
+from sqlmodel import Field, SQLModel,Relationship
 from app.models.base import BaseDates
+
+if TYPE_CHECKING:
+    from app.models.user_role import UserRole
+
+
 
 
 class UserRolePermissionBase(SQLModel):
     """Base model for UserRolePermission shared properties"""
     role_id: int = Field(
-        # foreign_key="tbl_userRole.role_id",
+        foreign_key="tbl_UserRole.role_id",
         nullable=False,
         description="Reference to role"
     )
@@ -44,3 +49,6 @@ class UserRolePermission(UserRolePermissionBase, BaseDates, table=True):
         primary_key=True,
         description="Auto-incremented permission ID"
     )
+
+# relationship
+user_role: "UserRole" = Relationship(back_populates="user_role_permission")

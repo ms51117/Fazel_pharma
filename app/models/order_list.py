@@ -13,12 +13,12 @@ if TYPE_CHECKING:
 class OrderListBase(SQLModel):
     """Base model for OrderList shared properties"""
     order_id: int = Field(
-        # foreign_key="tbl_Order.order_id",
+        foreign_key="tbl_Order.order_id",
         nullable=False,
         description="Order ID"
     )
     drug_id: int = Field(
-        # foreign_key="tbl_drug.drugs_id",
+        foreign_key="tbl_Drug.drugs_id",
         nullable=False,
         description="Drug ID"
     )
@@ -45,5 +45,5 @@ class OrderList(OrderListBase, BaseDates, table=True):
     )
 
     # Relationships
-    # order: "Order" = Relationship(back_populates="order_lists")
-    # drug: "Drug" = Relationship(back_populates="order_lists")
+    order: "Order" = Relationship(back_populates="order_list")
+    drug: "Drug" = Relationship(back_populates="order_list")

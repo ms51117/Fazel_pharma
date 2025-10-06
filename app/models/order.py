@@ -25,7 +25,7 @@ class OrderBase(SQLModel):
         description="Patient ID"
     )
     user_id: int = Field(
-        # foreign_key="tbl_user.user_id",
+        foreign_key="tbl_User.user_id",
         nullable=False,
         description="User ID who created the order"
     )
@@ -42,7 +42,7 @@ class Order(OrderBase, BaseDates, table=True):
     )
 
     # Relationships
-    # patient: "Patient" = Relationship(back_populates="orders")
-    # user: "User" = Relationship(back_populates="orders")
-    # order_lists: List["OrderList"] = Relationship(back_populates="order")
-    # payment_lists: List["PaymentList"] = Relationship(back_populates="order")
+    patient: "Patient" = Relationship(back_populates="order")
+    user: "User" = Relationship(back_populates="order")
+    order_list: Optional["OrderList"] = Relationship(back_populates="order")
+    payment_list: Optional["PaymentList"] = Relationship(back_populates="order")

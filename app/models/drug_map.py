@@ -12,12 +12,14 @@ if TYPE_CHECKING:
 class DrugMapBase(SQLModel):
     """Base model for DrugMap shared properties"""
     diseases_type_id: int = Field(
-        # foreign_key="tbl_DiseaseType.diseases_type_id",
+        foreign_key="tbl_DiseaseType.diseases_type_id",
+        primary_key=True,
         nullable=False,
         description="Disease type ID"
     )
     drugs_id: int = Field(
-        # foreign_key="tbl_drug.drugs_id",
+        foreign_key="tbl_Drug.drugs_id",
+        primary_key=True,
         nullable=False,
         description="Drug ID"
     )
@@ -27,12 +29,7 @@ class DrugMap(DrugMapBase, BaseDates, table=True):
     """Database model for DrugMap table (tbl_DrugMap)"""
     __tablename__ = "tbl_DrugMap"
 
-    drugs_map_id: Optional[int] = Field(
-        default=None,
-        primary_key=True,
-        description="Auto-incremented drug map ID"
-    )
 
     # Relationships
-    # disease_type: "DiseaseType" = Relationship(back_populates="drug_maps")
-    # drug: "Drug" = Relationship(back_populates="drug_maps")
+    # disease_type: "DiseaseType" = Relationship(back_populates="drug_map")
+    # drug: "Drug" = Relationship(back_populates="drug_map")
