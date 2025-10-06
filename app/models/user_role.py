@@ -32,4 +32,5 @@ class UserRole(UserRoleBase, BaseDates, table=True):
     )
 
     # Relationships
-    # users: List["User"] = Relationship(back_populates="role")
+    user: List["User"] = Relationship(back_populates="role")
+

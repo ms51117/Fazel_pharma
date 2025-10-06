@@ -12,12 +12,12 @@ if TYPE_CHECKING:
 class DrugMapBase(SQLModel):
     """Base model for DrugMap shared properties"""
     diseases_type_id: int = Field(
-        foreign_key="tbl_DiseaseType.diseases_type_id",
+        # foreign_key="tbl_DiseaseType.diseases_type_id",
         nullable=False,
         description="Disease type ID"
     )
     drugs_id: int = Field(
-        foreign_key="tbl_drug.drugs_id",
+        # foreign_key="tbl_drug.drugs_id",
         nullable=False,
         description="Drug ID"
     )

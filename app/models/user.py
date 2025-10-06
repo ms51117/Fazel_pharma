@@ -99,12 +99,12 @@ class User(UserBase, BaseDates, table=True):
     # Foreign Key to UserRole (removed from base)
     role_id: Optional[int] = Field(
         default=None,
-        # foreign_key="tbl_user_role.role_id",
+        foreign_key="tbl_UserRole.role_id",
         description="Reference to user's role"
     )
 
     # # Relationships
-    # role: Optional["UserRole"] = Relationship(back_populates="user")
+    role: Optional["UserRole"] = Relationship(back_populates="user")
     # patients: List["Patient"] = Relationship(back_populates="consultant")
     # sent_messages: List["Message"] = Relationship(
     #     back_populates="sender",

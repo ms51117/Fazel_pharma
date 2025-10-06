@@ -6,6 +6,7 @@ from app.models.base import BaseDates
 
 if TYPE_CHECKING:
     from app.models.drug_map import DrugMap
+    from app.models.drug import Drug
 
 
 class DiseaseTypeBase(SQLModel):
@@ -34,3 +35,5 @@ class DiseaseType(DiseaseTypeBase, BaseDates, table=True):
 
     # Relationships
     # drug_maps: List["DrugMap"] = Relationship(back_populates="disease_type")
+    # drugs: list["Drug"] = Relationship(back_populates="diseases", link_model=DrugMap)
+
