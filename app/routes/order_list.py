@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from database import get_session
 from app.models.order_list import OrderList
 from app.models.order import Order
-# from app.models.drug import Drug # بعد از پیاده‌سازی Drug اضافه می‌شود
+from app.models.drug import Drug # بعد از پیاده‌سازی Drug اضافه می‌شود
 from app.schemas.order_list import OrderListCreate, OrderListRead, OrderListUpdate
 
 router = APIRouter()
@@ -31,13 +31,13 @@ async def create_order_item(
             detail=f"Order with ID {order_item_in.order_id} not found."
         )
 
-    # TODO: 2. بررسی وجود دارو (Drug) - بعد از پیاده سازی مدل Drug
-    # drug = await session.get(Drug, order_item_in.drug_id)
-    # if not drug:
-    #     raise HTTPException(
-    #         status_code=status.HTTP_404_NOT_FOUND,
-    #         detail=f"Drug with ID {order_item_in.drug_id} not found."
-    #     )
+    # 2. بررسی وجود دارو (Drug) - تکمیل TODO
+    drug = await session.get(Drug, order_item_in.drug_id)  # <--- این خط را اضافه کنید
+    if not drug:  # <--- این بلاک را اضافه کنید
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Drug with ID {order_item_in.drug_id} not found."
+        )
 
     # 3. ایجاد آبجکت و ذخیره در دیتابیس
     db_order_item = OrderList.model_validate(order_item_in)
@@ -45,7 +45,6 @@ async def create_order_item(
     await session.commit()
     await session.refresh(db_order_item)
     return db_order_item
-
 
 @router.get("/", response_model=List[OrderListRead])
 async def read_order_items(
