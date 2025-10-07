@@ -3,12 +3,29 @@
 from typing import Optional, TYPE_CHECKING, List
 from sqlmodel import Field, Relationship, SQLModel
 from app.models.base import BaseDates
+from sqlalchemy import Column
+from sqlalchemy.types import Enum as SQLAlchemyEnum # ایمپورت Enum از SQLAlchemy
+from app.models.base import Base
+import sqlalchemy as sa
+
+
+import enum
 
 if TYPE_CHECKING:
     from app.models.order import order
     from app.models.order import Order
     from app.models.message import Message
 
+
+
+class GenderEnum(str, enum.Enum):
+    """
+    Enumeration for gender.
+    Values are stored as strings in the database.
+    """
+    MALE = "male"
+    FEMALE = "female"
+    UNKNOWN = "unknown"
 
 class PatientBase(SQLModel):
     """Base model for Patient shared properties"""
@@ -18,11 +35,14 @@ class PatientBase(SQLModel):
         description="Full name"
     )
 
-    sex: Optional[str] = Field(
-        default=None,
-        max_length=10,
-        description="Gender"
+    sex: Optional[GenderEnum] = Field(
+        default=GenderEnum.UNKNOWN,
+        nullable=False,
+        description="sex of patient"
     )
+
+
+
     age: Optional[int] = Field(
         default=None,
         description="Age in years"
@@ -56,7 +76,6 @@ class PatientBase(SQLModel):
         index=True,
         description="Telegram ID"
     )
-
     specific_diseases: Optional[str] = Field(
         default=None,
         max_length=1000,

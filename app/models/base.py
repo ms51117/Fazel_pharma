@@ -2,15 +2,16 @@
 
 from datetime import datetime
 from typing import ClassVar
-from sqlalchemy.ext.declarative import as_declarative, declared_attr
+from sqlalchemy.ext.declarative import declared_attr
 from sqlmodel import Field, SQLModel
 from sqlalchemy.ext.asyncio import AsyncAttrs
 from datetime import datetime, timezone # <-- ADD timezone here
 
 # 1. Base Class: This is the critical component that collects all model metadata
 # This class must be inherited by all SQLModel tables (via BaseDates)
-@as_declarative()
-class Base:
+class Base(SQLModel):
+    __abstract__ = True
+    registry: ClassVar
     """
     Base class which provides automated table name and gathers metadata for Alembic.
     """
@@ -35,7 +36,7 @@ def get_current_utc_naive():
 
 
 # 2. BaseDates Class: Adds timestamp fields
-class BaseDates(SQLModel, AsyncAttrs):
+class BaseDates(Base, AsyncAttrs):
     """
     Base class for models to inherit, adding creation and update timestamps.
     """

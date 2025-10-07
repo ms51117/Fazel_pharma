@@ -6,6 +6,11 @@ from sqlalchemy import pool
 from alembic import context
 from sqlmodel import SQLModel
 
+import sys
+from pathlib import Path
+
+# مسیر ریشه پروژه را به sys.path اضافه کن
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # ---------------- models import-------------------------
 from app.models.user import User
@@ -95,3 +100,5 @@ if context.is_offline_mode():
     run_migrations_offline()
 else:
     run_migrations_online()
+
+print("Tables in metadata:", list(target_metadata.tables.keys()))

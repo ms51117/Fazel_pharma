@@ -16,11 +16,10 @@ class MessageBase(SQLModel):
         nullable=True,
         description="User ID"
     )
-    telegram_id: str = Field(
-        foreign_key="tbl_User.telegram_id",
-        max_length=100,
+    patient_id: int = Field(
+        foreign_key="tbl_Patient.patient_id",
         nullable=True,
-        description="Telegram ID of sender/receiver"
+        description="Patient ID"
     )
     messages: str = Field(
         max_length=2000,

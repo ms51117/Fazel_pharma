@@ -50,5 +50,5 @@ class UserRolePermission(UserRolePermissionBase, BaseDates, table=True):
         description="Auto-incremented permission ID"
     )
 
-# relationship
-user_role: "UserRole" = Relationship(back_populates="user_role_permission")
+    # relationship
+    user_role: "UserRole" = Relationship(back_populates="user_role_permission")

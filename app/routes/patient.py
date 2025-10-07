@@ -1,141 +1,148 @@
-# app/routers/patient.py
+# In file: app/routes/patient.py
 
-from fastapi import APIRouter, Depends, HTTPException, status
-from sqlmodel import select
-from sqlmodel.ext.asyncio.session import AsyncSession
+from fastapi import APIRouter, Depends, HTTPException, Query, status
+from sqlmodel import Session, select, or_
 from typing import List
 
-# Import models, schemas, and dependencies
+# برای استفاده از AsyncSession، باید آن را از کتابخانه مربوطه import کنید
+from sqlmodel.ext.asyncio.session import AsyncSession
+
+# مسیر get_session باید به نسخه async اشاره کند
+from database import get_session
 from app.models.patient import Patient
 from app.schemas.patient import PatientCreate, PatientRead, PatientUpdate
-from database import get_session
 
-# Create an API router for patient-related endpoints
+# ایجاد روتر جدید برای مدیریت بیماران
 router = APIRouter()
 
+
+# ===================================================================
+# 1. CREATE A NEW PATIENT
+# ===================================================================
 @router.post("/", response_model=PatientRead, status_code=status.HTTP_201_CREATED)
 async def create_patient(
-    *,
-    session: AsyncSession = Depends(get_session),
-    patient_in: PatientCreate
-):
+        *,
+        session: AsyncSession = Depends(get_session),
+        patient_in: PatientCreate
+) -> Patient:
     """
-    Create a new patient in the database.
+    ایجاد یک بیمار جدید در سیستم.
+
+    - **telegram_id**: باید منحصر به فرد باشد.
+    - **mobile_number**: باید منحصر به فرد باشد.
     """
-    # Check if a patient with the same national_code already exists
-    if patient_in.national_code:
-        existing_patient = await session.exec(select(Patient).where(Patient.national_code == patient_in.national_code))
-        if existing_patient.first():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="A patient with this national code already exists."
-            )
-
-    # Check if a patient with the same mobile_number already exists
-    if patient_in.mobile_number:
-        existing_patient = await session.exec(select(Patient).where(Patient.mobile_number == patient_in.mobile_number))
-        if existing_patient.first():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="A patient with this mobile number already exists."
-            )
-
-    # Create the Patient DB model instance
-    patient_data = patient_in.dict(exclude_unset=True)
-    db_patient_obj = Patient(**patient_data)
-
-    # Add the new patient to the session and commit to the database
-    session.add(db_patient_obj)
-    await session.commit()
-    await session.refresh(db_patient_obj)
-
-    return db_patient_obj
-
-@router.get("/{patient_id}", response_model=PatientRead)
-async def read_patient_by_id(
-    patient_id: int,
-    session: AsyncSession = Depends(get_session)
-):
-    """
-    Retrieve a patient by their ID.
-    """
-    patient = await session.get(Patient, patient_id)
-    if not patient:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Patient with ID {patient_id} not found."
+    # بررسی اینکه آیا بیماری با همین mobile_number یا telegram_id قبلا ثبت شده است یا خیر
+    statement = select(Patient).where(
+        or_(
+            Patient.mobile_number == patient_in.mobile_number,
+            Patient.telegram_id == patient_in.telegram_id
         )
-    return patient
+    )
+    existing_patient = (await session.exec(statement)).first()
 
+    if existing_patient:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Patient with this mobile number or Telegram ID already exists."
+        )
+
+    # ایجاد نمونه از مدل دیتابیس با استفاده از داده‌های ورودی
+    db_patient = Patient.model_validate(patient_in)
+
+    session.add(db_patient)
+    await session.commit()
+    await session.refresh(db_patient)
+
+    return db_patient
+
+
+# ===================================================================
+# 2. READ PATIENTS (List with Pagination)
+# ===================================================================
 @router.get("/", response_model=List[PatientRead])
 async def read_patients(
-    session: AsyncSession = Depends(get_session)
-):
+        *,
+        session: AsyncSession = Depends(get_session),
+        offset: int = 0,
+        limit: int = Query(default=10, le=100)  # مقدار پیش‌فرض معقول‌تر و محدودیت روی 100
+) -> List[Patient]:
     """
-    Retrieve a list of all patients.
+    دریافت لیست بیماران با قابلیت صفحه‌بندی (pagination).
     """
-    patients = await session.exec(select(Patient))
-    return patients.all()
+    statement = select(Patient).offset(offset).limit(limit)
+    patients = (await session.exec(statement)).all()
+    return patients
 
+
+# ===================================================================
+# 3. READ A SINGLE PATIENT BY ID
+# ===================================================================
+@router.get("/{patient_id}", response_model=PatientRead)
+async def read_patient(
+        *,
+        session: AsyncSession = Depends(get_session),
+        patient_id: int
+) -> Patient:
+    """
+    دریافت اطلاعات یک بیمار خاص با استفاده از شناسه (ID).
+    """
+    db_patient = await session.get(Patient, patient_id)
+    if not db_patient:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Patient not found")
+    return db_patient
+
+
+# ===================================================================
+# 4. UPDATE A PATIENT
+# ===================================================================
 @router.patch("/{patient_id}", response_model=PatientRead)
 async def update_patient(
-    patient_id: int,
-    patient_in: PatientUpdate,
-    session: AsyncSession = Depends(get_session)
-):
+        *,
+        session: AsyncSession = Depends(get_session),
+        patient_id: int,
+        patient_in: PatientUpdate
+) -> Patient:
     """
-    Update an existing patient's information.
+    به‌روزرسانی اطلاعات یک بیمار.
+    فقط فیلدهایی که در درخواست ارسال شوند، آپدیت خواهند شد.
     """
-    patient_instance = await session.get(Patient, patient_id)
-    if not patient_instance:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Patient with ID {patient_id} not found."
-        )
+    db_patient = await session.get(Patient, patient_id)
+    if not db_patient:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Patient not found")
 
-    # Check for duplicate national_code, mobile_number
-    if patient_in.national_code:
-        existing_patient = await session.exec(select(Patient).where(Patient.national_code == patient_in.national_code))
-        if existing_patient.first():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="A patient with this national code already exists."
-            )
+    # استراتژی آپدیت مشابه فایل user.py
+    # تبدیل داده‌های ورودی به دیکشنری و حذف مقادیر None یا ارسال نشده
+    update_data = patient_in.model_dump(exclude_unset=True)
 
-    if patient_in.mobile_number:
-        existing_patient = await session.exec(select(Patient).where(Patient.mobile_number == patient_in.mobile_number))
-        if existing_patient.first():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="A patient with this mobile number already exists."
-            )
+    # به‌روزرسانی فیلدهای مدل با داده‌های جدید
+    for key, value in update_data.items():
+        setattr(db_patient, key, value)
 
-    # Update patient data
-    for key, value in patient_in.dict(exclude_unset=True).items():
-        setattr(patient_instance, key, value)
-
-    session.add(patient_instance)
+    session.add(db_patient)
     await session.commit()
-    await session.refresh(patient_instance)
+    await session.refresh(db_patient)
 
-    return patient_instance
+    return db_patient
 
+
+# ===================================================================
+# 5. DELETE A PATIENT
+# ===================================================================
 @router.delete("/{patient_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_patient(
-    patient_id: int,
-    session: AsyncSession = Depends(get_session)
-):
+        *,
+        session: AsyncSession = Depends(get_session),
+        patient_id: int
+) -> None:
     """
-    Delete a patient by their ID.
+    حذف یک بیمار از سیستم.
     """
-    patient = await session.get(Patient, patient_id)
-    if not patient:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Patient with ID {patient_id} not found."
-        )
+    db_patient = await session.get(Patient, patient_id)
+    if not db_patient:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Patient not found")
 
-    await session.delete(patient)
+    await session.delete(db_patient)
     await session.commit()
 
+    # طبق استاندارد RESTful، پس از حذف موفق، پاسخی با status_code 204 و بدون بدنه برمیگردانیم.
     return None

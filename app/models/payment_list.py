@@ -21,12 +21,12 @@ class PaymentStatusEnum(str, enum.Enum):
 class PaymentListBase(SQLModel):
     """Base model for PaymentList shared properties"""
     order_id: int = Field(
-        # foreign_key="tbl_Order.order_id",
+        foreign_key="tbl_Order.order_id",
         nullable=False,
         description="Order ID"
     )
     user_id: int = Field(
-        # foreign_key="tbl_user.user_id",
+        foreign_key="tbl_User.user_id",
         nullable=False,
         description="User ID who made the payment"
     )

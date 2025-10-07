@@ -1,35 +1,37 @@
 # app/schemas/patient.py
 
+from typing import Optional
 from sqlmodel import SQLModel
 from datetime import datetime
-from typing import Optional
+from app.models.patient import PatientBase,GenderEnum # مدل پایه را برای استفاده مجدد وارد می‌کنیم
 
-class PatientCreate(SQLModel):
-    """
-    Schema for creating a new patient. This is what the API expects as input.
-    """
-    full_name: str
-    national_code: Optional[str] = None
-    mobile_number: Optional[str] = None
-    address: Optional[str] = None
-    date_of_birth: Optional[datetime] = None
-    consultant_id: Optional[int] = None
+# ------------------- CREATE SCHEMA -------------------
+# این اسکیما دقیقاً همان PatientBase است.
+# کاربر تمام فیلدهای پایه را برای ایجاد یک بیمار جدید ارائه می‌دهد.
 
-class PatientRead(PatientCreate):
-    """
-    Schema for reading patient data. This is what the API returns as output.
-    """
+
+class PatientCreate(PatientBase):
+    pass # هیچ فیلد اضافی لازم نیست
+
+# ------------------- READ SCHEMA -------------------
+# این اسکیما برای نمایش اطلاعات بیمار به کاربر است.
+# علاوه بر فیلدهای پایه، شامل شناسه و تاریخ‌ها هم می‌شود.
+class PatientRead(PatientBase):
     patient_id: int
     created_at: datetime
     updated_at: datetime
 
+# ------------------- UPDATE SCHEMA -------------------
+# این اسکیما برای به‌روزرسانی اطلاعات یک بیمار موجود است.
+# همه فیلدها Optional هستند تا کاربر مجبور نباشد همه چیز را ارسال کند.
 class PatientUpdate(SQLModel):
-    """
-    Schema for updating a patient's information. All fields are optional.
-    """
     full_name: Optional[str] = None
-    national_code: Optional[str] = None
+    sex: Optional[GenderEnum] = None
+    age: Optional[int] = None
+    weight: Optional[float] = None
+    height: Optional[float] = None
     mobile_number: Optional[str] = None
+    postal_code: Optional[str] = None
     address: Optional[str] = None
-    date_of_birth: Optional[datetime] = None
-    consultant_id: Optional[int] = None
+    telegram_id: Optional[str] = None
+    specific_diseases: Optional[str] = None
