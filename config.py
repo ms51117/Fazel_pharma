@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from fastapi import FastAPI
 from app.routes import user
 from app.routes import patient
@@ -10,11 +12,29 @@ from app.routes import disease_type
 from app.routes import drug
 from app.routes import drug_map
 from app.routes import message
+from app.routes import login
+from contextlib import asynccontextmanager
+
+
+# ------------- mange life span ------------------
+
+@asynccontextmanager
+async def event_life_span(app: FastAPI):
+    with open ("server_time_log.log", "a") as log:
+        log.write(f"application startup at {datetime.now()}")
+    yield
+    with open ("server_time_log.log", "a") as log:
+        log.write(f"application shutdown at {datetime.now()}")
 
 
 
-app = FastAPI()
+app = FastAPI(life_span=event_life_span)
 
+
+
+
+
+#  ---------------- assign rout to app -------------------
 app.include_router(user.router, prefix="/user", tags=["Users"])
 app.include_router(patient.router, prefix="/patient", tags=["Patients"])
 app.include_router(user_role_permission.router,prefix="/permission", tags=["permissions"])
@@ -26,6 +46,7 @@ app.include_router(disease_type.router, prefix="/disease", tags=["Diseases"])
 app.include_router(drug.router, prefix="/drug", tags=["Drugs"])
 app.include_router(drug_map.router, prefix="/drug-map", tags=["Drugs-Map"])
 app.include_router(message.router, prefix="/message", tags=["Messages"])
+app.include_router(login.router, prefix="/login", tags=["login"])
 
 
 

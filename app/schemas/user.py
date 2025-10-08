@@ -18,6 +18,9 @@ class UserCreate(UserBase):
     # role_id is optional during creation, can be set later.
     role_id: Optional[int] = None
 
+    mobile_number : Optional[int] = None
+
+
 
 # Schema for reading user data.
 # This is what the API will return as output.
@@ -31,6 +34,7 @@ class UserRead(UserBase):
     updated_at: datetime
     last_login: Optional[datetime] = None
     role_id: Optional[int] = None
+    mobile_number : Optional[int] = None
 
 
 # Schema for updating an existing user.
