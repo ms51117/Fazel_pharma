@@ -28,7 +28,27 @@ async def event_life_span(app: FastAPI):
 
 
 
-app = FastAPI(life_span=event_life_span)
+
+app = FastAPI(
+    life_span=event_life_span,
+    title="Fazel Pharma API",
+    # ------ جدید: این بخش را به تنظیمات FastAPI اضافه کنید ------
+    swagger_ui_init_oauth={
+        "usePkceWithAuthorizationCodeGrant": False,
+        "clientId": "your-client-id", # این یک مقدار نمایشی است، مهم نیست چه باشد
+        "scopes": "openid profile email"
+    },
+    swagger_ui_oauth2_redirect_url="/oauth2-redirect",
+)
+
+
+
+
+
+
+
+
+
 
 
 
