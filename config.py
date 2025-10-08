@@ -15,22 +15,25 @@ from app.routes import message
 from app.routes import login
 from contextlib import asynccontextmanager
 
+import logging
+from app.core.logging_config import setup_logging
 
 # ------------- mange life span ------------------
 
+
 @asynccontextmanager
 async def event_life_span(app: FastAPI):
-    with open ("server_time_log.log", "a") as log:
-        log.write(f"application startup at {datetime.now()}")
+    # Setup logging on startup
+    setup_logging()  # <-- فراخوانی تابع تنظیمات لاگ
+
+    # Get our custom logger
+    logger = logging.getLogger("app")
+    logger.info("Application startup......................................")
     yield
-    with open ("server_time_log.log", "a") as log:
-        log.write(f"application shutdown at {datetime.now()}")
-
-
-
+    logger.info("Application shutdown.....................................")
 
 app = FastAPI(
-    life_span=event_life_span,
+    lifespan=event_life_span,
     title="Fazel Pharma API",
     # ------ جدید: این بخش را به تنظیمات FastAPI اضافه کنید ------
     swagger_ui_init_oauth={
@@ -40,16 +43,6 @@ app = FastAPI(
     },
     swagger_ui_oauth2_redirect_url="/oauth2-redirect",
 )
-
-
-
-
-
-
-
-
-
-
 
 
 

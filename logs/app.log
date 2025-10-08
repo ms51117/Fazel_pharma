@@ -1,0 +1,14 @@
+2025-10-09 00:55:22,116 - app - INFO - config:34 - Application startup...
+2025-10-09 00:55:22,116 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-09 00:55:37,879 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-09 00:55:37,989 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-09 00:55:37,989 - app - INFO - config:37 - Application shutdown.
+2025-10-09 00:55:37,989 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-09 00:55:37,989 - uvicorn.error - INFO - server:94 - Finished server process [6112]
+2025-10-09 00:59:25,395 - app - INFO - config:31 - Application startup...
+2025-10-09 00:59:25,396 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-09 00:59:42,087 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-09 00:59:42,197 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-09 00:59:42,197 - app - INFO - config:33 - Application shutdown.
+2025-10-09 00:59:42,197 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-09 00:59:42,197 - uvicorn.error - INFO - server:94 - Finished server process [7832]
