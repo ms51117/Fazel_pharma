@@ -9,6 +9,9 @@ from sqlalchemy.exc import IntegrityError
 from database import get_session
 from app.models.disease_type import DiseaseType
 from app.schemas.disease_type import DiseaseTypeCreate, DiseaseTypeRead, DiseaseTypeUpdate
+from security import get_current_active_user
+from app.models.user import User
+
 
 router = APIRouter()
 
@@ -16,6 +19,7 @@ router = APIRouter()
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=DiseaseTypeRead)
 async def create_disease_type(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         disease_type_in: DiseaseTypeCreate,
 ) -> Any:
@@ -39,6 +43,7 @@ async def create_disease_type(
 @router.get("/", response_model=List[DiseaseTypeRead])
 async def read_disease_types(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -54,6 +59,7 @@ async def read_disease_types(
 @router.get("/{disease_type_id}", response_model=DiseaseTypeRead)
 async def read_disease_type_by_id(
         *,
+        current_user: User = Depends(get_current_active_user),
         disease_type_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -72,6 +78,7 @@ async def read_disease_type_by_id(
 @router.patch("/{disease_type_id}", response_model=DiseaseTypeRead)
 async def update_disease_type(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         disease_type_id: int,
         disease_type_in: DiseaseTypeUpdate,
@@ -107,6 +114,7 @@ async def update_disease_type(
 @router.delete("/{disease_type_id}")
 async def delete_disease_type(
         *,
+        current_user: User = Depends(get_current_active_user),
         disease_type_id: int,
         session: AsyncSession = Depends(get_session),
 ):

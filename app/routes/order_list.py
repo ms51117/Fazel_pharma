@@ -10,6 +10,8 @@ from app.models.order_list import OrderList
 from app.models.order import Order
 from app.models.drug import Drug # بعد از پیاده‌سازی Drug اضافه می‌شود
 from app.schemas.order_list import OrderListCreate, OrderListRead, OrderListUpdate
+from security import get_current_active_user
+from app.models.user import User
 
 router = APIRouter()
 
@@ -17,6 +19,7 @@ router = APIRouter()
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=OrderListRead)
 async def create_order_item(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         order_item_in: OrderListCreate,
 ) -> Any:
@@ -49,6 +52,7 @@ async def create_order_item(
 @router.get("/", response_model=List[OrderListRead])
 async def read_order_items(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -64,6 +68,7 @@ async def read_order_items(
 @router.get("/{order_list_id}", response_model=OrderListRead)
 async def read_order_item_by_id(
         *,
+        current_user: User = Depends(get_current_active_user),
         order_list_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -82,6 +87,7 @@ async def read_order_item_by_id(
 @router.patch("/{order_list_id}", response_model=OrderListRead)
 async def update_order_item(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         order_list_id: int,
         order_item_in: OrderListUpdate,
@@ -107,6 +113,7 @@ async def update_order_item(
 @router.delete("/{order_list_id}")
 async def delete_order_item(
         *,
+        current_user: User = Depends(get_current_active_user),
         order_list_id: int,
         session: AsyncSession = Depends(get_session),
 ):

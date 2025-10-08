@@ -10,6 +10,8 @@ from database import get_session
 from app.models.drug import Drug
 from app.models.disease_type import DiseaseType  # برای اعتبارسنجی
 from app.schemas.drug import DrugCreate, DrugRead, DrugUpdate, DrugReadWithDetails
+from security import get_current_active_user
+from app.models.user import User
 
 router = APIRouter()
 
@@ -28,6 +30,7 @@ async def get_disease_type_or_404(disease_type_id: int, session: AsyncSession):
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=DrugRead)
 async def create_drug(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         drug_in: DrugCreate,
 ) -> Any:
@@ -48,6 +51,7 @@ async def create_drug(
 @router.get("/", response_model=List[DrugReadWithDetails])
 async def read_drugs(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -63,6 +67,7 @@ async def read_drugs(
 @router.get("/{drug_id}", response_model=DrugReadWithDetails)
 async def read_drug_by_id(
         *,
+        current_user: User = Depends(get_current_active_user),
         drug_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -83,6 +88,7 @@ async def read_drug_by_id(
 @router.patch("/{drug_id}", response_model=DrugRead)
 async def update_drug(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         drug_id: int,
         drug_in: DrugUpdate,
@@ -115,6 +121,7 @@ async def update_drug(
 @router.delete("/{drug_id}")
 async def delete_drug(
         *,
+        current_user: User = Depends(get_current_active_user),
         drug_id: int,
         session: AsyncSession = Depends(get_session),
 ):

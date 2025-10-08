@@ -10,6 +10,8 @@ from database import get_session
 from app.models.message import Message
 from app.models.patient import Patient  # برای اعتبارسنجی
 from app.schemas.message import MessageCreate, MessageRead, MessageUpdate, MessageReadWithDetails
+from security import get_current_active_user
+from app.models.user import User
 
 router = APIRouter()
 
@@ -28,6 +30,7 @@ async def get_patient_or_404(patient_id: int, session: AsyncSession):
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=MessageRead)
 async def create_message(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         message_in: MessageCreate,
 ) -> Any:
@@ -49,6 +52,7 @@ async def create_message(
 @router.get("/", response_model=List[MessageReadWithDetails])
 async def read_messages(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -65,6 +69,7 @@ async def read_messages(
 @router.get("/{message_id}", response_model=MessageReadWithDetails)
 async def read_message_by_id(
         *,
+        current_user: User = Depends(get_current_active_user),
         message_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -85,6 +90,7 @@ async def read_message_by_id(
 @router.patch("/{message_id}", response_model=MessageRead)
 async def update_message(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         message_id: int,
         message_in: MessageUpdate,
@@ -113,6 +119,7 @@ async def update_message(
 @router.delete("/{message_id}")
 async def delete_message(
         *,
+        current_user: User = Depends(get_current_active_user),
         message_id: int,
         session: AsyncSession = Depends(get_session),
 ):

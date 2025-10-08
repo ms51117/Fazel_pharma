@@ -11,6 +11,8 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 from database import get_session
 from app.models.patient import Patient
 from app.schemas.patient import PatientCreate, PatientRead, PatientUpdate
+from security import get_current_active_user
+from app.models.user import User
 
 # ایجاد روتر جدید برای مدیریت بیماران
 router = APIRouter()
@@ -22,6 +24,7 @@ router = APIRouter()
 @router.post("/", response_model=PatientRead, status_code=status.HTTP_201_CREATED)
 async def create_patient(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         patient_in: PatientCreate
 ) -> Patient:
@@ -62,6 +65,7 @@ async def create_patient(
 @router.get("/", response_model=List[PatientRead])
 async def read_patients(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         offset: int = 0,
         limit: int = Query(default=10, le=100)  # مقدار پیش‌فرض معقول‌تر و محدودیت روی 100
@@ -80,6 +84,7 @@ async def read_patients(
 @router.get("/{patient_id}", response_model=PatientRead)
 async def read_patient(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         patient_id: int
 ) -> Patient:
@@ -98,6 +103,7 @@ async def read_patient(
 @router.patch("/{patient_id}", response_model=PatientRead)
 async def update_patient(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         patient_id: int,
         patient_in: PatientUpdate
@@ -131,6 +137,7 @@ async def update_patient(
 @router.delete("/{patient_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_patient(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         patient_id: int
 ) -> None:

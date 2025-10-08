@@ -7,8 +7,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from database import get_session
 from app.models.user_role_permission import UserRolePermission
-from app.schemas.user_role_permission import UserRolePermissionCreate, UserRolePermissionRead, \
-    UserRolePermissionUpdate
+from app.schemas.user_role_permission import UserRolePermissionCreate, UserRolePermissionRead, UserRolePermissionUpdate
+from app.models.user import User
+from security import get_current_active_user
+
 
 router = APIRouter()
 
@@ -16,6 +18,7 @@ router = APIRouter()
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=UserRolePermissionRead)
 async def create_permission(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         permission_in: UserRolePermissionCreate,
 ) -> Any:
@@ -44,6 +47,7 @@ async def create_permission(
 @router.get("/", response_model=List[UserRolePermissionRead])
 async def read_permissions(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -59,6 +63,7 @@ async def read_permissions(
 @router.get("/{permission_id}", response_model=UserRolePermissionRead)
 async def read_permission_by_id(
         *,
+        current_user: User = Depends(get_current_active_user),
         permission_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -77,6 +82,7 @@ async def read_permission_by_id(
 @router.patch("/{permission_id}", response_model=UserRolePermissionRead)
 async def update_permission(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         permission_id: int,
         permission_in: UserRolePermissionUpdate,
@@ -103,6 +109,7 @@ async def update_permission(
 @router.delete("/{permission_id}")
 async def delete_permission(
         *,
+        current_user: User = Depends(get_current_active_user),
         permission_id: int,
         session: AsyncSession = Depends(get_session),
 ):

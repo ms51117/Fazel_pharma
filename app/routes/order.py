@@ -11,6 +11,7 @@ from app.models.order import Order
 from app.models.patient import Patient
 from app.models.user import User
 from app.schemas.order import OrderCreate, OrderRead, OrderUpdate , OrderReadWithDetails
+from security import get_current_active_user
 
 router = APIRouter()
 
@@ -18,6 +19,7 @@ router = APIRouter()
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=OrderRead)
 async def create_order(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         order_in: OrderCreate,
 ) -> Any:
@@ -51,6 +53,7 @@ async def create_order(
 @router.get("/", response_model=List[OrderRead])
 async def read_orders(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -66,6 +69,7 @@ async def read_orders(
 @router.get("/{order_id}", response_model=OrderReadWithDetails)
 async def read_order_by_id(
         *,
+        current_user: User = Depends(get_current_active_user),
         order_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -87,6 +91,7 @@ async def read_order_by_id(
 @router.patch("/{order_id}", response_model=OrderRead)
 async def update_order(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         order_id: int,
         order_in: OrderUpdate,
@@ -124,6 +129,7 @@ async def update_order(
 @router.delete("/{order_id}")
 async def delete_order(
         *,
+        current_user: User = Depends(get_current_active_user),
         order_id: int,
         session: AsyncSession = Depends(get_session),
 ):

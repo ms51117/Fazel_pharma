@@ -8,6 +8,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from database import get_session
 from app.models.user_role import UserRole
 from app.schemas.user_role import UserRoleCreate, UserRoleRead, UserRoleUpdate
+from app.models.user import User
+from security import get_current_active_user
 
 router = APIRouter()
 
@@ -15,6 +17,7 @@ router = APIRouter()
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=UserRoleRead)
 async def create_role(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         role_in: UserRoleCreate,
 ) -> Any:
@@ -40,6 +43,7 @@ async def create_role(
 @router.get("/", response_model=List[UserRoleRead])
 async def read_roles(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -55,6 +59,7 @@ async def read_roles(
 @router.get("/{role_id}", response_model=UserRoleRead)
 async def read_role_by_id(
         *,
+        current_user: User = Depends(get_current_active_user),
         role_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -73,6 +78,7 @@ async def read_role_by_id(
 @router.patch("/{role_id}", response_model=UserRoleRead)
 async def update_role(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         role_id: int,
         role_in: UserRoleUpdate,
@@ -99,6 +105,7 @@ async def update_role(
 @router.delete("/{role_id}")
 async def delete_role(
         *,
+        current_user: User = Depends(get_current_active_user),
         role_id: int,
         session: AsyncSession = Depends(get_session),
 ):

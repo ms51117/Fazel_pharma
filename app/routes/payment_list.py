@@ -9,6 +9,7 @@ from database import get_session
 from app.models.payment_list import PaymentList
 from app.models.user import User
 from app.schemas.payment_list import PaymentListCreate, PaymentListRead, PaymentListUpdate
+from security import get_current_active_user
 
 router = APIRouter()
 
@@ -16,6 +17,7 @@ router = APIRouter()
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=PaymentListRead)
 async def create_payment(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         payment_in: PaymentListCreate,
 ) -> Any:
@@ -41,6 +43,7 @@ async def create_payment(
 @router.get("/", response_model=List[PaymentListRead])
 async def read_payments(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -56,6 +59,7 @@ async def read_payments(
 @router.get("/{payment_id}", response_model=PaymentListRead)
 async def read_payment_by_id(
         *,
+        current_user: User = Depends(get_current_active_user),
         payment_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -74,6 +78,7 @@ async def read_payment_by_id(
 @router.patch("/{payment_id}", response_model=PaymentListRead)
 async def update_payment(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         payment_id: int,
         payment_in: PaymentListUpdate,
@@ -109,6 +114,7 @@ async def update_payment(
 @router.delete("/{payment_id}")
 async def delete_payment(
         *,
+        current_user: User = Depends(get_current_active_user),
         payment_id: int,
         session: AsyncSession = Depends(get_session),
 ):

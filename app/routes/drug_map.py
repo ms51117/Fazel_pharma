@@ -11,13 +11,15 @@ from app.models.drug_map import DrugMap
 from app.models.drug import Drug
 from app.models.disease_type import DiseaseType
 from app.schemas.drug_map import DrugMapCreate, DrugMapRead
-
+from security import get_current_active_user
+from app.models.user import User
 router = APIRouter()
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=DrugMapRead)
 async def create_drug_disease_mapping(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         mapping_in: DrugMapCreate,
 ) -> Any:
@@ -58,6 +60,7 @@ async def create_drug_disease_mapping(
 @router.get("/", response_model=List[DrugMapRead])
 async def read_mappings(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -73,6 +76,7 @@ async def read_mappings(
 @router.delete("/", status_code=status.HTTP_200_OK)
 async def delete_drug_disease_mapping(
         *,
+        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         mapping_to_delete: DrugMapCreate,  # از اسکیمای Create برای دریافت drug_id و disease_type_id استفاده می‌کنیم
 ):
