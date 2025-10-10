@@ -6,11 +6,12 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
+from app.core.permission import FormName, PermissionAction
 from database import get_session
 from app.models.drug import Drug
 from app.models.disease_type import DiseaseType  # برای اعتبارسنجی
 from app.schemas.drug import DrugCreate, DrugRead, DrugUpdate, DrugReadWithDetails
-from security import get_current_active_user
+from security import get_current_active_user, RoleChecker
 from app.models.user import User
 
 router = APIRouter()
@@ -32,6 +33,8 @@ async def create_drug(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG, required_permission=PermissionAction.INSERT)),
         drug_in: DrugCreate,
 ) -> Any:
     """
@@ -53,6 +56,9 @@ async def read_drugs(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG, required_permission=PermissionAction.VIEW)),
+
         skip: int = 0,
         limit: int = 100,
 ) -> Any:
@@ -68,6 +74,9 @@ async def read_drugs(
 async def read_drug_by_id(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG, required_permission=PermissionAction.VIEW)),
+
         drug_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -90,6 +99,9 @@ async def update_drug(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG, required_permission=PermissionAction.UPDATE)),
+
         drug_id: int,
         drug_in: DrugUpdate,
 ) -> Any:
@@ -122,6 +134,9 @@ async def update_drug(
 async def delete_drug(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG, required_permission=PermissionAction.DELETE)),
+
         drug_id: int,
         session: AsyncSession = Depends(get_session),
 ):

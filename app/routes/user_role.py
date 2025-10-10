@@ -9,7 +9,12 @@ from database import get_session
 from app.models.user_role import UserRole
 from app.schemas.user_role import UserRoleCreate, UserRoleRead, UserRoleUpdate
 from app.models.user import User
-from security import get_current_active_user
+from security import get_current_active_user,RoleChecker
+
+
+#  for role check - this is the name define in database
+from app.core.permission import FormName, PermissionAction
+
 
 router = APIRouter()
 
@@ -20,6 +25,9 @@ async def create_role(
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         role_in: UserRoleCreate,
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLES, required_permission=PermissionAction.INSERT)),
+
 ) -> Any:
     """
     ایجاد یک نقش کاربری جدید (مثلا: ادمین، مشاور).
@@ -45,6 +53,9 @@ async def read_roles(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLES, required_permission=PermissionAction.VIEW)),
+
         skip: int = 0,
         limit: int = 100,
 ) -> Any:
@@ -62,6 +73,9 @@ async def read_role_by_id(
         current_user: User = Depends(get_current_active_user),
         role_id: int,
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLES, required_permission=PermissionAction.VIEW))
+
 ) -> Any:
     """
     دریافت اطلاعات یک نقش با شناسه (ID).
@@ -80,6 +94,9 @@ async def update_role(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLES, required_permission=PermissionAction.UPDATE)),
+
         role_id: int,
         role_in: UserRoleUpdate,
 ) -> Any:
@@ -106,6 +123,9 @@ async def update_role(
 async def delete_role(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLES, required_permission=PermissionAction.DELETE)),
+
         role_id: int,
         session: AsyncSession = Depends(get_session),
 ):

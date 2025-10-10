@@ -6,10 +6,11 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 
+from app.core.permission import FormName, PermissionAction
 from database import get_session
 from app.models.disease_type import DiseaseType
 from app.schemas.disease_type import DiseaseTypeCreate, DiseaseTypeRead, DiseaseTypeUpdate
-from security import get_current_active_user
+from security import get_current_active_user, RoleChecker
 from app.models.user import User
 
 
@@ -21,6 +22,9 @@ async def create_disease_type(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DISEASE_TYPE, required_permission=PermissionAction.INSERT)),
+
         disease_type_in: DiseaseTypeCreate,
 ) -> Any:
     """
@@ -45,6 +49,9 @@ async def read_disease_types(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DISEASE_TYPE, required_permission=PermissionAction.VIEW)),
+
         skip: int = 0,
         limit: int = 100,
 ) -> Any:
@@ -59,6 +66,9 @@ async def read_disease_types(
 @router.get("/{disease_type_id}", response_model=DiseaseTypeRead)
 async def read_disease_type_by_id(
         *,
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DISEASE_TYPE, required_permission=PermissionAction.VIEW)),
+
         current_user: User = Depends(get_current_active_user),
         disease_type_id: int,
         session: AsyncSession = Depends(get_session),
@@ -80,6 +90,9 @@ async def update_disease_type(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DISEASE_TYPE, required_permission=PermissionAction.UPDATE)),
+
         disease_type_id: int,
         disease_type_in: DiseaseTypeUpdate,
 ) -> Any:
@@ -115,6 +128,9 @@ async def update_disease_type(
 async def delete_disease_type(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DISEASE_TYPE, required_permission=PermissionAction.DELETE)),
+
         disease_type_id: int,
         session: AsyncSession = Depends(get_session),
 ):

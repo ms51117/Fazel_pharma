@@ -7,11 +7,12 @@ from typing import List
 # برای استفاده از AsyncSession، باید آن را از کتابخانه مربوطه import کنید
 from sqlmodel.ext.asyncio.session import AsyncSession
 
+from app.core.permission import FormName, PermissionAction
 # مسیر get_session باید به نسخه async اشاره کند
 from database import get_session
 from app.models.patient import Patient
 from app.schemas.patient import PatientCreate, PatientRead, PatientUpdate
-from security import get_current_active_user
+from security import get_current_active_user, RoleChecker
 from app.models.user import User
 
 # ایجاد روتر جدید برای مدیریت بیماران
@@ -26,6 +27,8 @@ async def create_patient(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.INSERT)),
         patient_in: PatientCreate
 ) -> Patient:
     """
@@ -67,6 +70,8 @@ async def read_patients(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.VIEW)),
         offset: int = 0,
         limit: int = Query(default=10, le=100)  # مقدار پیش‌فرض معقول‌تر و محدودیت روی 100
 ) -> List[Patient]:
@@ -86,6 +91,8 @@ async def read_patient(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.VIEW)),
         patient_id: int
 ) -> Patient:
     """
@@ -105,6 +112,8 @@ async def update_patient(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.UPDATE)),
         patient_id: int,
         patient_in: PatientUpdate
 ) -> Patient:
@@ -138,6 +147,9 @@ async def update_patient(
 async def delete_patient(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.DELETE)),
+
         session: AsyncSession = Depends(get_session),
         patient_id: int
 ) -> None:

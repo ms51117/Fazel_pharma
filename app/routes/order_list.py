@@ -5,12 +5,13 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.permission import FormName, PermissionAction
 from database import get_session
 from app.models.order_list import OrderList
 from app.models.order import Order
 from app.models.drug import Drug # بعد از پیاده‌سازی Drug اضافه می‌شود
 from app.schemas.order_list import OrderListCreate, OrderListRead, OrderListUpdate
-from security import get_current_active_user
+from security import get_current_active_user, RoleChecker
 from app.models.user import User
 
 router = APIRouter()
@@ -20,6 +21,8 @@ router = APIRouter()
 async def create_order_item(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER_LIST, required_permission=PermissionAction.INSERT)),
         session: AsyncSession = Depends(get_session),
         order_item_in: OrderListCreate,
 ) -> Any:
@@ -54,6 +57,8 @@ async def read_order_items(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER_LIST, required_permission=PermissionAction.VIEW)),
         skip: int = 0,
         limit: int = 100,
 ) -> Any:
@@ -69,6 +74,8 @@ async def read_order_items(
 async def read_order_item_by_id(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER_LIST, required_permission=PermissionAction.VIEW)),
         order_list_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -89,6 +96,8 @@ async def update_order_item(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER_LIST, required_permission=PermissionAction.UPDATE)),
         order_list_id: int,
         order_item_in: OrderListUpdate,
 ) -> Any:
@@ -114,6 +123,8 @@ async def update_order_item(
 async def delete_order_item(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER_LIST, required_permission=PermissionAction.DELETE)),
         order_list_id: int,
         session: AsyncSession = Depends(get_session),
 ):

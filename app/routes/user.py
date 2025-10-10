@@ -11,30 +11,29 @@ from typing import List
 from app.models.user import User
 from app.schemas.user import UserCreate, UserRead, UserUpdate
 from database import get_session
-from security import get_password_hash,get_current_active_user
+from security import get_password_hash,get_current_active_user,RoleChecker
+
+
+#  for role check - this is the name define in database
+from app.core.permission import FormName, PermissionAction
 
 
 # Create an API router for user-related endpoints
 router = APIRouter()
 
-
 @router.post("/", response_model=UserRead, status_code=status.HTTP_201_CREATED)
 async def create_user(
         *,
         session: AsyncSession = Depends(get_session),
-        user_in: UserCreate
+        user_in: UserCreate,
+        _permission_check: None = Depends(RoleChecker(form_name=FormName.USER, required_permission=PermissionAction.INSERT)),
+        current_user: User = Depends(get_current_active_user)
+
 ):
     """
     Create a new user in the database.
     """
     # Check if a user with the same telegram_id already exists
-    db_user = await session.exec(select(User).where(User.telegram_id == user_in.telegram_id))
-    if db_user.first():
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="A user with this Telegram ID already exists."
-        )
-
     db_user = await session.exec(select(User).where(User.telegram_id == user_in.telegram_id))
     if db_user.first():
         raise HTTPException(
@@ -81,7 +80,8 @@ async def create_user(
 async def read_user_by_id(
         user_id: int,
         session: AsyncSession = Depends(get_session),
-        current_user: User = Depends(get_current_active_user)
+        current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(RoleChecker(form_name=FormName.USER, required_permission=PermissionAction.VIEW))
 
 ):
     """
@@ -101,7 +101,9 @@ async def read_user_by_id(
 @router.get("/", response_model=List[UserRead])
 async def read_users(
     current_user: User = Depends(get_current_active_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_session),
+    _permission_check: None = Depends(RoleChecker(form_name=FormName.USER, required_permission=PermissionAction.VIEW))
+
 ):
     """
     Retrieve a list of all users.
@@ -118,7 +120,8 @@ async def update_user(
     user_id: int,
     user_in: UserUpdate,
     current_user: User = Depends(get_current_active_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_session),
+    _permission_check: None = Depends(RoleChecker(form_name=FormName.USER, required_permission=PermissionAction.UPDATE))
 ):
     """
     Update an existing user's information.
@@ -169,7 +172,8 @@ async def update_user(
 async def delete_user(
     user_id: int,
     current_user: User = Depends(get_current_active_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_session),
+    _permission_check: None = Depends(RoleChecker(form_name=FormName.USER, required_permission=PermissionAction.DELETE))
 ):
     """
     Delete a user by their ID.

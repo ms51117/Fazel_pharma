@@ -6,12 +6,13 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 
+from app.core.permission import FormName, PermissionAction
 from database import get_session
 from app.models.drug_map import DrugMap
 from app.models.drug import Drug
 from app.models.disease_type import DiseaseType
 from app.schemas.drug_map import DrugMapCreate, DrugMapRead
-from security import get_current_active_user
+from security import get_current_active_user, RoleChecker
 from app.models.user import User
 router = APIRouter()
 
@@ -21,6 +22,8 @@ async def create_drug_disease_mapping(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG_MAP, required_permission=PermissionAction.INSERT)),
         mapping_in: DrugMapCreate,
 ) -> Any:
     """
@@ -61,6 +64,8 @@ async def create_drug_disease_mapping(
 async def read_mappings(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG_MAP, required_permission=PermissionAction.VIEW)),
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -78,6 +83,8 @@ async def delete_drug_disease_mapping(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG_MAP, required_permission=PermissionAction.DELETE)),
         mapping_to_delete: DrugMapCreate,  # از اسکیمای Create برای دریافت drug_id و disease_type_id استفاده می‌کنیم
 ):
     """

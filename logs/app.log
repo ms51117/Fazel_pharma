@@ -12,3 +12,140 @@
 2025-10-09 00:59:42,197 - app - INFO - config:33 - Application shutdown.
 2025-10-09 00:59:42,197 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-10-09 00:59:42,197 - uvicorn.error - INFO - server:94 - Finished server process [7832]
+2025-10-09 22:30:21,348 - app - INFO - config:31 - Application startup......................................
+2025-10-09 22:30:21,348 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-09 22:32:26,080 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54299 - "POST /login/access-token HTTP/1.1" 200
+2025-10-09 23:31:19,736 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54828 - "GET /permission/?skip=0&limit=100 HTTP/1.1" 401
+2025-10-09 23:31:58,033 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54849 - "POST /login/access-token HTTP/1.1" 200
+2025-10-09 23:32:33,410 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54854 - "GET /permission/?skip=0&limit=100 HTTP/1.1" 401
+2025-10-09 23:32:50,403 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54855 - "GET /permission/?skip=0&limit=10 HTTP/1.1" 401
+2025-10-09 23:35:45,120 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54889 - "GET /permission/?skip=0&limit=10 HTTP/1.1" 401
+2025-10-09 23:35:59,868 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-09 23:35:59,975 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-09 23:35:59,975 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-09 23:35:59,975 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-09 23:35:59,975 - uvicorn.error - INFO - server:94 - Finished server process [724]
+2025-10-09 23:36:01,147 - app - INFO - config:31 - Application startup......................................
+2025-10-09 23:36:01,147 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-09 23:36:07,664 - app - INFO - config:31 - Application startup......................................
+2025-10-09 23:36:07,665 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-09 23:36:13,982 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54912 - "GET /permission/?skip=0&limit=10 HTTP/1.1" 401
+2025-10-09 23:37:05,310 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54934 - "GET /permission/?skip=0&limit=10 HTTP/1.1" 401
+2025-10-09 23:37:07,468 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54934 - "GET /permission/?skip=0&limit=10 HTTP/1.1" 401
+2025-10-09 23:37:14,881 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54938 - "GET /docs HTTP/1.1" 200
+2025-10-09 23:37:14,989 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54938 - "GET /openapi.json HTTP/1.1" 200
+2025-10-09 23:37:35,467 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54939 - "POST /login/access-token HTTP/1.1" 200
+2025-10-09 23:38:15,635 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-09 23:38:15,743 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-09 23:38:15,743 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-09 23:38:15,744 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-09 23:38:15,744 - uvicorn.error - INFO - server:94 - Finished server process [14816]
+2025-10-09 23:41:50,504 - app - INFO - config:31 - Application startup......................................
+2025-10-09 23:41:50,504 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-09 23:41:56,487 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55009 - "GET /docs HTTP/1.1" 200
+2025-10-09 23:41:56,663 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55009 - "GET /openapi.json HTTP/1.1" 200
+2025-10-09 23:42:13,720 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55010 - "POST /login/access-token HTTP/1.1" 200
+2025-10-09 23:42:41,252 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55029 - "GET /permission/?skip=0&limit=100 HTTP/1.1" 200
+2025-10-09 23:43:06,444 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55043 - "GET /permission/?skip=0&limit=100 HTTP/1.1" 403
+2025-10-09 23:43:27,778 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-09 23:43:27,886 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-09 23:43:27,886 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-09 23:43:27,886 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-09 23:43:27,887 - uvicorn.error - INFO - server:94 - Finished server process [7044]
+2025-10-09 23:56:06,098 - app - INFO - config:31 - Application startup......................................
+2025-10-09 23:56:06,098 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-09 23:56:38,349 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55164 - "GET /docs HTTP/1.1" 200
+2025-10-09 23:56:38,523 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55164 - "GET /openapi.json HTTP/1.1" 200
+2025-10-09 23:56:58,481 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55165 - "POST /login/access-token HTTP/1.1" 200
+2025-10-09 23:57:33,403 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55184 - "GET /permission/?skip=0&limit=100 HTTP/1.1" 500
+2025-10-09 23:57:33,404 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\result.py", line 199, in _key_not_found
+    self._key_fallback(key, None)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\result.py", line 138, in _key_fallback
+    raise KeyError(key) from err
+KeyError: 'is_active'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 377, in app
+    solved_result = await solve_dependencies(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\dependencies\utils.py", line 646, in solve_dependencies
+    solved = await call(**solved_result.values)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\security.py", line 123, in get_current_active_user
+    if not current_user.is_active:
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 66, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 63, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\result.py", line 201, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+AttributeError: is_active
+2025-10-10 00:02:07,564 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-10 00:02:07,673 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-10 00:02:07,674 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-10 00:02:07,674 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-10 00:02:07,674 - uvicorn.error - INFO - server:94 - Finished server process [9868]
+2025-10-10 00:10:39,613 - app - INFO - config:31 - Application startup......................................
+2025-10-10 00:10:39,614 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-10 00:10:55,600 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55298 - "GET /permission/?skip=0&limit=100 HTTP/1.1" 200
+2025-10-10 00:11:22,000 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55308 - "GET /docs HTTP/1.1" 200
+2025-10-10 00:11:22,169 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55308 - "GET /openapi.json HTTP/1.1" 200
+2025-10-10 00:11:27,197 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55309 - "GET /permission/?skip=0&limit=100 HTTP/1.1" 403
+2025-10-10 00:11:55,123 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55323 - "POST /login/access-token HTTP/1.1" 200
+2025-10-10 00:12:21,845 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55326 - "GET /permission/?skip=0&limit=100 HTTP/1.1" 200
+2025-10-10 00:21:27,297 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-10 00:21:27,408 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-10 00:21:27,408 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-10 00:21:27,409 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-10 00:21:27,409 - uvicorn.error - INFO - server:94 - Finished server process [12168]
+2025-10-10 00:30:17,907 - app - INFO - config:31 - Application startup......................................
+2025-10-10 00:30:17,907 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-10 00:30:41,368 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55874 - "GET /user/ HTTP/1.1" 200
+2025-10-10 00:31:35,126 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55946 - "GET /user/ HTTP/1.1" 403
+2025-10-10 00:46:39,343 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-10 00:46:39,451 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-10 00:46:39,451 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-10 00:46:39,452 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-10 00:46:39,452 - uvicorn.error - INFO - server:94 - Finished server process [9136]
+2025-10-10 00:46:50,870 - app - INFO - config:31 - Application startup......................................
+2025-10-10 00:46:50,870 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-10 00:47:00,876 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56077 - "GET /user/ HTTP/1.1" 403
+2025-10-10 00:47:19,399 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-10 00:47:19,507 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-10 00:47:19,507 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-10 00:47:19,507 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-10 00:47:19,507 - uvicorn.error - INFO - server:94 - Finished server process [5420]

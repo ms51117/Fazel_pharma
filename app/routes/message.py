@@ -6,11 +6,12 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
+from app.core.permission import FormName, PermissionAction
 from database import get_session
 from app.models.message import Message
 from app.models.patient import Patient  # برای اعتبارسنجی
 from app.schemas.message import MessageCreate, MessageRead, MessageUpdate, MessageReadWithDetails
-from security import get_current_active_user
+from security import get_current_active_user, RoleChecker
 from app.models.user import User
 
 router = APIRouter()
@@ -32,6 +33,8 @@ async def create_message(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.MESSAGE, required_permission=PermissionAction.INSERT)),
         message_in: MessageCreate,
 ) -> Any:
     """
@@ -54,6 +57,8 @@ async def read_messages(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.MESSAGE, required_permission=PermissionAction.VIEW)),
         skip: int = 0,
         limit: int = 100,
 ) -> Any:
@@ -70,6 +75,8 @@ async def read_messages(
 async def read_message_by_id(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.MESSAGE, required_permission=PermissionAction.VIEW)),
         message_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -92,6 +99,8 @@ async def update_message(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.MESSAGE, required_permission=PermissionAction.UPDATE)),
         message_id: int,
         message_in: MessageUpdate,
 ) -> Any:
@@ -120,6 +129,8 @@ async def update_message(
 async def delete_message(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.MESSAGE, required_permission=PermissionAction.DELETE)),
         message_id: int,
         session: AsyncSession = Depends(get_session),
 ):

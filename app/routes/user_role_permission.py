@@ -9,7 +9,11 @@ from database import get_session
 from app.models.user_role_permission import UserRolePermission
 from app.schemas.user_role_permission import UserRolePermissionCreate, UserRolePermissionRead, UserRolePermissionUpdate
 from app.models.user import User
-from security import get_current_active_user
+from security import get_current_active_user,RoleChecker
+
+
+#  for role check - this is the name define in database
+from app.core.permission import FormName, PermissionAction
 
 
 router = APIRouter()
@@ -20,6 +24,9 @@ async def create_permission(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLE_PERMISSIONS, required_permission=PermissionAction.INSERT)),
+
         permission_in: UserRolePermissionCreate,
 ) -> Any:
     """
@@ -48,6 +55,9 @@ async def create_permission(
 async def read_permissions(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLE_PERMISSIONS, required_permission=PermissionAction.VIEW)),
+
         session: AsyncSession = Depends(get_session),
         skip: int = 0,
         limit: int = 100,
@@ -64,6 +74,9 @@ async def read_permissions(
 async def read_permission_by_id(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLE_PERMISSIONS, required_permission=PermissionAction.VIEW)),
+
         permission_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -84,6 +97,9 @@ async def update_permission(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLE_PERMISSIONS, required_permission=PermissionAction.UPDATE)),
+
         permission_id: int,
         permission_in: UserRolePermissionUpdate,
 ) -> Any:
@@ -110,6 +126,9 @@ async def update_permission(
 async def delete_permission(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.USER_ROLE_PERMISSIONS, required_permission=PermissionAction.DELETE)),
+
         permission_id: int,
         session: AsyncSession = Depends(get_session),
 ):

@@ -6,12 +6,13 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
+from app.core.permission import FormName, PermissionAction
 from database import get_session
 from app.models.order import Order
 from app.models.patient import Patient
 from app.models.user import User
 from app.schemas.order import OrderCreate, OrderRead, OrderUpdate , OrderReadWithDetails
-from security import get_current_active_user
+from security import get_current_active_user, RoleChecker
 
 router = APIRouter()
 
@@ -21,6 +22,8 @@ async def create_order(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.INSERT)),
         order_in: OrderCreate,
 ) -> Any:
     """
@@ -55,6 +58,8 @@ async def read_orders(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.VIEW)),
         skip: int = 0,
         limit: int = 100,
 ) -> Any:
@@ -70,6 +75,8 @@ async def read_orders(
 async def read_order_by_id(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.VIEW)),
         order_id: int,
         session: AsyncSession = Depends(get_session),
 ) -> Any:
@@ -93,6 +100,8 @@ async def update_order(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.UPDATE)),
         order_id: int,
         order_in: OrderUpdate,
 ) -> Any:
@@ -132,6 +141,8 @@ async def delete_order(
         current_user: User = Depends(get_current_active_user),
         order_id: int,
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.DELETE)),
 ):
     """
     حذف یک سفارش با شناسه (ID).

@@ -5,16 +5,23 @@ from typing import Any
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, HTTPBearer, HTTPAuthorizationCredentials
-from jose import jwt
+from jose import jwt, JWTError
 from passlib.context import CryptContext
 from pydantic import ValidationError
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.future import select
 
+from sqlmodel import select
+from sqlalchemy.orm import selectinload
+from sqlmodel.ext.asyncio.session import AsyncSession
+
+from app.models import UserRole
 from setting import settings
 from database import get_session
 from app.models.user import User
 from app.schemas.token import TokenPayload
+
+from app.core.permission import FormName, PermissionAction
+
 
 # Context برای هش کردن و بررسی رمز عبور
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -23,7 +30,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 # و باعث می‌شود در اندپوینت /login فرم username/password نمایش داده شود.
 # ما از این اسکما برای محافظت از روت‌های دیگر استفاده *نخواهیم* کرد.
 oauth2_scheme = OAuth2PasswordBearer(
-    tokenUrl=f"/api/v1/login/access-token"
+    tokenUrl=f"/login/access-token"
 )
 
 # این اسکیمای امنیتی اصلی ما برای محافظت از اندپوینت‌ها است.
@@ -61,54 +68,104 @@ def get_password_hash(password: str) -> str:
 
 async def get_current_user(
         session: AsyncSession = Depends(get_session),
-        # وابستگی ما به HTTPBearer است تا Swagger فرم درست را نشان دهد
+        # همان وابستگی شما که به درستی کار می‌کند
         credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme),
 ) -> User:
     """
     وابستگی (Dependency) برای دریافت کاربر فعلی از توکن JWT.
-    توکن را از هدر استخراج، رمزگشایی و کاربر مربوطه را از دیتابیس پیدا می‌کند.
+    این نسخه بهینه شده و اطلاعات نقش (Role) و دسترسی‌های (Permissions) کاربر را نیز
+    همزمان با خود کاربر بارگذاری می‌کند.
     """
-    # credentials.credentials خود رشته توکن است
     token = credentials.credentials
-
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
     try:
-        # رمزگشایی توکن
         payload = jwt.decode(
             token, settings.SECRET_KEY, algorithms=[ALGORITHM]
         )
-        # استخراج payload و اعتبارسنجی با اسکیمای TokenPayload
         token_data = TokenPayload(**payload)
-    except (jwt.JWTError, ValidationError):
-        # اگر توکن نامعتبر یا منقضی شده باشد، خطا برگردانده می‌شود
+    except (JWTError, ValidationError):
         raise credentials_exception
 
-    # استخراج شماره موبایل از فیلد 'sub' توکن
     mobile_number = token_data.sub
 
-    # جستجوی کاربر در دیتابیس با استفاده از شماره موبایل
-    query = select(User).where(User.mobile_number == mobile_number)
-    result = await session.execute(query)
-    user = result.scalar_one_or_none()
+    # === فقط این بخش تغییر می‌کند (بهینه‌سازی کوئری) ===
+    # به جای select ساده، از selectinload برای بارگذاری روابط مرتبط استفاده می‌کنیم.
+    statement = (
+        select(User)
+        .where(User.mobile_number == mobile_number)
+        .options(
+            # به SQLAlchemy/SQLModel می‌گوید:
+            # "وقتی کاربر را پیدا کردی، بلافاصله role آن را هم با یک JOIN بگیر"
+            # "و سپس user_role_permission های مربوط به آن role را هم با یک JOIN دیگر بگیر"
+            selectinload(User.role).selectinload(UserRole.user_role_permission)
+        )
+    )
+    # از exec برای اجرای کوئری statement استفاده می‌کنیم
+    result = await session.exec(statement)
+    user = result.one_or_none()
+    # =================================================
 
     if user is None:
-        # اگر کاربری با این شماره موبایل پیدا نشد
         raise credentials_exception
 
     return user
 
 
+# ========= تابع جدید برای اضافه کردن =========
+
 async def get_current_active_user(
+        # این تابع از تابع get_current_user شما استفاده می‌کند
         current_user: User = Depends(get_current_user),
 ) -> User:
     """
-    وابستگی برای بررسی فعال بودن کاربر فعلی.
-    ابتدا get_current_user را اجرا می‌کند و سپس فیلد is_active را چک می‌کند.
+    وابستگی اصلی برای اندپوینت‌های محافظت شده.
+    کاربر را از get_current_user می‌گیرد و چک می‌کند که آیا فعال (is_active) است یا خیر.
     """
     if not current_user.is_active:
-        raise HTTPException(status_code=400, detail="Inactive user")
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Inactive user")
     return current_user
+
+
+# ========= پایان تغییرات =========
+
+# کلاس RoleChecker که در پیام قبلی معرفی شد را هم اینجا اضافه کنید
+class RoleChecker:
+    """
+    Dependency class to check user permissions based on their role.
+    """
+
+    def __init__(self, form_name: FormName, required_permission: PermissionAction):
+        self.form_name = form_name.value
+
+        self.required_permission = required_permission.value
+
+    def __call__(self, current_user: User = Depends(get_current_active_user)):
+        """
+        This method is executed when the dependency is called by FastAPI.
+        """
+        if not current_user.role or not current_user.role.user_role_permission:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail=f"You do not have permission to perform '{self.required_permission}' on '{self.form_name}'.",
+            )
+
+        permission_found = False
+        for perm in current_user.role.user_role_permission:
+            if perm.form_name == self.form_name:
+                permission_found = True
+                if not getattr(perm, self.required_permission, False):
+                    raise HTTPException(
+                        status_code=status.HTTP_403_FORBIDDEN,
+                        detail=f"You do not have permission to perform '{self.required_permission}' on '{self.form_name}'.",
+                    )
+                break
+
+        if not permission_found:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail=f"No permissions defined for form '{self.form_name}' in your role.",
+            )

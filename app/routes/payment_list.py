@@ -9,7 +9,11 @@ from database import get_session
 from app.models.payment_list import PaymentList
 from app.models.user import User
 from app.schemas.payment_list import PaymentListCreate, PaymentListRead, PaymentListUpdate
-from security import get_current_active_user
+from security import get_current_active_user, RoleChecker
+
+#  for role check - this is the name define in database
+from app.core.permission import FormName, PermissionAction
+
 
 router = APIRouter()
 
@@ -18,6 +22,9 @@ router = APIRouter()
 async def create_payment(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PAYMENT_LIST, required_permission=PermissionAction.INSERT)),
+
         session: AsyncSession = Depends(get_session),
         payment_in: PaymentListCreate,
 ) -> Any:
@@ -45,6 +52,9 @@ async def read_payments(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PAYMENT_LIST, required_permission=PermissionAction.VIEW)),
+
         skip: int = 0,
         limit: int = 100,
 ) -> Any:
@@ -61,6 +71,9 @@ async def read_payment_by_id(
         *,
         current_user: User = Depends(get_current_active_user),
         payment_id: int,
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PAYMENT_LIST, required_permission=PermissionAction.VIEW)),
+
         session: AsyncSession = Depends(get_session),
 ) -> Any:
     """
@@ -80,6 +93,9 @@ async def update_payment(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PAYMENT_LIST, required_permission=PermissionAction.UPDATE)),
+
         payment_id: int,
         payment_in: PaymentListUpdate,
 ) -> Any:
@@ -115,6 +131,9 @@ async def update_payment(
 async def delete_payment(
         *,
         current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PAYMENT_LIST, required_permission=PermissionAction.DELETE)),
+
         payment_id: int,
         session: AsyncSession = Depends(get_session),
 ):
