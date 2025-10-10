@@ -6,13 +6,13 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 from database import get_session
 from app.models.drug_map import DrugMap
 from app.models.drug import Drug
 from app.models.disease_type import DiseaseType
 from app.schemas.drug_map import DrugMapCreate, DrugMapRead
-from security import get_current_active_user, RoleChecker
+from security import get_current_active_user
 from app.models.user import User
 router = APIRouter()
 

@@ -6,12 +6,12 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 from database import get_session
 from app.models.drug import Drug
 from app.models.disease_type import DiseaseType  # برای اعتبارسنجی
 from app.schemas.drug import DrugCreate, DrugRead, DrugUpdate, DrugReadWithDetails
-from security import get_current_active_user, RoleChecker
+from security import get_current_active_user
 from app.models.user import User
 
 router = APIRouter()

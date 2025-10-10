@@ -9,11 +9,11 @@ from database import get_session
 from app.models.user_role import UserRole
 from app.schemas.user_role import UserRoleCreate, UserRoleRead, UserRoleUpdate
 from app.models.user import User
-from security import get_current_active_user,RoleChecker
+from security import get_current_active_user
 
 
 #  for role check - this is the name define in database
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 
 
 router = APIRouter()

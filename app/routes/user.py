@@ -11,11 +11,11 @@ from typing import List
 from app.models.user import User
 from app.schemas.user import UserCreate, UserRead, UserUpdate
 from database import get_session
-from security import get_password_hash,get_current_active_user,RoleChecker
+from security import get_password_hash,get_current_active_user
 
 
 #  for role check - this is the name define in database
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 
 
 # Create an API router for user-related endpoints

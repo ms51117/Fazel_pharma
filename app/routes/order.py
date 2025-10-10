@@ -6,13 +6,13 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 from database import get_session
 from app.models.order import Order
 from app.models.patient import Patient
 from app.models.user import User
 from app.schemas.order import OrderCreate, OrderRead, OrderUpdate , OrderReadWithDetails
-from security import get_current_active_user, RoleChecker
+from security import get_current_active_user
 
 router = APIRouter()
 

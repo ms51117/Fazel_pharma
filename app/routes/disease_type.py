@@ -6,11 +6,11 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 from database import get_session
 from app.models.disease_type import DiseaseType
 from app.schemas.disease_type import DiseaseTypeCreate, DiseaseTypeRead, DiseaseTypeUpdate
-from security import get_current_active_user, RoleChecker
+from security import get_current_active_user
 from app.models.user import User
 
 

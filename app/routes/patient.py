@@ -7,12 +7,12 @@ from typing import List
 # برای استفاده از AsyncSession، باید آن را از کتابخانه مربوطه import کنید
 from sqlmodel.ext.asyncio.session import AsyncSession
 
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 # مسیر get_session باید به نسخه async اشاره کند
 from database import get_session
 from app.models.patient import Patient
 from app.schemas.patient import PatientCreate, PatientRead, PatientUpdate
-from security import get_current_active_user, RoleChecker
+from security import get_current_active_user
 from app.models.user import User
 
 # ایجاد روتر جدید برای مدیریت بیماران

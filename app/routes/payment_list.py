@@ -9,10 +9,10 @@ from database import get_session
 from app.models.payment_list import PaymentList
 from app.models.user import User
 from app.schemas.payment_list import PaymentListCreate, PaymentListRead, PaymentListUpdate
-from security import get_current_active_user, RoleChecker
+from security import get_current_active_user
 
 #  for role check - this is the name define in database
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 
 
 router = APIRouter()

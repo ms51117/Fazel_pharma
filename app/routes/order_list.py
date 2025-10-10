@@ -5,13 +5,13 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.permission import FormName, PermissionAction
+from app.core.permission import FormName, PermissionAction, RoleChecker
 from database import get_session
 from app.models.order_list import OrderList
 from app.models.order import Order
 from app.models.drug import Drug # بعد از پیاده‌سازی Drug اضافه می‌شود
 from app.schemas.order_list import OrderListCreate, OrderListRead, OrderListUpdate
-from security import get_current_active_user, RoleChecker
+from security import get_current_active_user
 from app.models.user import User
 
 router = APIRouter()
