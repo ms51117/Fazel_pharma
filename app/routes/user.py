@@ -2,6 +2,7 @@
 # app/routers/user.py
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.orm import selectinload
 from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 from typing import List
@@ -9,7 +10,7 @@ from typing import List
 
 # Import models, schemas, and dependencies
 from app.models.user import User
-from app.schemas.user import UserCreate, UserRead, UserUpdate
+from app.schemas.user import UserCreate, UserRead, UserUpdate,UserRoleRead
 from database import get_session
 from security import get_password_hash,get_current_active_user
 
@@ -191,3 +192,38 @@ async def delete_user(
     await session.commit()
 
     return None
+
+# ------------------------------------------------------------------
+
+@router.get("/by-telegram-id/{telegram_id}", response_model=UserRoleRead)
+async def get_user_role_by_telegram_id(
+        telegram_id: int,
+        session: AsyncSession = Depends(get_session),
+        # نکته: این اندپوینت باید توسط ربات (یک کاربر معتبر) فراخوانی شود،
+        # پس آن را با get_current_active_user محافظت می‌کنیم.
+        # ربات خودش لاگین می‌کند و توکن می‌گیرد.
+        current_user: User = Depends(get_current_active_user)
+):
+    """
+    Retrieve a user's role name by their Telegram ID.
+    If the user does not exist, it raises a 404 error.
+    If the user exists but has no role, it returns {"roleName": null}.
+    """
+    statement = (
+        select(User)
+        .where(User.telegram_id == telegram_id)
+        .options(selectinload(User.role))  # برای بارگذاری بهینه نقش کاربر
+    )
+    user = (await session.exec(statement)).one_or_none()
+
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"User with Telegram ID {telegram_id} not found."
+        )
+
+    # اگر کاربر نقش داشت، نام نقش را برگردان
+    # در غیر این صورت، مقدار None (که در JSON به null تبدیل می‌شود) برگردانده می‌شود
+    role_name = user.role.role_name if user.role else None
+
+    return UserRoleRead(roleName=role_name)

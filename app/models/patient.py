@@ -81,6 +81,16 @@ class PatientBase(SQLModel):
         max_length=1000,
         description="Specific diseases or conditions"
     )
+    consultant_type: Optional[str] = Field(
+        default=None,
+        description="consultant type"
+    )
+    special_conditions: Optional[str] = Field(
+        default=None,
+        max_length=1000,
+        description="Specific conditions"
+    )
+
 
 
 

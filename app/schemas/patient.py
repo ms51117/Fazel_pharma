@@ -35,3 +35,5 @@ class PatientUpdate(SQLModel):
     address: Optional[str] = None
     telegram_id: Optional[str] = None
     specific_diseases: Optional[str] = None
+    special_conditions: Optional[str] = None
+    consultant_type: Optional[str] = None

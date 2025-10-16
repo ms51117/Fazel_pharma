@@ -1,7 +1,7 @@
 # app/schemas/user.py
 
 from typing import Optional
-from sqlmodel import SQLModel
+from sqlmodel import SQLModel,Field
 from datetime import datetime
 from app.models.user import UserBase  # Import UserBase from your model file
 
@@ -18,7 +18,7 @@ class UserCreate(UserBase):
     # role_id is optional during creation, can be set later.
     role_id: Optional[int] = None
 
-    mobile_number : Optional[int] = None
+    mobile_number : Optional[str] = None
 
 
 
@@ -34,7 +34,7 @@ class UserRead(UserBase):
     updated_at: datetime
     last_login: Optional[datetime] = None
     role_id: Optional[int] = None
-    mobile_number : Optional[int] = None
+    mobile_number : Optional[str] = None
 
 
 # Schema for updating an existing user.
@@ -50,3 +50,14 @@ class UserUpdate(SQLModel):
     is_active: Optional[bool] |None = None
     is_verified: Optional[bool] |None = None
     role_id: Optional[int] |None = None
+
+
+class UserRoleRead(SQLModel):
+    """
+    Schema for reading a user's role.
+    Used by the bot to determine user workflow.
+    """
+    role_name: str | None = Field(default=None, alias="roleName")
+
+    class Config:
+        populate_by_name = True # Allows using alias "roleName"
