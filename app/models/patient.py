@@ -1,7 +1,8 @@
 # app/models/patient.py
 
 from typing import Optional, TYPE_CHECKING, List
-from sqlmodel import Field, Relationship, SQLModel
+from sqlmodel import Field, Relationship, SQLModel, JSON
+
 from app.models.base import BaseDates
 from sqlalchemy import Column
 from sqlalchemy.types import Enum as SQLAlchemyEnum # ایمپورت Enum از SQLAlchemy
@@ -89,6 +90,11 @@ class PatientBase(SQLModel):
         default=None,
         max_length=1000,
         description="Specific conditions"
+    )
+    photo_paths: Optional[List[str]] = Field(
+        sa_column=Column(JSON),
+        default=[],
+        description="photo_paths"
     )
 
 

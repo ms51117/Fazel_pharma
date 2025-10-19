@@ -1,8 +1,8 @@
 # app/schemas/message_schema.py
 
-from typing import Optional
+from typing import Optional,List
 from sqlmodel import SQLModel, Field
-from datetime import datetime
+from datetime import datetime, date
 
 # برای نمایش اطلاعات بیمار در خروجی پیام
 from app.schemas.patient import PatientRead
@@ -47,3 +47,23 @@ class MessageRead(MessageBase):
 # ---------------------------------------------------------------------------
 class MessageReadWithDetails(MessageRead):
     patient: Optional[PatientRead] = None
+
+
+class UnreadDatesResponse(SQLModel):
+    """
+    Schema for the response of unread message dates endpoint.
+    """
+    dates: Optional[List[date]] = None
+
+
+# -------------------------------------------
+
+
+class UnreadPatientInfo(SQLModel): # یا BaseModel
+    """Schema برای اطلاعات یک بیمار با پیام خوانده نشده"""
+    telegram_id: Optional[str] = None
+    full_name: Optional[str] = None
+
+class UnreadPatientsResponse(SQLModel): # یا BaseModel
+    """Schema برای لیست بیماران با پیام خوانده نشده"""
+    patients: Optional[List[UnreadPatientInfo]] = None
