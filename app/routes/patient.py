@@ -86,19 +86,22 @@ async def read_patients(
 # ===================================================================
 # 3. READ A SINGLE PATIENT BY ID
 # ===================================================================
-@router.get("/{patient_id}", response_model=PatientRead)
+@router.get("/{telegram_id}", response_model=PatientRead)
 async def read_patient(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         _permission_check: None = Depends(
             RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.VIEW)),
-        patient_id: int
+        telegram_id: str
 ) -> Patient:
     """
     دریافت اطلاعات یک بیمار خاص با استفاده از شناسه (ID).
     """
-    db_patient = await session.get(Patient, patient_id)
+    statement = select(Patient).where(Patient.telegram_id == telegram_id)
+
+    db_patient = (await session.exec(statement)).one_or_none()
+
     if not db_patient:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Patient not found")
     return db_patient
@@ -107,21 +110,23 @@ async def read_patient(
 # ===================================================================
 # 4. UPDATE A PATIENT
 # ===================================================================
-@router.patch("/{patient_id}", response_model=PatientRead)
+@router.patch("/{telegram_id}", response_model=PatientRead)
 async def update_patient(
         *,
         current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
         _permission_check: None = Depends(
             RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.UPDATE)),
-        patient_id: int,
+        telegram_id: int,
         patient_in: PatientUpdate
 ) -> Patient:
     """
     به‌روزرسانی اطلاعات یک بیمار.
     فقط فیلدهایی که در درخواست ارسال شوند، آپدیت خواهند شد.
     """
-    db_patient = await session.get(Patient, patient_id)
+    statement = select(Patient).where(Patient.telegram_id == telegram_id)
+    db_patient = (await session.exec(statement)).one_or_none()
+
     if not db_patient:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Patient not found")
 
@@ -143,7 +148,7 @@ async def update_patient(
 # ===================================================================
 # 5. DELETE A PATIENT
 # ===================================================================
-@router.delete("/{patient_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/{telegram_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_patient(
         *,
         current_user: User = Depends(get_current_active_user),
@@ -151,12 +156,14 @@ async def delete_patient(
             RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.DELETE)),
 
         session: AsyncSession = Depends(get_session),
-        patient_id: int
+        telegram_id: int
 ) -> None:
     """
     حذف یک بیمار از سیستم.
     """
-    db_patient = await session.get(Patient, patient_id)
+    statement = select(Patient).where(Patient.telegram_id == telegram_id)
+    db_patient = (await session.exec(statement)).one_or_none()
+
     if not db_patient:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Patient not found")
 

@@ -7,10 +7,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.permission import FormName, PermissionAction, RoleChecker
+from app.models import DrugMap
 from database import get_session
 from app.models.drug import Drug
 from app.models.disease_type import DiseaseType  # برای اعتبارسنجی
-from app.schemas.drug import DrugCreate, DrugRead, DrugUpdate, DrugReadWithDetails
+from app.schemas.drug import DrugCreate, DrugRead, DrugUpdate
 from security import get_current_active_user
 from app.models.user import User
 
@@ -51,7 +52,7 @@ async def create_drug(
     return db_drug
 
 
-@router.get("/", response_model=List[DrugReadWithDetails])
+@router.get("/", response_model=List[DrugRead])
 async def read_drugs(
         *,
         current_user: User = Depends(get_current_active_user),
@@ -70,7 +71,7 @@ async def read_drugs(
     return drugs
 
 
-@router.get("/{drug_id}", response_model=DrugReadWithDetails)
+@router.get("/{drug_id}", response_model=DrugRead)
 async def read_drug_by_id(
         *,
         current_user: User = Depends(get_current_active_user),
@@ -153,3 +154,42 @@ async def delete_drug(
     await session.delete(drug)
     await session.commit()
     return {"ok": True, "message": "Drug deleted successfully"}
+
+
+@router.get("read-drug-by-type/{disease_type_id}", response_model=List[DrugRead])
+async def read_drug_by_id(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.DRUG, required_permission=PermissionAction.VIEW)),
+
+        disease_type_id: int,
+        session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    این اندپوینت `disease_type_id` را به عنوان ورودی می‌گیرد و با استفاده از جدول واسط `drug_map`،
+    تمام داروهای مرتبط را از جدول `drug` استخراج کرده و به صورت یک لیست برمی‌گرداند.
+    """
+    # مرحله 1: ابتدا بررسی می‌کنیم که آیا بیماری با این ID اصلاً وجود دارد یا خیر.
+    # این کار برای ارائه خطای 404 مناسب است.
+
+    disease_type = await session.get(DiseaseType, disease_type_id)
+    if not disease_type:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"بیماری با ID '{disease_type_id}' یافت نشد."
+        )
+
+    # مرحله 2: پیدا کردن تمام داروهای مرتبط با استفاده از JOIN
+    # Drug <--- DrugMap ---> DiseaseType
+    statement = (
+        select(Drug)
+        .join(DrugMap, Drug.drugs_id == DrugMap.drugs_id)
+        .where(DrugMap.diseases_type_id == disease_type_id)
+    )
+
+    result = await session.exec(statement)
+    related_drugs = result.all()
+
+    # اگر دارویی مرتبط پیدا نشد، یک لیست خالی برمی‌گردد که رفتار درستی است.
+    return related_drugs

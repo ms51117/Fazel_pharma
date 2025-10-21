@@ -1,8 +1,11 @@
 # app/models/message.py
 
-from typing import Optional, TYPE_CHECKING
-from sqlmodel import Field, Relationship, SQLModel
+from typing import Optional, TYPE_CHECKING,List
+from sqlmodel import Field, Relationship, SQLModel,Column
 from app.models.base import BaseDates
+from typing import Optional, TYPE_CHECKING, List
+from sqlmodel import Field, Relationship, SQLModel, JSON
+
 
 if TYPE_CHECKING:
     from app.models.user import User
@@ -26,11 +29,7 @@ class MessageBase(SQLModel):
         nullable=False,
         description="Message content"
     )
-    attachment_path: Optional[str] = Field(
-        default=None,
-        max_length=500,
-        description="Path to attachment file (voice, image, etc.)"
-    )
+
     messages_seen: Optional[bool] = Field(
         default=False,
         nullable=False,
@@ -39,6 +38,11 @@ class MessageBase(SQLModel):
     messages_sender: Optional[bool] = Field(
         nullable=False,
         description="messages sender , if sender == patient then T if sender == user then F"
+    )
+    attachment_path: Optional[List[str]] = Field(
+        sa_column=Column(JSON),
+        default=[],
+        description="Path to attachment file (voice, image, etc.)"
     )
 
 

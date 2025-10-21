@@ -1634,3 +1634,15 @@ patients.0.telegram_id
 2025-10-19 22:38:33,306 - app - INFO - config:33 - Application shutdown.....................................
 2025-10-19 22:38:33,306 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-10-19 22:38:33,306 - uvicorn.error - INFO - server:94 - Finished server process [356]
+2025-10-20 12:22:56,251 - app - INFO - config:31 - Application startup......................................
+2025-10-20 12:22:56,252 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-20 12:23:06,727 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52955 - "GET /docs HTTP/1.1" 200
+2025-10-20 12:23:06,859 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52955 - "GET /openapi.json HTTP/1.1" 200
+2025-10-20 12:23:32,941 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52956 - "POST /login/access-token HTTP/1.1" 200
+2025-10-20 12:26:19,295 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53041 - "GET /patient/87384626 HTTP/1.1" 200
+2025-10-20 12:27:05,873 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53064 - "GET /drugread-drug-by-type/2 HTTP/1.1" 403
+2025-10-20 12:29:07,247 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-20 12:29:07,354 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-20 12:29:07,354 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-20 12:29:07,354 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-20 12:29:07,355 - uvicorn.error - INFO - server:94 - Finished server process [9464]
