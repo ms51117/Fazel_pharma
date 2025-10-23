@@ -6,17 +6,9 @@ from datetime import datetime, date
 
 # برای نمایش اطلاعات بیمار در خروجی پیام
 from app.schemas.patient import PatientRead
+from app.models.message import MessageBase
 
 
-# ---------------------------------------------------------------------------
-# 1. اسکیمای پایه (MessageBase)
-# ---------------------------------------------------------------------------
-class MessageBase(SQLModel):
-    message_text: str = Field(max_length=4000, description="The content of the message")
-
-    # کلید خارجی به بیمار
-    # این فیلد در زمان ایجاد الزامی است
-    patient_id: int = Field(foreign_key="tbl_Patient.patient_id")
 
 
 # ---------------------------------------------------------------------------

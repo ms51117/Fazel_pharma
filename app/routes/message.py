@@ -153,7 +153,6 @@ async def delete_message(
     return {"ok": True, "message": "Message deleted successfully"}
 
 
-
 @router.get("/unread-message-dates/", response_model=UnreadDatesResponse)
 async def get_unread_message_dates(
         *,

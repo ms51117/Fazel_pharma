@@ -57,7 +57,7 @@ class UserRoleRead(SQLModel):
     Schema for reading a user's role.
     Used by the bot to determine user workflow.
     """
-    role_name: str | None = Field(default=None, alias="roleName")
+    role_name: str | None = Field(default=None)
 
     class Config:
         populate_by_name = True # Allows using alias "roleName"

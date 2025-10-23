@@ -40,7 +40,7 @@ async def create_patient(
     # بررسی اینکه آیا بیماری با همین mobile_number یا telegram_id قبلا ثبت شده است یا خیر
     statement = select(Patient).where(
         or_(
-            Patient.mobile_number == patient_in.mobile_number,
+            # Patient.mobile_number == patient_in.mobile_number,
             Patient.telegram_id == patient_in.telegram_id
         )
     )

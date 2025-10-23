@@ -1646,3 +1646,552 @@ patients.0.telegram_id
 2025-10-20 12:29:07,354 - app - INFO - config:33 - Application shutdown.....................................
 2025-10-20 12:29:07,354 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-10-20 12:29:07,355 - uvicorn.error - INFO - server:94 - Finished server process [9464]
+2025-10-22 00:35:02,227 - app - INFO - config:31 - Application startup......................................
+2025-10-22 00:35:02,228 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-22 00:35:12,730 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56423 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 00:35:38,826 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56455 - "POST /login/access-token HTTP/1.1" 500
+2025-10-22 00:35:38,826 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 838, in _start_transaction
+    self._transaction = self._connection.transaction(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\asyncpg\connection.py", line 302, in transaction
+    self._check_open()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\asyncpg\connection.py", line 1596, in _check_open
+    raise exceptions.InterfaceError('connection is closed')
+asyncpg.exceptions._base.InterfaceError: connection is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 515, in _prepare_and_execute
+    await adapt_connection._start_transaction()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 845, in _start_transaction
+    self._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.InterfaceError: <class 'asyncpg.exceptions._base.InterfaceError'>: connection is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 387, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 288, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\app\routes\login.py", line 33, in login_for_access_token
+    db_user = (await session.exec(statement)).one_or_none()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\ext\asyncio\session.py", line 98, in exec
+    result = await greenlet_spawn(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\orm\session.py", line 83, in exec
+    results = super().execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 515, in _prepare_and_execute
+    await adapt_connection._start_transaction()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 845, in _start_transaction
+    self._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.InterfaceError: (sqlalchemy.dialects.postgresql.asyncpg.InterfaceError) <class 'asyncpg.exceptions._base.InterfaceError'>: connection is closed
+[SQL: SELECT "tbl_User".created_at, "tbl_User".updated_at, "tbl_User".telegram_id, "tbl_User".full_name, "tbl_User".national_code, "tbl_User".mobile_number, "tbl_User".address, "tbl_User".is_active, "tbl_User".is_verified, "tbl_User".user_id, "tbl_User".hashed_password, "tbl_User".last_login, "tbl_User".login_attempts, "tbl_User".role_id 
+FROM "tbl_User" 
+WHERE "tbl_User".mobile_number = $1::VARCHAR]
+[parameters: ('09876543210',)]
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+2025-10-22 00:35:50,958 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56483 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 00:42:58,251 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57123 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:42:58,254 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57125 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:43:11,905 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57139 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:43:11,909 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57141 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:49:15,963 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-22 00:49:16,071 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-22 00:49:16,071 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-22 00:49:16,072 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-22 00:49:16,072 - uvicorn.error - INFO - server:94 - Finished server process [8560]
+2025-10-22 00:49:19,916 - app - INFO - config:31 - Application startup......................................
+2025-10-22 00:49:19,916 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-22 00:49:32,352 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57299 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:49:32,355 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57301 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:49:53,622 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57312 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:49:53,625 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57314 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:57:04,581 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-22 00:57:04,691 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-22 00:57:04,691 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-22 00:57:04,691 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-22 00:57:04,692 - uvicorn.error - INFO - server:94 - Finished server process [8980]
+2025-10-22 00:57:09,496 - app - INFO - config:31 - Application startup......................................
+2025-10-22 00:57:09,496 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-22 00:57:24,698 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57444 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 00:57:24,701 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57446 - "GET /users/by-telegram-id/87384626 HTTP/1.1" 404
+2025-10-22 01:02:13,322 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57574 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 01:02:23,151 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57581 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:02:23,159 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57583 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:03:05,752 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57593 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 401
+2025-10-22 01:03:22,126 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57598 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 01:03:43,047 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57605 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:15:00,336 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-22 01:15:00,446 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-22 01:15:00,446 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-22 01:15:00,446 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-22 01:15:00,446 - uvicorn.error - INFO - server:94 - Finished server process [15140]
+2025-10-22 01:15:04,167 - app - INFO - config:31 - Application startup......................................
+2025-10-22 01:15:04,167 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-22 01:15:15,383 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57817 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:15:15,391 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57821 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:15:50,825 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57835 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:15:50,832 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57837 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:17:32,418 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57898 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:17:34,964 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57898 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:17:35,866 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57898 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:17:37,187 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57898 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:17:38,152 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57898 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:17:42,377 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57898 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:17:46,006 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57898 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:18:16,648 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57924 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 01:18:24,670 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57932 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:18:24,678 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57934 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:20:41,919 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57989 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 01:20:48,976 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57996 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:20:48,984 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57998 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:21:02,404 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58006 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:26:25,567 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58098 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 01:26:36,922 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58107 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:26:36,930 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58109 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:26:36,938 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58111 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:26:36,945 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58113 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:29:29,132 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58157 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:29:29,139 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58159 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:29:29,147 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58161 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:32:24,245 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58190 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:32:24,253 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58192 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:32:24,260 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58194 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:36:36,809 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-22 01:36:36,821 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58263 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-22 01:36:36,920 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-22 01:36:36,920 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-22 01:36:36,921 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-22 01:36:36,921 - uvicorn.error - INFO - server:94 - Finished server process [18876]
+2025-10-22 01:36:38,202 - app - INFO - config:31 - Application startup......................................
+2025-10-22 01:36:38,203 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-22 01:37:39,896 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58301 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:37:39,904 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58305 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:37:39,911 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58307 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:37:54,470 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58315 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 01:38:05,392 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58327 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:38:05,400 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58329 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:38:05,408 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58331 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:38:08,425 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58342 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-22 01:38:15,421 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58346 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:38:16,913 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58348 - "GET /message/unread-by-date/dates HTTP/1.1" 422
+2025-10-22 01:48:05,129 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58501 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 01:48:13,862 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58508 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:48:13,870 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58510 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:48:13,877 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58512 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:48:16,317 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58516 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-22 01:49:35,061 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58540 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 01:49:36,671 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58542 - "GET /message/unread-by-date/2025-10-07 HTTP/1.1" 200
+2025-10-22 01:51:08,005 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58569 - "GET /message/unread-by-date/2025-10-07 HTTP/1.1" 200
+2025-10-22 02:02:58,579 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58781 - "POST /login/access-token HTTP/1.1" 200
+2025-10-22 02:03:32,062 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58787 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 02:03:32,070 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58789 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 02:03:32,077 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58791 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 02:03:35,244 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58795 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-22 02:03:45,136 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58802 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 02:03:46,668 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58804 - "GET /message/unread-by-date/2025-10-07 HTTP/1.1" 200
+2025-10-22 02:03:59,647 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58808 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-22 02:04:01,527 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58810 - "GET /patient/87384626 HTTP/1.1" 200
+2025-10-22 02:04:37,093 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-22 02:04:37,201 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-22 02:04:37,201 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-22 02:04:37,202 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-22 02:04:37,202 - uvicorn.error - INFO - server:94 - Finished server process [19076]
+2025-10-23 12:54:13,586 - app - INFO - config:31 - Application startup......................................
+2025-10-23 12:54:13,587 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-23 12:54:31,250 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54278 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 12:56:43,570 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54334 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:56:43,579 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54336 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:56:51,217 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54343 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:56:51,225 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54345 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:12,292 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54358 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:12,299 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54360 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:27,811 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54368 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:27,818 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54370 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:37,027 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54372 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:37,035 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54374 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:41,087 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54381 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:41,094 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54383 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:52,483 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54387 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:57:52,489 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54389 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:58:05,157 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54391 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:58:05,164 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54393 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:58:17,000 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54395 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 12:58:17,007 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54397 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:06:53,932 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54521 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 13:07:07,062 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54529 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:07:07,069 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54531 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:07:25,345 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54539 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:07:25,353 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54541 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:07:29,724 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54550 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:07:29,730 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54552 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:08:50,179 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54565 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:08:50,187 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54567 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:10:11,014 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54630 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:10:11,022 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54632 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:10:13,084 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54635 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:10:13,092 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54637 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:11:20,541 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54777 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:11:20,548 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54779 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:11:22,373 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54783 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:11:22,381 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54785 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:11:37,696 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54802 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:11:37,704 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54804 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:11:38,393 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54807 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:11:38,406 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54809 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:12:34,704 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54827 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:12:34,714 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54829 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 13:28:34,047 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55064 - "GET /message/unread-by-date/2025-10-07 HTTP/1.1" 401
+2025-10-23 13:28:47,757 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55069 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 13:29:07,232 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55078 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:29:13,825 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55080 - "GET /user/by-telegram-id/1 HTTP/1.1" 200
+2025-10-23 13:35:54,905 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55200 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 13:36:03,679 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55205 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:36:03,686 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55207 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:36:09,388 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55213 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:36:09,394 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55215 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:40:37,338 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55283 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 13:40:49,613 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55290 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:40:49,620 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55292 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:40:56,798 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55300 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:40:56,804 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55302 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:43:12,370 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55337 - "GET /user/by-telegram-id/1 HTTP/1.1" 200
+2025-10-23 13:43:21,814 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55340 - "GET /user/by-telegram-id/0 HTTP/1.1" 404
+2025-10-23 13:43:39,292 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55345 - "GET /user/by-telegram-id/0 HTTP/1.1" 404
+2025-10-23 13:45:23,989 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55370 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 13:45:34,515 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55375 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:45:34,522 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55377 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:48:25,165 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55425 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 13:48:33,521 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55429 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:48:33,529 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55431 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:48:48,954 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55437 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:48:48,961 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55439 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:51:29,396 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55465 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 13:54:30,916 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55511 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:54:30,922 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55513 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:59:09,117 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55576 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 13:59:13,058 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55582 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 13:59:13,065 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55584 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:06:50,774 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55651 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 14:07:03,788 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55664 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:03,795 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55666 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:25,794 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55675 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:25,802 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55678 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:39,169 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55686 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:39,175 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55688 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:41,891 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55690 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:41,898 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55692 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:45,248 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55694 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:07:45,255 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55696 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:13:47,760 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55772 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 14:14:03,783 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55777 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:03,790 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55779 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:34,227 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55789 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:34,235 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55791 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:38,698 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55793 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:38,705 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55795 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:41,039 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55797 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:41,046 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55799 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:45,165 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55801 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:14:45,172 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55803 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:15:48,208 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55822 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 14:15:48,215 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55824 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 14:16:14,367 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55826 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 14:16:14,374 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55828 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 14:16:18,010 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55834 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 14:16:18,018 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55836 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 14:20:42,034 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55898 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 14:20:42,043 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55900 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 14:29:21,631 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-23 14:29:21,738 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-23 14:29:21,738 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-23 14:29:21,739 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-23 14:29:21,739 - uvicorn.error - INFO - server:94 - Finished server process [23316]
+2025-10-23 14:29:28,870 - app - INFO - config:31 - Application startup......................................
+2025-10-23 14:29:28,870 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-23 14:29:34,378 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56076 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 14:29:45,467 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56091 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:29:45,475 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56093 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:29:45,483 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56095 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:30:04,524 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56106 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:30:04,531 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56108 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:30:05,509 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56112 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-23 14:31:22,456 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56138 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:31:22,729 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56140 - "GET /message/unread-by-date/2025-10-07 HTTP/1.1" 200
+2025-10-23 14:47:43,547 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56357 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 14:47:52,310 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56365 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:47:52,318 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56367 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:47:52,325 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56369 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:47:59,604 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56371 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:47:59,612 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56373 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:48:00,132 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56377 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-23 14:48:01,746 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56379 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:48:01,755 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56381 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:48:02,009 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56383 - "GET /message/unread-by-date/2025-10-07 HTTP/1.1" 200
+2025-10-23 14:48:23,006 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56418 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:48:29,108 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56432 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:48:33,594 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56439 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:48:52,013 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56459 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 14:48:55,558 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56463 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:48:58,547 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56468 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 14:54:03,280 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56562 - "GET /disease/?skip=0&limit=100 HTTP/1.1" 403
+2025-10-23 14:57:16,191 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56982 - "GET /disease/?skip=0&limit=100 HTTP/1.1" 200
+2025-10-23 15:00:32,900 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57301 - "GET /disease/?skip=0&limit=100 HTTP/1.1" 500
+2025-10-23 15:00:32,901 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 409, in app
+    content = await serialize_response(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 252, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'disease_name'), 'msg': 'Field required', 'input': DiseaseType(diseases_name='بیماری پوستی', updated_at=datetime.datetime(2025, 10, 7, 16, 36, 58, 832240), diseases_type_id=1, created_at=datetime.datetime(2025, 10, 7, 16, 36, 58, 832240), diseases_explain='لک ,جوش, اگزما و ...')}
+  {'type': 'missing', 'loc': ('response', 0, 'disease_type_id'), 'msg': 'Field required', 'input': DiseaseType(diseases_name='بیماری پوستی', updated_at=datetime.datetime(2025, 10, 7, 16, 36, 58, 832240), diseases_type_id=1, created_at=datetime.datetime(2025, 10, 7, 16, 36, 58, 832240), diseases_explain='لک ,جوش, اگزما و ...')}
+
+2025-10-23 15:07:25,846 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57470 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:07:28,255 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57474 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:07:39,638 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57480 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:07:41,950 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57482 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:07:51,948 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57488 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:07:57,642 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57500 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:03,869 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57507 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:10,228 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57510 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:38,647 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57512 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:45,357 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57516 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:45,365 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57518 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:45,372 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57520 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:56,274 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57524 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:56,281 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57526 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:08:56,288 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57528 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:09:37,924 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57536 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:09:42,665 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57538 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:09:43,599 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57540 - "POST /patient/ HTTP/1.1" 422
+2025-10-23 15:12:01,958 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57562 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 15:12:12,140 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57567 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:12:14,113 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57576 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:12:19,271 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57578 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:12:21,076 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57580 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:12:27,057 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57582 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:12:30,094 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57584 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:12:35,350 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57586 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:12:50,146 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57589 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:13:03,725 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57601 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:13:06,619 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57603 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:13:07,473 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57605 - "POST /patient/ HTTP/1.1" 409
+2025-10-23 15:18:25,401 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-23 15:18:25,509 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-23 15:18:25,509 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-23 15:18:25,509 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-23 15:18:25,509 - uvicorn.error - INFO - server:94 - Finished server process [8616]
+2025-10-23 15:18:27,449 - app - INFO - config:31 - Application startup......................................
+2025-10-23 15:18:27,449 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-23 15:18:32,374 - app - INFO - config:31 - Application startup......................................
+2025-10-23 15:18:32,375 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-23 15:18:46,174 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58050 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 15:18:51,688 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58059 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:18:53,503 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58063 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:14,032 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58069 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:16,078 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58071 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:23,234 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58075 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:27,686 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58078 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:32,006 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58081 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:40,735 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58084 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:51,655 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58103 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:54,050 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58105 - "GET /user/by-telegram-id/667522998 HTTP/1.1" 404
+2025-10-23 15:19:54,822 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58107 - "POST /patient/ HTTP/1.1" 201
+2025-10-23 15:20:22,022 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58131 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 15:20:22,029 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58133 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 15:20:22,036 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58135 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 15:20:26,695 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58147 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 15:20:26,703 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58149 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 15:20:26,998 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58151 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-23 15:20:46,657 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58193 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 15:20:46,666 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58195 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 15:20:46,938 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58197 - "GET /message/unread-by-date/2025-10-07 HTTP/1.1" 200
+2025-10-23 15:22:07,847 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58260 - "GET /disease/?skip=0&limit=100 HTTP/1.1" 500
+2025-10-23 15:22:07,848 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 409, in app
+    content = await serialize_response(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 252, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'disease_type_id'), 'msg': 'Field required', 'input': DiseaseType(diseases_name='بیماری پوستی', updated_at=datetime.datetime(2025, 10, 7, 16, 36, 58, 832240), diseases_type_id=1, created_at=datetime.datetime(2025, 10, 7, 16, 36, 58, 832240), diseases_explain='لک ,جوش, اگزما و ...')}
+
+2025-10-23 15:26:44,691 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-23 15:26:44,800 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-23 15:26:44,800 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-23 15:26:44,800 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-23 15:26:44,800 - uvicorn.error - INFO - server:94 - Finished server process [6456]
+2025-10-23 15:26:49,520 - app - INFO - config:31 - Application startup......................................
+2025-10-23 15:26:49,520 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-23 15:26:55,258 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58332 - "GET /disease/?skip=0&limit=100 HTTP/1.1" 200
+2025-10-23 15:30:42,564 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58423 - "GET /disease/?skip=0&limit=100 HTTP/1.1" 200
+2025-10-23 17:06:51,976 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59969 - "POST /login/access-token HTTP/1.1" 200
+2025-10-23 17:06:53,051 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59974 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 17:06:53,059 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59976 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 17:06:53,550 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59980 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-23 17:06:59,201 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59983 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 17:06:59,209 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59985 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 17:06:59,519 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59987 - "GET /message/unread-by-date/2025-10-07 HTTP/1.1" 200
+2025-10-23 17:07:07,564 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59991 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 17:07:07,571 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59993 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 17:07:07,811 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59995 - "GET /patient/667522998 HTTP/1.1" 200
+2025-10-23 17:07:31,206 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60006 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 17:07:31,213 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60008 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-23 17:07:31,433 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60010 - "GET /disease/ HTTP/1.1" 200
+2025-10-23 17:36:55,890 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60651 - "GET /patient/87384626 HTTP/1.1" 200
+2025-10-23 17:39:07,493 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-23 17:39:07,602 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-23 17:39:07,603 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-23 17:39:07,603 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-23 17:39:07,603 - uvicorn.error - INFO - server:94 - Finished server process [4724]
+2025-10-23 17:39:08,768 - app - INFO - config:31 - Application startup......................................
+2025-10-23 17:39:08,768 - uvicorn.error - INFO - on:62 - Application startup complete.

@@ -197,7 +197,7 @@ async def delete_user(
 
 @router.get("/by-telegram-id/{telegram_id}", response_model=UserRoleRead)
 async def get_user_role_by_telegram_id(
-        telegram_id: int,
+        telegram_id: str,
         session: AsyncSession = Depends(get_session),
         # نکته: این اندپوینت باید توسط ربات (یک کاربر معتبر) فراخوانی شود،
         # پس آن را با get_current_active_user محافظت می‌کنیم.
@@ -226,4 +226,4 @@ async def get_user_role_by_telegram_id(
     # در غیر این صورت، مقدار None (که در JSON به null تبدیل می‌شود) برگردانده می‌شود
     role_name = user.role.role_name if user.role else None
 
-    return UserRoleRead(roleName=role_name)
+    return UserRoleRead(role_name=role_name)
