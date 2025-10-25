@@ -1,21 +1,11 @@
 # app/schemas/drug_map_schema.py
 
 from sqlmodel import SQLModel, Field
+from app.models.drug_map import DrugMapBase
 
 # ---------------------------------------------------------------------------
 # 1. اسکیمای پایه و ورودی برای ایجاد ارتباط (CREATE)
 # ---------------------------------------------------------------------------
-class DrugMapBase(SQLModel):
-    diseases_type_id: int = Field(
-        description="ID of the disease type to map",
-        foreign_key="tbl_DiseaseType.diseases_type_id",
-        primary_key=True
-    )
-    drugs_id: int = Field(
-        description="ID of the drug to map",
-        foreign_key="tbl_Drug.drugs_id",
-        primary_key=True
-    )
 
 class DrugMapCreate(DrugMapBase):
     pass

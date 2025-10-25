@@ -28,16 +28,20 @@ from app.models.drug import DrugBase
 # ---------------------------------------------------------------------------
 class DrugCreate(DrugBase):
     pass
+    diseases_type_id: int = Field(description="The ID of the disease type this drug belongs to")
+
 
 
 # ---------------------------------------------------------------------------
 # 3. اسکیمای آپدیت (Update)
 # ---------------------------------------------------------------------------
 class DrugUpdate(SQLModel):
-    drugs_name_fa: Optional[str] = None
-    drugs_name_en: Optional[str] = None
-    drugs_price: Optional[Decimal] = None
-    drugs_description: Optional[str] = None
+    drug_pname: Optional[str] = None
+    drug_lname: Optional[str] = None
+    drug_explain : Optional[str] = None
+    drug_how_to_use : Optional[str] = None
+    unit: Optional[str] = None
+    price: Optional[Decimal] = None
     diseases_type_id: Optional[int] = None
 
 

@@ -14,17 +14,17 @@ if TYPE_CHECKING:
 
 class MessageBase(SQLModel):
     """Base model for Message shared properties"""
-    user_id: int = Field(
+    user_id: Optional[int] = Field(
         foreign_key="tbl_User.user_id",
         nullable=True,
         description="User ID"
     )
-    patient_id: int = Field(
+    patient_id: Optional[int] = Field(
         foreign_key="tbl_Patient.patient_id",
         nullable=True,
         description="Patient ID"
     )
-    messages: str = Field(
+    messages: Optional[str] = Field(
         max_length=2000,
         nullable=False,
         description="Message content"

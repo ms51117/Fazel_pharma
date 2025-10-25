@@ -14,6 +14,9 @@ from app.models.disease_type import DiseaseType  # برای اعتبارسنجی
 from app.schemas.drug import DrugCreate, DrugRead, DrugUpdate
 from security import get_current_active_user
 from app.models.user import User
+from app.schemas.drug_map import DrugMapCreate
+from sqlalchemy.exc import IntegrityError
+
 
 router = APIRouter()
 
@@ -43,12 +46,29 @@ async def create_drug(
     """
     # 1. اعتبارسنجی وجود `diseases_type_id`
     await get_disease_type_or_404(drug_in.diseases_type_id, session)
+    drug_data = drug_in.model_dump(exclude={"diseases_type_id"})
+
 
     # 2. ایجاد آبجکت دارو و ذخیره
-    db_drug = Drug.model_validate(drug_in)
+    db_drug = Drug.model_validate(drug_data)
     session.add(db_drug)
     await session.commit()
     await session.refresh(db_drug)
+
+
+    db_mapping = DrugMap(diseases_type_id = drug_in.diseases_type_id,drugs_id = db_drug.drugs_id)
+    session.add(db_mapping)
+    try:
+        await session.commit()
+    except IntegrityError:
+        await session.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="This mapping between drug and disease type already exists."
+        )
+    await session.refresh(db_mapping)
+
+
     return db_drug
 
 
