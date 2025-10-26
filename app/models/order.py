@@ -4,6 +4,8 @@ from typing import Optional, TYPE_CHECKING, List
 from sqlmodel import Field, Relationship, SQLModel
 from datetime import datetime
 from app.models.base import BaseDates
+import enum
+
 
 if TYPE_CHECKING:
     from app.models.patient import Patient
@@ -11,14 +13,21 @@ if TYPE_CHECKING:
     from app.models.order_list import OrderList
     from app.models.payment_list import PaymentList
 
+class OrderStatusEnum(str, enum.Enum):
+    """Enum for payment status"""
+    CREATED = "Created"
+    CONFIRM = "Confirm"
+    REJECTED = "Rejected"
+    PAID = "Paid"
+    SENT = "Sent"
+    DELIVERED = "Delived"
+
+
+
 
 class OrderBase(SQLModel):
     """Base model for Order shared properties"""
-    date: datetime = Field(
-        default_factory=datetime.now,
-        nullable=False,
-        description="Order date"
-    )
+
     patient_id: int = Field(
         foreign_key="tbl_Patient.patient_id",
         nullable=False,
@@ -28,6 +37,11 @@ class OrderBase(SQLModel):
         foreign_key="tbl_User.user_id",
         nullable=False,
         description="User ID who created the order"
+    )
+    order_status: OrderStatusEnum = Field(
+        default=OrderStatusEnum.CREATED,
+        nullable=False,
+        description="Order Status"
     )
 
 

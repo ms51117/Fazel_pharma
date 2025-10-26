@@ -1,5 +1,5 @@
 # app/schemas/order_schema.py
-
+import enum
 from typing import Optional, List
 from sqlmodel import SQLModel, Field
 from datetime import datetime
@@ -8,13 +8,11 @@ from datetime import datetime
 # فعلا تعریف ساده‌ای از آنها داریم.
 from app.schemas.order_list import OrderListRead
 from app.schemas.payment_list import PaymentListRead
+from app.models.order import OrderBase,OrderStatusEnum
 
 # ---------------------------------------------------------------------------
 # 1. اسکیمای پایه و ورودی برای ایجاد سفارش (CREATE)
 # ---------------------------------------------------------------------------
-class OrderBase(SQLModel):
-    patient_id: int = Field(description="ID of the patient for this order", foreign_key="tbl_Patient.patient_id")
-    user_id: int = Field(description="ID of the user who created the order", foreign_key="tbl_User.user_id")
 
 class OrderCreate(OrderBase):
     # فیلد `date` به صورت خودکار در مدل مقداردهی می‌شود، پس در ورودی نیاز نیست.
@@ -27,6 +25,9 @@ class OrderUpdate(SQLModel):
     # معمولا فقط وضعیت سفارش آپدیت می‌شود، اما برای انعطاف‌پذیری اینها را هم می‌گذاریم.
     patient_id: Optional[int] = None
     user_id: Optional[int] = None
+    order_status: Optional[OrderStatusEnum] = None
+    updated_at: datetime = None
+
     # می‌توان فیلدهای دیگری مثل order_status را در آینده به مدل اضافه و اینجا آپدیت کرد.
 
 # ---------------------------------------------------------------------------
@@ -35,7 +36,6 @@ class OrderUpdate(SQLModel):
 # این اسکیما فقط اطلاعات خود سفارش را برمی‌گرداند.
 class OrderRead(OrderBase):
     order_id: int
-    date: datetime
     created_at: datetime
     updated_at: datetime
 

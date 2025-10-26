@@ -176,7 +176,7 @@ async def delete_drug(
     return {"ok": True, "message": "Drug deleted successfully"}
 
 
-@router.get("read-drug-by-type/{disease_type_id}", response_model=List[DrugRead])
+@router.get("/read-drug-by-type/{disease_type_id}", response_model=List[DrugRead])
 async def read_drug_by_id(
         *,
         current_user: User = Depends(get_current_active_user),

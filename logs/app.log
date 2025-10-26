@@ -2709,3 +2709,184 @@ sqlalchemy.orm.exc.UnmappedInstanceError: Class 'app.schemas.drug_map.DrugMapCre
 2025-10-25 16:47:09,195 - app - INFO - config:33 - Application shutdown.....................................
 2025-10-25 16:47:09,195 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-10-25 16:47:09,195 - uvicorn.error - INFO - server:94 - Finished server process [4736]
+2025-10-25 16:53:03,080 - app - INFO - config:31 - Application startup......................................
+2025-10-25 16:53:03,081 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-25 17:04:57,419 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52875 - "POST /login/access-token HTTP/1.1" 200
+2025-10-25 17:05:09,082 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52882 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:09,092 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52884 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:09,675 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52888 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-25 17:05:11,211 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52890 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:11,218 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52892 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:11,441 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52894 - "GET /message/unread-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-25 17:05:13,006 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52896 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:13,014 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52898 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:13,449 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52900 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-25 17:05:24,293 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52907 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:24,300 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52909 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:25,029 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52911 - "GET /disease/ HTTP/1.1" 200
+2025-10-25 17:05:33,746 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52913 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:33,754 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52915 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:05:33,991 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52917 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 404
+2025-10-25 17:06:09,143 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52941 - "GET /drugread-drug-by-type/4 HTTP/1.1" 200
+2025-10-25 17:07:08,261 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-25 17:07:08,370 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-25 17:07:08,370 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-25 17:07:08,370 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-25 17:07:08,370 - uvicorn.error - INFO - server:94 - Finished server process [20288]
+2025-10-25 17:07:12,536 - app - INFO - config:31 - Application startup......................................
+2025-10-25 17:07:12,536 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-25 17:07:18,379 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53015 - "GET /drugread-drug-by-type/4 HTTP/1.1" 404
+2025-10-25 17:07:35,355 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53025 - "GET /drugread-drug-by-type/3 HTTP/1.1" 404
+2025-10-25 17:07:55,263 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53049 - "GET /docs HTTP/1.1" 200
+2025-10-25 17:07:55,449 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53049 - "GET /openapi.json HTTP/1.1" 200
+2025-10-25 17:08:08,312 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53050 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 403
+2025-10-25 17:08:26,709 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53073 - "POST /login/access-token HTTP/1.1" 200
+2025-10-25 17:08:49,144 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53089 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 200
+2025-10-25 17:09:09,612 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53116 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:09,622 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53118 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:10,335 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53122 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-25 17:09:12,018 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53125 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:12,026 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53127 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:12,310 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53129 - "GET /message/unread-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-25 17:09:13,871 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53132 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:13,880 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53134 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:14,121 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53136 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-25 17:09:16,630 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53138 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:16,638 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53140 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:16,873 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53142 - "GET /disease/ HTTP/1.1" 200
+2025-10-25 17:09:20,771 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53145 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:20,779 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53147 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:09:21,014 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53149 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 200
+2025-10-25 17:15:34,446 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53269 - "POST /login/access-token HTTP/1.1" 200
+2025-10-25 17:15:37,350 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53274 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:37,357 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53276 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:37,816 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53280 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-25 17:15:39,141 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53282 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:39,149 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53284 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:39,381 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53286 - "GET /message/unread-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-25 17:15:40,598 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53288 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:40,607 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53290 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:40,850 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53292 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-25 17:15:44,974 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53300 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:44,982 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53302 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:45,258 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53304 - "GET /disease/ HTTP/1.1" 200
+2025-10-25 17:15:46,833 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53306 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:46,841 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53308 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:47,104 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53310 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 200
+2025-10-25 17:15:51,733 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53314 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:15:51,740 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53316 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:06,834 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53389 - "POST /login/access-token HTTP/1.1" 200
+2025-10-25 17:21:10,792 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53394 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:10,800 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53396 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:11,300 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53400 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-25 17:21:15,247 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53402 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:15,255 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53404 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:15,542 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53406 - "GET /message/unread-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-25 17:21:16,699 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53408 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:16,707 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53410 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:16,996 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53412 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-25 17:21:21,651 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53414 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:21,659 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53416 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:21,986 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53418 - "GET /disease/ HTTP/1.1" 200
+2025-10-25 17:21:23,655 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53420 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:23,662 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53422 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:24,002 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53424 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 200
+2025-10-25 17:21:28,059 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53426 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:28,067 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53428 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:28,076 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53430 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:35,431 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53432 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:35,439 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53434 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:35,447 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53436 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:36,260 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53438 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:36,267 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53440 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:36,275 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53442 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:36,963 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53444 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:36,971 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53446 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:36,979 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53448 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:37,491 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53450 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:37,498 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53452 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:37,507 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53454 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:38,157 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53456 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:38,165 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53458 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:21:38,173 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53460 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:50:52,032 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53800 - "POST /login/access-token HTTP/1.1" 200
+2025-10-25 17:50:59,658 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53815 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:50:59,665 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53817 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:50:59,674 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53819 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:01,759 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53821 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:01,765 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53823 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:01,774 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53825 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:04,305 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53827 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:04,313 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53829 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:04,826 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53833 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-25 17:51:06,431 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53835 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:06,438 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53837 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:06,726 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53839 - "GET /message/unread-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-25 17:51:08,261 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53841 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:08,268 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53843 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:08,603 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53845 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-25 17:51:11,287 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53847 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:11,294 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53849 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:11,515 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53851 - "GET /disease/ HTTP/1.1" 200
+2025-10-25 17:51:13,127 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53853 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:13,135 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53855 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:13,462 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53857 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 200
+2025-10-25 17:51:18,013 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53859 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:18,020 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53861 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:51:18,029 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53863 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:29,791 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53942 - "POST /login/access-token HTTP/1.1" 200
+2025-10-25 17:57:41,564 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53947 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:41,572 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53949 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:42,076 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53953 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-25 17:57:44,804 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53958 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:44,812 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53960 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:45,117 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53962 - "GET /message/unread-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-25 17:57:46,790 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53966 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:46,797 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53968 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:47,159 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53970 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-25 17:57:52,508 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53976 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:52,515 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53978 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:52,773 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53980 - "GET /disease/ HTTP/1.1" 200
+2025-10-25 17:57:54,532 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53982 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:54,539 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53984 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:54,802 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53986 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 200
+2025-10-25 17:57:56,587 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53988 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:56,594 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53990 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:58,730 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53992 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:57:58,738 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53995 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:58:00,300 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53997 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:58:00,308 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53999 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:58:03,562 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54001 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 17:58:03,571 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54003 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:24,060 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54105 - "POST /login/access-token HTTP/1.1" 200
+2025-10-25 18:02:27,871 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54110 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:27,881 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54113 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:28,340 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54117 - "GET /message/unread-message-dates/ HTTP/1.1" 200
+2025-10-25 18:02:29,963 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54119 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:29,971 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54121 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:30,238 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54123 - "GET /message/unread-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-25 18:02:31,882 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54125 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:31,889 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54127 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:32,230 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54129 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-25 18:02:35,249 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54131 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:35,256 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54133 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:35,523 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54135 - "GET /disease/ HTTP/1.1" 200
+2025-10-25 18:02:37,204 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54137 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:37,213 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54139 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:37,503 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54141 - "GET /drug/read-drug-by-type/4 HTTP/1.1" 200
+2025-10-25 18:02:39,471 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54143 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:39,479 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54145 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:40,579 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54147 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:40,587 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54149 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:41,628 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54151 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:41,636 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54153 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:43,684 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54155 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:43,692 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54157 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:56,532 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54165 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:56,541 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54167 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-25 18:02:56,549 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54169 - "GET /user/by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-26 12:14:32,614 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-26 12:14:32,724 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-26 12:14:32,724 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-26 12:14:32,725 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-26 12:14:32,725 - uvicorn.error - INFO - server:94 - Finished server process [24808]
