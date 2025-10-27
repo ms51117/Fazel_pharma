@@ -3,7 +3,7 @@
 from typing import Optional
 from sqlmodel import SQLModel
 from datetime import datetime
-from app.models.patient import PatientBase,GenderEnum # مدل پایه را برای استفاده مجدد وارد می‌کنیم
+from app.models.patient import PatientBase,GenderEnum,PatientStatus # مدل پایه را برای استفاده مجدد وارد می‌کنیم
 
 # ------------------- CREATE SCHEMA -------------------
 # این اسکیما دقیقاً همان PatientBase است.
@@ -18,6 +18,7 @@ class PatientCreate(PatientBase):
 # علاوه بر فیلدهای پایه، شامل شناسه و تاریخ‌ها هم می‌شود.
 class PatientRead(PatientBase):
     patient_id: int
+    patient_status : PatientStatus
     created_at: datetime
     updated_at: datetime
 
@@ -37,3 +38,5 @@ class PatientUpdate(SQLModel):
     specific_diseases: Optional[str] = None
     special_conditions: Optional[str] = None
     consultant_type: Optional[str] = None
+    patient_status: Optional[PatientStatus] = None
+

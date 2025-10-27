@@ -195,7 +195,7 @@ async def delete_user(
 
 # ------------------------------------------------------------------
 
-@router.get("/by-telegram-id/{telegram_id}", response_model=UserRoleRead)
+@router.get("/role-by-telegram-id/{telegram_id}", response_model=UserRoleRead)
 async def get_user_role_by_telegram_id(
         telegram_id: str,
         session: AsyncSession = Depends(get_session),
@@ -227,3 +227,28 @@ async def get_user_role_by_telegram_id(
     role_name = user.role.role_name if user.role else None
 
     return UserRoleRead(role_name=role_name)
+
+@router.get("/read-by-telegram-id/{telegram_id}", response_model=UserRead)
+async def read_user_by_telegram_id(
+        telegram_id: str,
+        session: AsyncSession = Depends(get_session),
+        current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(RoleChecker(form_name=FormName.USER, required_permission=PermissionAction.VIEW))
+
+):
+    """
+    Retrieve a user by their ID.
+    """
+    # Fetch the user from the database by primary key
+    statement = (
+        select(User)
+        .where(User.telegram_id == telegram_id))
+
+    user = (await session.exec(statement)).one_or_none()
+
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"User with telegram_ID {telegram_id} not found."
+        )
+    return user

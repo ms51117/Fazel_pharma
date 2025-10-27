@@ -19,6 +19,26 @@ if TYPE_CHECKING:
 
 
 
+
+class PatientStatus(str, enum.Enum):
+    """
+    وضعیت‌های مختلف بیمار در چرخه حیات سیستم.
+    """
+    AWAITING_PROFILE_COMPLETION = "awaiting_profile_completion" # در حال پر کردن اطلاعات اولیه.
+    PROFILE_COMPLETED = "profile_completed"     # اطلاعات اولیه تکمیل شده، منتظر ارسال درخواست مشاوره.
+    AWAITING_CONSULTATION = "awaiting_consultation" # درخواست مشاوره ثبت شده، منتظر پاسخ مشاور.
+    AWAITING_INVOICE_APPROVAL = "awaiting_invoice_approval" # فاکتور توسط مشاور صادر شده، منتظر تایید بیمار.
+    AWAITING_PAYMENT = "awaiting_payment"     # فاکتور تایید شده، منتظر پرداخت.
+    PAYMENT_COMPLETED = "payment_completed"     # پرداخت انجام شده، منتظر تایید صندوق‌دار.
+    PAYMENT_CONFIRMED = "payment_confirmed"
+    AWAITING_SHIPMENT = "awaiting_shipment"   # تایید صندوق‌دار انجام شده، منتظر ارسال.
+    SHIPPED = "shipped"                       # بسته ارسال شده.
+    COMPLETED = "completed"                   # فرآیند برای این سفارش تمام شده.
+    CANCELLED = "cancelled"                   # فرآیند توسط کاربر یا سیستم لغو شد
+
+
+
+
 class GenderEnum(str, enum.Enum):
     """
     Enumeration for gender.
@@ -41,8 +61,6 @@ class PatientBase(SQLModel):
         nullable=False,
         description="sex of patient"
     )
-
-
 
     age: Optional[int] = Field(
         default=None,
@@ -76,6 +94,12 @@ class PatientBase(SQLModel):
         max_length=100,
         index=True,
         description="Telegram ID"
+    )
+    patient_status: PatientStatus = Field(
+        default=PatientStatus.AWAITING_PROFILE_COMPLETION,  # هر بیمار جدید با این وضعیت شروع می‌کند
+        nullable=False,
+        index=True,
+        description="Current status of the patient in the workflow"
     )
     specific_diseases: Optional[str] = Field(
         default=None,

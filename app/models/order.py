@@ -58,5 +58,5 @@ class Order(OrderBase, BaseDates, table=True):
     # Relationships
     patient: "Patient" = Relationship(back_populates="order")
     user: "User" = Relationship(back_populates="order")
-    order_list: Optional["OrderList"] = Relationship(back_populates="order")
-    payment_list: Optional["PaymentList"] = Relationship(back_populates="order")
+    order_list: List["OrderList"] = Relationship(back_populates="order")
+    payment_list: List["PaymentList"] = Relationship(back_populates="order")

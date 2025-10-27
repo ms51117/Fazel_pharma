@@ -17,6 +17,8 @@ from app.models.order import OrderBase,OrderStatusEnum
 class OrderCreate(OrderBase):
     # فیلد `date` به صورت خودکار در مدل مقداردهی می‌شود، پس در ورودی نیاز نیست.
     pass
+    drug_ids: List[int]
+    order_status: Optional[OrderStatusEnum] = None
 
 # ---------------------------------------------------------------------------
 # 2. اسکیمای ورودی برای آپدیت سفارش (UPDATE)
