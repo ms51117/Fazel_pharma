@@ -179,37 +179,3 @@ async def get_unread_message_dates(
     # 4. برگرداندن نتیجه در قالب schema تعریف شده
     return UnreadDatesResponse(dates=unread_dates)
 
-@router.get("/unread-by-date/{target_date}", response_model=UnreadPatientsResponse)
-async def get_unread_by_date(
-        *,
-        current_user: User = Depends(get_current_active_user),
-        _permission_check: None = Depends(
-            RoleChecker(form_name=FormName.MESSAGE, required_permission=PermissionAction.VIEW)),
-        target_date : date,
-        session: AsyncSession = Depends(get_session),
-) -> Any:
-    """
-برای دریافت تاریخ هایی که در ان پیام نخانده شده وجود دارد
-    """
-    statement = (
-        select(Patient.telegram_id, Patient.full_name)
-        # اتصال Message به Patient
-        .select_from(Message)  # <--- این خط اضافه شد
-
-        .join(Patient, Message.patient_id == Patient.patient_id)
-        # اعمال فیلترها
-
-        .where(Message.messages_seen == False)
-        .where(func.cast(Message.created_at, Date) == target_date)
-        # گروه‌بندی برای اطمینان از نتایج منحصر به فرد برای هر بیمار
-        .group_by(Patient.telegram_id, Patient.full_name)
-    )
-    results = await session.exec(statement)
-
-
-
-    # 3. دریافت تمام نتایج به صورت یک لیست
-    #    .all() در اینجا لیستی از تاریخ‌ها را برمی‌گرداند
-
-    # 4. برگرداندن نتیجه در قالب schema تعریف شده
-    return UnreadPatientsResponse(patients=results)

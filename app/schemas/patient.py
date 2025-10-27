@@ -1,8 +1,8 @@
 # app/schemas/patient.py
 
-from typing import Optional
+from typing import Optional, List
 from sqlmodel import SQLModel
-from datetime import datetime
+from datetime import datetime,date
 from app.models.patient import PatientBase,GenderEnum,PatientStatus # مدل پایه را برای استفاده مجدد وارد می‌کنیم
 
 # ------------------- CREATE SCHEMA -------------------
@@ -39,4 +39,19 @@ class PatientUpdate(SQLModel):
     special_conditions: Optional[str] = None
     consultant_type: Optional[str] = None
     patient_status: Optional[PatientStatus] = None
+    updated_at: Optional[datetime] = None
 
+
+class WaitingForConsultantDatesResponse(SQLModel):
+    dates: Optional[List[date]] = None
+
+
+
+class AwaitingForConsultationPatientInfo(SQLModel): # یا BaseModel
+    """Schema برای اطلاعات یک بیمار با پیام خوانده نشده"""
+    telegram_id: Optional[str] = None
+    full_name: Optional[str] = None
+
+class AwaitingForConsultationPatientsResponse(SQLModel): # یا BaseModel
+    """Schema برای لیست بیماران با پیام خوانده نشده"""
+    patients: Optional[List[AwaitingForConsultationPatientInfo]] = None

@@ -1,8 +1,9 @@
 # In file: app/routes/patient.py
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
-from sqlmodel import Session, select, or_
-from typing import List
+from sqlmodel import Session, select, or_,func,Date
+from typing import List,Any
+from datetime import date
 
 # برای استفاده از AsyncSession، باید آن را از کتابخانه مربوطه import کنید
 from sqlmodel.ext.asyncio.session import AsyncSession
@@ -11,9 +12,11 @@ from app.core.permission import FormName, PermissionAction, RoleChecker
 # مسیر get_session باید به نسخه async اشاره کند
 from database import get_session
 from app.models.patient import Patient
-from app.schemas.patient import PatientCreate, PatientRead, PatientUpdate
+from app.schemas.patient import PatientCreate, PatientRead, PatientUpdate, WaitingForConsultantDatesResponse, \
+    AwaitingForConsultationPatientsResponse
 from security import get_current_active_user
 from app.models.user import User
+from app.core.enums import PatientStatus
 
 # ایجاد روتر جدید برای مدیریت بیماران
 router = APIRouter()
@@ -117,7 +120,7 @@ async def update_patient(
         session: AsyncSession = Depends(get_session),
         _permission_check: None = Depends(
             RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.UPDATE)),
-        telegram_id: int,
+        telegram_id: str,
         patient_in: PatientUpdate
 ) -> Patient:
     """
@@ -134,9 +137,10 @@ async def update_patient(
     # تبدیل داده‌های ورودی به دیکشنری و حذف مقادیر None یا ارسال نشده
     update_data = patient_in.model_dump(exclude_unset=True)
 
-    # به‌روزرسانی فیلدهای مدل با داده‌های جدید
-    for key, value in update_data.items():
-        setattr(db_patient, key, value)
+    # # به‌روزرسانی فیلدهای مدل با داده‌های جدید
+    # for key, value in update_data.items():
+    #     setattr(db_patient, key, value)
+    db_patient.sqlmodel_update(update_data)
 
     session.add(db_patient)
     await session.commit()
@@ -175,3 +179,59 @@ async def delete_patient(
 
 # ----------------------------------------------------------------------------------
 
+@router.get("/waiting-for-consultation-dates/", response_model=WaitingForConsultantDatesResponse)
+async def waiting_for_consultation_by(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.VIEW)),
+) -> Any:
+    """
+    دریافت تاریخ هایی که در ان بیمار منتظر مشاوره است.
+    """
+
+    statement = (
+        select(func.cast(Patient.updated_at, Date))
+        .where(Patient.patient_status == PatientStatus.AWAITING_CONSULTATION)
+        .distinct()
+        .order_by(func.cast(Patient.updated_at, Date).desc())
+    )
+    results = await session.exec(statement)
+    db_dates = results.all()
+
+    if not db_dates:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="no Patient waiting for consultation")
+
+
+    return WaitingForConsultantDatesResponse(dates=db_dates)
+# ---------------------------------------------------------------------------
+
+@router.get("/awaiting-for-consultation-by-date/{target_date}", response_model=AwaitingForConsultationPatientsResponse)
+async def get_awaiting_for_consultation_by_date(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.MESSAGE, required_permission=PermissionAction.VIEW)),
+        target_date : date,
+        session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+برای دریافت تاریخ هایی که در ان پیام نخانده شده وجود دارد
+    """
+    statement = (
+        select(Patient.telegram_id, Patient.full_name)
+
+        # اعمال فیلترها
+        .where(Patient.patient_status == PatientStatus.AWAITING_CONSULTATION)
+        .where(func.cast(Patient.updated_at, Date) == target_date)
+        # گروه‌بندی برای اطمینان از نتایج منحصر به فرد برای هر بیمار
+        .group_by(Patient.telegram_id, Patient.full_name)
+    )
+    results = await session.exec(statement)
+
+    # 3. دریافت تمام نتایج به صورت یک لیست
+    #    .all() در اینجا لیستی از تاریخ‌ها را برمی‌گرداند
+
+    # 4. برگرداندن نتیجه در قالب schema تعریف شده
+    return AwaitingForConsultationPatientsResponse(patients=results)

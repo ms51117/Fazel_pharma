@@ -3372,3 +3372,437 @@ WHERE "tbl_User".telegram_id = $1::VARCHAR]
 2025-10-26 21:45:58,368 - app - INFO - config:33 - Application shutdown.....................................
 2025-10-26 21:45:58,368 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-10-26 21:45:58,368 - uvicorn.error - INFO - server:94 - Finished server process [21412]
+2025-10-27 17:13:59,591 - app - INFO - config:31 - Application startup......................................
+2025-10-27 17:13:59,592 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-27 17:13:59,625 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51589 - "GET /docs HTTP/1.1" 200
+2025-10-27 17:13:59,757 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51589 - "GET /openapi.json HTTP/1.1" 200
+2025-10-27 17:14:12,918 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51590 - "GET /docs HTTP/1.1" 200
+2025-10-27 17:14:12,977 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51590 - "GET /openapi.json HTTP/1.1" 200
+2025-10-27 17:14:31,095 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51591 - "POST /login/access-token HTTP/1.1" 200
+2025-10-27 17:17:30,561 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51692 - "GET /patient/waiting-for-consultation-dates/ HTTP/1.1" 200
+2025-10-27 17:17:30,623 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-27 17:17:30,733 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-27 17:17:30,733 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-27 17:17:30,733 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-27 17:17:30,733 - uvicorn.error - INFO - server:94 - Finished server process [15340]
+2025-10-27 17:17:31,919 - app - INFO - config:31 - Application startup......................................
+2025-10-27 17:17:31,919 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-27 17:41:11,281 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-27 17:41:11,369 - uvicorn.error - INFO - server:299 - Waiting for connections to close. (CTRL+C to force quit)
+2025-10-27 17:41:11,627 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53793 - "POST /login/access-token HTTP/1.1" 200
+2025-10-27 17:41:11,627 - uvicorn.error - INFO - server:306 - Waiting for background tasks to complete. (CTRL+C to force quit)
+2025-10-27 17:41:11,738 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-27 17:41:11,738 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-27 17:41:11,738 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-27 17:41:11,738 - uvicorn.error - INFO - server:94 - Finished server process [16076]
+2025-10-27 17:41:12,900 - app - INFO - config:31 - Application startup......................................
+2025-10-27 17:41:12,900 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-27 17:41:13,009 - uvicorn.error - ERROR - on:134 - Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\_compat.py", line 53, in asyncio_run
+    return loop.run_until_complete(main)
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 628, in run_until_complete
+    self.run_forever()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 595, in run_forever
+    self._run_once()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1881, in _run_once
+    handle._run()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\server.py", line 70, in serve
+    with self.capture_signals():
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 142, in __exit__
+    next(self.gen)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\server.py", line 331, in capture_signals
+    signal.raise_signal(captured_signal)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+2025-10-27 17:41:14,123 - app - INFO - config:31 - Application startup......................................
+2025-10-27 17:41:14,123 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-10-27 17:42:20,082 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53828 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:20,090 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53832 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:20,703 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53836 - "GET /patient/waiting-for-consultation-dates/ HTTP/1.1" 200
+2025-10-27 17:42:27,825 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53838 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:27,832 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53840 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:28,101 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53842 - "GET /patient/awaiting-for-consultation-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-27 17:42:30,984 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53844 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:30,992 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53846 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:31,269 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53848 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-27 17:42:33,672 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53850 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:33,680 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53852 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:34,240 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53854 - "GET /disease/ HTTP/1.1" 200
+2025-10-27 17:42:38,672 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53856 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:38,680 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53858 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:38,911 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53860 - "GET /drug/read-drug-by-type/2 HTTP/1.1" 200
+2025-10-27 17:42:40,710 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53862 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:40,718 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53864 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:41,859 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53866 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:41,866 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53868 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:43,016 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53870 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:43,023 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53872 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:44,933 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53874 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:44,940 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53876 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:45,326 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53878 - "GET /user/read-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:42:45,333 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53880 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-27 17:42:45,363 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53882 - "POST /order/ HTTP/1.1" 201
+2025-10-27 17:45:00,192 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53906 - "POST /login/access-token HTTP/1.1" 200
+2025-10-27 17:45:05,790 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53911 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:05,798 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53913 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:06,478 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53917 - "GET /patient/waiting-for-consultation-dates/ HTTP/1.1" 200
+2025-10-27 17:45:08,635 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53919 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:08,643 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53921 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:08,948 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53923 - "GET /patient/awaiting-for-consultation-by-date/2025-10-23 HTTP/1.1" 200
+2025-10-27 17:45:10,680 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53925 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:10,687 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53927 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:10,969 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53929 - "GET /patient/667522998 HTTP/1.1" 200
+2025-10-27 17:45:13,802 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53931 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:13,811 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53933 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:14,038 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53935 - "GET /disease/ HTTP/1.1" 200
+2025-10-27 17:45:15,377 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53938 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:15,385 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53940 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:15,721 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53944 - "GET /drug/read-drug-by-type/2 HTTP/1.1" 200
+2025-10-27 17:45:17,813 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53946 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:17,821 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53948 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:18,836 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53950 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:18,843 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53952 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:20,279 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53958 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:20,286 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53960 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:20,632 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53962 - "GET /user/read-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:45:20,640 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53964 - "GET /patient/667522998 HTTP/1.1" 200
+2025-10-27 17:45:20,662 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53966 - "POST /order/ HTTP/1.1" 201
+2025-10-27 17:50:53,777 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54027 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:50:53,785 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54029 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:50:54,089 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54031 - "GET /patient/waiting-for-consultation-dates/ HTTP/1.1" 200
+2025-10-27 17:50:55,291 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54033 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:50:55,299 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54035 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:50:55,532 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54037 - "GET /patient/awaiting-for-consultation-by-date/2025-10-23 HTTP/1.1" 200
+2025-10-27 17:50:56,681 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54039 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:50:56,689 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54041 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:50:56,996 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54043 - "GET /patient/667522998 HTTP/1.1" 200
+2025-10-27 17:50:58,964 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54047 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:50:58,970 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54049 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:50:59,190 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54051 - "GET /disease/ HTTP/1.1" 200
+2025-10-27 17:51:01,288 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54053 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:01,296 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54055 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:01,531 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54057 - "GET /drug/read-drug-by-type/2 HTTP/1.1" 200
+2025-10-27 17:51:02,982 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54059 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:02,990 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54061 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:03,242 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54063 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:03,249 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54065 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:03,579 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54069 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:03,587 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54071 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:06,224 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54073 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:06,230 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54075 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:06,479 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54077 - "GET /user/read-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:06,486 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54079 - "GET /patient/667522998 HTTP/1.1" 200
+2025-10-27 17:51:06,509 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54081 - "POST /order/ HTTP/1.1" 201
+2025-10-27 17:51:30,540 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54093 - "POST /login/access-token HTTP/1.1" 200
+2025-10-27 17:51:37,135 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54098 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:37,142 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54100 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:37,765 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54104 - "GET /patient/waiting-for-consultation-dates/ HTTP/1.1" 200
+2025-10-27 17:51:39,327 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54106 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:39,335 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54108 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:39,584 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54110 - "GET /patient/awaiting-for-consultation-by-date/2025-10-24 HTTP/1.1" 200
+2025-10-27 17:51:40,967 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54112 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:40,975 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54114 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:41,258 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54116 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-27 17:51:44,145 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54118 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:44,152 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54120 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:44,483 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54122 - "GET /disease/ HTTP/1.1" 200
+2025-10-27 17:51:46,974 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54124 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:46,981 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54126 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:47,240 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54128 - "GET /drug/read-drug-by-type/2 HTTP/1.1" 200
+2025-10-27 17:51:57,613 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54130 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:57,620 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54132 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:58,735 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54137 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:51:58,742 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54139 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:52:01,245 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54141 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:52:01,252 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54143 - "GET /user/role-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:52:01,634 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54145 - "GET /user/read-by-telegram-id/87384626 HTTP/1.1" 200
+2025-10-27 17:52:01,640 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54147 - "GET /patient/7439340671 HTTP/1.1" 200
+2025-10-27 17:52:01,660 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54149 - "POST /order/ HTTP/1.1" 201
+2025-10-27 17:52:01,668 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54151 - "PATCH /patient/7439340671 HTTP/1.1" 500
+2025-10-27 17:52:01,668 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got int
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 545, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\asyncpg\prepared_stmt.py", line 267, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\asyncpg\prepared_stmt.py", line 256, in __do_execute
+    return await executor(protocol)
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: 7439340671 (expected str, got int)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: 7439340671 (expected str, got int)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 387, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 288, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\app\routes\patient.py", line 131, in update_patient
+    db_patient = (await session.exec(statement)).one_or_none()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\ext\asyncio\session.py", line 98, in exec
+    result = await greenlet_spawn(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\orm\session.py", line 83, in exec
+    results = super().execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: 7439340671 (expected str, got int)
+[SQL: SELECT "tbl_Patient".created_at, "tbl_Patient".updated_at, "tbl_Patient".full_name, "tbl_Patient".sex, "tbl_Patient".age, "tbl_Patient".weight, "tbl_Patient".height, "tbl_Patient".mobile_number, "tbl_Patient".postal_code, "tbl_Patient".address, "tbl_Patient".telegram_id, "tbl_Patient".patient_status, "tbl_Patient".specific_diseases, "tbl_Patient".consultant_type, "tbl_Patient".special_conditions, "tbl_Patient".photo_paths, "tbl_Patient".patient_id 
+FROM "tbl_Patient" 
+WHERE "tbl_Patient".telegram_id = $1::VARCHAR]
+[parameters: (7439340671,)]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-10-27 17:55:17,919 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54246 - "PATCH /patient/7439340671 HTTP/1.1" 500
+2025-10-27 17:55:17,920 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg\\pgproto\\./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got int
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 545, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\asyncpg\prepared_stmt.py", line 267, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\asyncpg\prepared_stmt.py", line 256, in __do_execute
+    return await executor(protocol)
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: 7439340671 (expected str, got int)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: 7439340671 (expected str, got int)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 387, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\routing.py", line 288, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\app\routes\patient.py", line 131, in update_patient
+    db_patient = (await session.exec(statement)).one_or_none()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\ext\asyncio\session.py", line 98, in exec
+    result = await greenlet_spawn(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\orm\session.py", line 83, in exec
+    results = super().execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: 7439340671 (expected str, got int)
+[SQL: SELECT "tbl_Patient".created_at, "tbl_Patient".updated_at, "tbl_Patient".full_name, "tbl_Patient".sex, "tbl_Patient".age, "tbl_Patient".weight, "tbl_Patient".height, "tbl_Patient".mobile_number, "tbl_Patient".postal_code, "tbl_Patient".address, "tbl_Patient".telegram_id, "tbl_Patient".patient_status, "tbl_Patient".specific_diseases, "tbl_Patient".consultant_type, "tbl_Patient".special_conditions, "tbl_Patient".photo_paths, "tbl_Patient".patient_id 
+FROM "tbl_Patient" 
+WHERE "tbl_Patient".telegram_id = $1::VARCHAR]
+[parameters: (7439340671,)]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-10-27 17:58:49,638 - uvicorn.error - INFO - server:264 - Shutting down
+2025-10-27 17:58:49,747 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-10-27 17:58:49,747 - app - INFO - config:33 - Application shutdown.....................................
+2025-10-27 17:58:49,747 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-10-27 17:58:49,747 - uvicorn.error - INFO - server:94 - Finished server process [3420]
