@@ -52,3 +52,26 @@ class OrderReadWithDetails(OrderRead):
     order_list: List[OrderListRead] = []
     payment_list: List[PaymentListRead] = []
 
+
+# --------------------------------------------------
+class OrderItemUpdate(SQLModel):
+    """
+    Represents a single item in the order update request.
+    Client only needs to send drug_id and quantity.
+    Price will be fetched from the database for security.
+    """
+    drug_id: int
+    qty: int = Field(default=1, gt=0, description="Quantity must be greater than zero")
+
+
+# --- اسکیمای جامع و جدید برای آپدیت سفارش ---
+class OrderComprehensiveUpdate(SQLModel):
+    """
+    A comprehensive schema for updating an order.
+    All fields are optional, so the client can update only what's needed.
+    """
+    order_status: Optional[OrderStatusEnum] = None
+    order_items: Optional[List[OrderItemUpdate]] = Field(
+        default=None,
+        description="If provided, replaces the ENTIRE existing list of items."
+    )

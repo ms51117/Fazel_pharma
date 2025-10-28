@@ -6,15 +6,15 @@ from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from sqlalchemy import sql
+from datetime import datetime, timezone
 
-
-
+from app.core.enums import OrderStatusEnum
 from app.core.permission import FormName, PermissionAction, RoleChecker
 from database import get_session
 from app.models.order import Order
 from app.models.patient import Patient
 from app.models.user import User
-from app.schemas.order import OrderCreate, OrderRead, OrderUpdate , OrderReadWithDetails
+from app.schemas.order import OrderCreate, OrderRead, OrderUpdate, OrderReadWithDetails, OrderComprehensiveUpdate
 from security import get_current_active_user
 from app.models.drug import Drug
 from app.models.order_list import OrderList
@@ -124,7 +124,9 @@ async def read_order_by_id(
     دریافت اطلاعات یک سفارش با شناسه (ID) به همراه تمام اقلام آن.
     """
     # از selectinload برای Eager Loading اقلام سفارش استفاده می‌کنیم.
-    statement = select(Order).where(Order.order_id == order_id).options(selectinload(Order.order_list))
+    statement = (select(Order)
+                 .where(Order.order_id == order_id)
+                 .options(selectinload(Order.order_list),selectinload(Order.payment_list)))
     result = await session.exec(statement)
     order = result.one_or_none()
 
@@ -135,44 +137,103 @@ async def read_order_by_id(
         )
     return order
 
-@router.patch("/{order_id}", response_model=OrderRead)
-async def update_order(
+@router.patch("/{order_id}", response_model=OrderReadWithDetails)
+async def comprehensive_update_order(
         *,
-        current_user: User = Depends(get_current_active_user),
         session: AsyncSession = Depends(get_session),
+        current_user: User = Depends(get_current_active_user),
         _permission_check: None = Depends(
             RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.UPDATE)),
         order_id: int,
-        order_in: OrderUpdate,
+        order_in: OrderComprehensiveUpdate,  # استفاده از اسکیمای جامع جدید
 ) -> Any:
     """
-    آپدیت اطلاعات یک سفارش موجود.
+    A comprehensive endpoint to update an order.
+    - Can update 'order_status'.
+    - Can replace the entire list of 'order_items'.
+    All operations are optional and transactional.
     """
-    db_order = await session.get(Order, order_id)
+    # 1. سفارش را به همراه آیتم‌های فعلی‌اش (order_lists) با Eager Loading دریافت کن
+    statement = (
+        select(Order)
+        .where(Order.order_id == order_id)
+        .options(selectinload(Order.order_lists))  # بسیار مهم برای دسترسی و حذف آیتم‌ها
+    )
+    result = await session.exec(statement)
+    db_order = result.one_or_none()
+
     if not db_order:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Order with ID {order_id} not found",
         )
 
+    # یک فلگ برای اینکه بفهمیم آیا تغییری اعمال شده است یا خیر
+    is_updated = False
     update_data = order_in.model_dump(exclude_unset=True)
 
-    # اعتبارسنجی کلیدهای خارجی در صورت تغییر
-    if "patient_id" in update_data:
-        patient = await session.get(Patient, update_data["patient_id"])
-        if not patient:
-            raise HTTPException(status_code=404, detail="Patient not found")
+    # 2. آپدیت وضعیت سفارش (اگر در درخواست آمده باشد)
+    if "order_status" in update_data:
+        db_order.order_status = order_in.order_status
+        is_updated = True
 
-    if "user_id" in update_data:
-        user = await session.get(User, update_data["user_id"])
-        if not user:
-            raise HTTPException(status_code=404, detail="User not found")
+    # 3. جایگزینی لیست داروها (اگر در درخواست آمده باشد)
+    if "order_items" in update_data:
+        # --- الف) حذف تمام آیتم‌های قدیمی ---
+        for item in db_order.order_lists:
+            await session.delete(item)
 
-    db_order.sqlmodel_update(update_data)
-    session.add(db_order)
-    await session.commit()
-    await session.refresh(db_order)
-    return db_order
+        # --- ب) اعتبارسنجی و آماده‌سازی آیتم‌های جدید ---
+        new_items_data = order_in.order_items
+        if new_items_data:  # اگر لیست خالی نباشد
+            drug_ids = {item.drug_id for item in new_items_data}
+
+            # با یک کوئری تمام داروهای مورد نیاز را بگیر
+            drug_stmt = select(Drug).where(Drug.drugs_id.in_(drug_ids))
+            drugs_result = await session.exec(drug_stmt)
+            valid_drugs = drugs_result.all()
+
+            # بررسی اینکه تمام ID های درخواستی معتبر هستند
+            if len(valid_drugs) != len(drug_ids):
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail="One or more drug IDs are invalid."
+                )
+
+            # یک دیکشنری از قیمت‌ها برای دسترسی سریع و امن
+            drug_price_map = {drug.drugs_id: drug.price for drug in valid_drugs}
+
+            # --- ج) ایجاد و افزودن آیتم‌های جدید به session ---
+            for item_data in new_items_data:
+                new_order_item = OrderList(
+                    order_id=db_order.order_id,
+                    drug_id=item_data.drug_id,
+                    qty=item_data.qty,
+                    price=drug_price_map[item_data.drug_id]  # قیمت از دیتابیس خوانده می‌شود
+                )
+                session.add(new_order_item)
+
+        is_updated = True
+
+    # 4. ذخیره‌سازی تغییرات در دیتابیس (فقط اگر تغییری وجود داشته باشد)
+    if is_updated:
+        db_order.updated_at = datetime.now(timezone.utc)
+        session.add(db_order)
+        await session.commit()
+
+        # Refresh کردن آبجکت سفارش برای بارگذاری مجدد روابط (به خصوص order_lists جدید)
+        await session.refresh(db_order, attribute_names=["order_lists"])
+
+    # برای اطمینان از اینکه همه روابط برای پاسخ JSON آماده هستند، دوباره آن‌ها را load میکنیم
+    # این کار از خطای MissingGreenlet در پاسخ نهایی جلوگیری می‌کند
+    final_order_statement = (
+        select(Order)
+        .where(Order.order_id == order_id)
+        .options(selectinload(Order.order_lists), selectinload(Order.payment_list))
+    )
+    final_result = await session.exec(final_order_statement)
+
+    return final_result.one()
 
 
 @router.delete("/{order_id}")
@@ -198,3 +259,37 @@ async def delete_order(
     await session.delete(order)
     await session.commit()
     return {"ok": True, "message": "Order and its related items deleted successfully"}
+
+
+
+# -----------------------------------------------------------------------
+@router.get("/get-order-by-status-by-patient-id/{patient_id}/{status}", response_model=list[OrderReadWithDetails])
+async def get_orders_by_patient_and_status(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.VIEW)),
+        patient_id: int,
+        order_status: OrderStatusEnum
+) -> Any:
+    """
+    ایجاد یک سفارش جدید برای یک بیمار توسط یک کاربر.
+    """
+    # 1. بررسی وجود بیمار (Patient)
+    patient = await session.get(Patient , patient_id)
+    if not patient:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Patient with ID {patient_id} not found."
+        )
+
+    statement = (select(Order)
+                 .where(Order.patient_id == patient_id ,Order.order_status == order_status)
+                 .options(selectinload(Order.order_list),selectinload(Order.payment_list)))
+    result = await session.exec(statement)
+    orders = result.all()
+
+
+    return orders
+
