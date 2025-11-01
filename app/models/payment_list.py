@@ -25,10 +25,11 @@ class PaymentListBase(SQLModel):
         nullable=False,
         description="Order ID"
     )
-    user_id: int = Field(
+    user_id: Optional [int] = Field(
         foreign_key="tbl_User.user_id",
-        nullable=False,
-        description="User ID who made the payment"
+        default=None,
+        nullable=True,
+        description="User ID who approve the payment ( casher)"
     )
     payment_date: datetime = Field(
         default_factory=datetime.now,
@@ -51,7 +52,7 @@ class PaymentListBase(SQLModel):
         nullable=False,
         description="Payment amount in Rials"
     )
-    payment_status: PaymentStatusEnum = Field(
+    payment_status: Optional[PaymentStatusEnum] = Field(
         default=PaymentStatusEnum.NOT_SEEN,
         nullable=False,
         description="Payment status"

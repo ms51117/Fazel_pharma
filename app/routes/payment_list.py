@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from database import get_session
 from app.models.payment_list import PaymentList
 from app.models.user import User
+from app.models.order import Order
 from app.schemas.payment_list import PaymentListCreate, PaymentListRead, PaymentListUpdate
 from security import get_current_active_user
 
@@ -32,11 +33,11 @@ async def create_payment(
     ثبت یک پرداخت جدید.
     """
     # 1. بررسی وجود کاربر (User)
-    user = await session.get(User, payment_in.user_id)
-    if not user:
+    order = await session.get(Order, payment_in.order_id)
+    if not order:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"User with ID {payment_in.user_id} not found. Cannot create payment."
+            detail=f"Order with ID {payment_in.order_id} not found. Cannot create payment."
         )
 
     # 2. ایجاد آبجکت و ذخیره در دیتابیس

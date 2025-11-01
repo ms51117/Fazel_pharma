@@ -124,9 +124,11 @@ async def read_order_by_id(
     دریافت اطلاعات یک سفارش با شناسه (ID) به همراه تمام اقلام آن.
     """
     # از selectinload برای Eager Loading اقلام سفارش استفاده می‌کنیم.
-    statement = (select(Order)
-                 .where(Order.order_id == order_id)
-                 .options(selectinload(Order.order_list),selectinload(Order.payment_list)))
+    statement = (
+        select(Order)
+        .where(Order.order_id == order_id)
+        .options(selectinload(Order.order_list).selectinload(OrderList.drug),selectinload(Order.payment_list)))
+
     result = await session.exec(statement)
     order = result.one_or_none()
 
@@ -137,30 +139,32 @@ async def read_order_by_id(
         )
     return order
 
+
 @router.patch("/{order_id}", response_model=OrderReadWithDetails)
 async def comprehensive_update_order(
-        *,
-        session: AsyncSession = Depends(get_session),
-        current_user: User = Depends(get_current_active_user),
-        _permission_check: None = Depends(
-            RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.UPDATE)),
-        order_id: int,
-        order_in: OrderComprehensiveUpdate,  # استفاده از اسکیمای جامع جدید
+    *,
+    session: AsyncSession = Depends(get_session),
+    current_user: User = Depends(get_current_active_user),
+    _permission_check: None = Depends(
+        RoleChecker(form_name=FormName.ORDER, required_permission=PermissionAction.UPDATE)),
+    order_id: int,
+    order_in: OrderComprehensiveUpdate,
 ) -> Any:
     """
-    A comprehensive endpoint to update an order.
+    A comprehensive endpoint to update an order using modern cascading.
     - Can update 'order_status'.
-    - Can replace the entire list of 'order_items'.
-    All operations are optional and transactional.
+    - Replaces the entire list of 'order_items' safely.
     """
-    # 1. سفارش را به همراه آیتم‌های فعلی‌اش (order_lists) با Eager Loading دریافت کن
+    # 1. Get the order with its current items using selectinload
+    # <<< CRITICAL CHANGE: Use selectinload to prevent session conflicts
     statement = (
         select(Order)
         .where(Order.order_id == order_id)
-        .options(selectinload(Order.order_lists))  # بسیار مهم برای دسترسی و حذف آیتم‌ها
+        .options(selectinload(Order.order_list).selectinload(OrderList.drug),selectinload(Order.payment_list))  # <--- این خط اضافه شده است
+
     )
     result = await session.exec(statement)
-    db_order = result.one_or_none()
+    db_order = result.one_or_none() # Use one_or_none for safety
 
     if not db_order:
         raise HTTPException(
@@ -168,74 +172,51 @@ async def comprehensive_update_order(
             detail=f"Order with ID {order_id} not found",
         )
 
-    # یک فلگ برای اینکه بفهمیم آیا تغییری اعمال شده است یا خیر
-    is_updated = False
     update_data = order_in.model_dump(exclude_unset=True)
+    is_updated = False
 
-    # 2. آپدیت وضعیت سفارش (اگر در درخواست آمده باشد)
+    # 2. Update order status if present
     if "order_status" in update_data:
         db_order.order_status = order_in.order_status
         is_updated = True
 
-    # 3. جایگزینی لیست داروها (اگر در درخواست آمده باشد)
+    # 3. Replace the list of items using the modern cascade approach
     if "order_items" in update_data:
-        # --- الف) حذف تمام آیتم‌های قدیمی ---
-        for item in db_order.order_lists:
-            await session.delete(item)
-
-        # --- ب) اعتبارسنجی و آماده‌سازی آیتم‌های جدید ---
         new_items_data = order_in.order_items
-        if new_items_data:  # اگر لیست خالی نباشد
-            drug_ids = {item.drug_id for item in new_items_data}
+        new_order_list_objects = []
 
-            # با یک کوئری تمام داروهای مورد نیاز را بگیر
+        if new_items_data:
+            drug_ids = {item.drug_id for item in new_items_data}
             drug_stmt = select(Drug).where(Drug.drugs_id.in_(drug_ids))
             drugs_result = await session.exec(drug_stmt)
-            valid_drugs = drugs_result.all()
+            valid_drugs = {drug.drugs_id: drug for drug in drugs_result.all()}
 
-            # بررسی اینکه تمام ID های درخواستی معتبر هستند
             if len(valid_drugs) != len(drug_ids):
-                raise HTTPException(
-                    status_code=status.HTTP_404_NOT_FOUND,
-                    detail="One or more drug IDs are invalid."
-                )
+                invalid_ids = drug_ids - set(valid_drugs.keys())
+                raise HTTPException(status_code=404, detail=f"Invalid drug IDs found: {invalid_ids}")
 
-            # یک دیکشنری از قیمت‌ها برای دسترسی سریع و امن
-            drug_price_map = {drug.drugs_id: drug.price for drug in valid_drugs}
-
-            # --- ج) ایجاد و افزودن آیتم‌های جدید به session ---
             for item_data in new_items_data:
-                new_order_item = OrderList(
-                    order_id=db_order.order_id,
-                    drug_id=item_data.drug_id,
-                    qty=item_data.qty,
-                    price=drug_price_map[item_data.drug_id]  # قیمت از دیتابیس خوانده می‌شود
+                new_order_list_objects.append(
+                    OrderList(
+                        drug_id=item_data.drug_id,
+                        qty=item_data.qty,
+                        price=valid_drugs[item_data.drug_id].price
+                    )
                 )
-                session.add(new_order_item)
 
+        # The magic line: direct replacement triggers the cascade
+        db_order.order_list = new_order_list_objects
         is_updated = True
 
-    # 4. ذخیره‌سازی تغییرات در دیتابیس (فقط اگر تغییری وجود داشته باشد)
+    # 4. Commit changes if anything was updated
     if is_updated:
-        db_order.updated_at = datetime.now(timezone.utc)
-        session.add(db_order)
+        # No need to add db_order to session if it's already persistent
+        # session.add(db_order) # This is usually not needed for an update
+
         await session.commit()
+        await session.refresh(db_order)
 
-        # Refresh کردن آبجکت سفارش برای بارگذاری مجدد روابط (به خصوص order_lists جدید)
-        await session.refresh(db_order, attribute_names=["order_lists"])
-
-    # برای اطمینان از اینکه همه روابط برای پاسخ JSON آماده هستند، دوباره آن‌ها را load میکنیم
-    # این کار از خطای MissingGreenlet در پاسخ نهایی جلوگیری می‌کند
-    final_order_statement = (
-        select(Order)
-        .where(Order.order_id == order_id)
-        .options(selectinload(Order.order_lists), selectinload(Order.payment_list))
-    )
-    final_result = await session.exec(final_order_statement)
-
-    return final_result.one()
-
-
+    return db_order
 @router.delete("/{order_id}")
 async def delete_order(
         *,
@@ -263,7 +244,7 @@ async def delete_order(
 
 
 # -----------------------------------------------------------------------
-@router.get("/get-order-by-status-by-patient-id/{patient_id}/{status}", response_model=list[OrderReadWithDetails])
+@router.get("/get-order-by-status-by-patient-id/", response_model=list[OrderReadWithDetails])
 async def get_orders_by_patient_and_status(
         *,
         current_user: User = Depends(get_current_active_user),
@@ -286,7 +267,7 @@ async def get_orders_by_patient_and_status(
 
     statement = (select(Order)
                  .where(Order.patient_id == patient_id ,Order.order_status == order_status)
-                 .options(selectinload(Order.order_list),selectinload(Order.payment_list)))
+                 .options(selectinload(Order.order_list).selectinload(OrderList.drug),selectinload(Order.payment_list)))
     result = await session.exec(statement)
     orders = result.all()
 

@@ -3,15 +3,13 @@
 from typing import Optional
 from sqlmodel import SQLModel, Field
 from decimal import Decimal
+from app.models.order_list import OrderListBase
+from app.schemas.drug import DrugRead  # ایمپورت اسکیمای جدید
+
 
 # ---------------------------------------------------------------------------
 # 1. اسکیمای پایه و ورودی برای ایجاد قلم سفارش (CREATE)
 # ---------------------------------------------------------------------------
-class OrderListBase(SQLModel):
-    order_id: int = Field(description="ID of the order this item belongs to", foreign_key="tbl_Order.order_id")
-    drug_id: int = Field(description="ID of the drug in this order item", foreign_key="tbl_Drug.drugs_id")
-    qty: int = Field(description="Quantity of the drug")
-    price: Decimal = Field(max_digits=12, decimal_places=0, description="Price per unit at the time of order")
 
 class OrderListCreate(OrderListBase):
     pass
@@ -33,6 +31,7 @@ class OrderListUpdate(SQLModel):
 # ---------------------------------------------------------------------------
 class OrderListRead(OrderListBase):
     order_list_id: int
+    drug: Optional[DrugRead]  # <--- اینجا کلید اصلی تغییر است
 
 # ---------------------------------------------------------------------------
 # 4. اسکیمای خروجی با جزئیات (مثلاً نام دارو)

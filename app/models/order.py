@@ -58,5 +58,7 @@ class Order(OrderBase, BaseDates, table=True):
     # Relationships
     patient: "Patient" = Relationship(back_populates="order")
     user: "User" = Relationship(back_populates="order")
-    order_list: List["OrderList"] = Relationship(back_populates="order")
+    order_list: List["OrderList"] = Relationship(back_populates="order",sa_relationship_kwargs={
+            "cascade": "all, delete-orphan"
+        })
     payment_list: List["PaymentList"] = Relationship(back_populates="order")
