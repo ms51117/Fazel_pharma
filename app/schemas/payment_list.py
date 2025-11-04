@@ -6,6 +6,7 @@ from datetime import datetime
 
 from app.core.enums import PaymentStatusEnum
 from app.models.payment_list import PaymentListBase
+from app.models.patient import Patient
 
 # ---------------------------------------------------------------------------
 # 1. اسکیمای پایه و ورودی برای ایجاد پرداخت (CREATE)
@@ -21,8 +22,7 @@ class PaymentListCreate(PaymentListBase):
 # ---------------------------------------------------------------------------
 # این اسکیما علاوه بر فیلدهای پایه، فیلدهای خودکار دیتابیس را هم نمایش می‌دهد.
 class PaymentListRead(PaymentListBase):
-    payment_id: int
-    payment_date: datetime # این فیلد در مدل شما توسط BaseDates مدیریت می‌شود
+    payment_list_id: int
 
 # ---------------------------------------------------------------------------
 # 3. اسکیمای ورودی برای آپدیت پرداخت (UPDATE)
@@ -30,10 +30,16 @@ class PaymentListRead(PaymentListBase):
 # تمام فیلدها اختیاری هستند. توجه کنید که معمولاً user_id و amount آپدیت نمی‌شوند،
 # اما برای انعطاف‌پذیری بیشتر اینجا قرار داده شده‌اند.
 class PaymentListUpdate(SQLModel):
-    payment_date : datetime = None
+    payment_date : Optional[datetime] = None
     payment_refer_code : Optional[str] = None
     payment_path_file: Optional[str] = None
-    payment_value: Decimal = None
-    payment_status: PaymentStatusEnum = None
+    payment_value: Optional[Decimal] = None
+    payment_status: Optional[PaymentStatusEnum] = None
     payment_status_explain : Optional[str] = None
+    user_id: Optional[int] = None
+
+class DatePaymentListRead(PaymentListBase):
+    payment_list_id: int
+    telegram_id : Optional[str] = None
+    full_name : Optional[str] = None
 

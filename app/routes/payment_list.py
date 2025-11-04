@@ -2,18 +2,24 @@
 
 from typing import List, Any
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlmodel import select
+from sqlalchemy import func
+from sqlalchemy.orm import selectinload
+from sqlmodel import select,Date
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from database import get_session
 from app.models.payment_list import PaymentList
 from app.models.user import User
 from app.models.order import Order
-from app.schemas.payment_list import PaymentListCreate, PaymentListRead, PaymentListUpdate
+from app.schemas.payment_list import PaymentListCreate, PaymentListRead, PaymentListUpdate, DatePaymentListRead
 from security import get_current_active_user
 
 #  for role check - this is the name define in database
 from app.core.permission import FormName, PermissionAction, RoleChecker
+from app.core.enums import PaymentStatusEnum
+from datetime import date
+
+
 
 
 router = APIRouter()
@@ -151,3 +157,53 @@ async def delete_payment(
     await session.delete(payment)
     await session.commit()
     return {"ok": True, "message": "Payment deleted successfully"}
+
+# -----------------------------------------------------------------------------------------------
+
+
+
+# اندپوینت ۱: دریافت تاریخ‌هایی که پرداخت در انتظار دارند
+@router.get("/not-seen/", response_model=list[str])
+async def get_pending_payment_dates(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PAYMENT_LIST, required_permission=PermissionAction.DELETE)),
+
+        session: AsyncSession = Depends(get_session),
+):
+    """
+    Returns a list of unique dates (YYYY-MM-DD) that have payments
+    with 'Pending' status.
+    """
+    statement = select(func.date(Order.created_at)).join(PaymentList).where(PaymentList.payment_status == PaymentStatusEnum.NOT_SEEN).distinct()
+    result = await session.exec(statement)
+    results= result.all()
+    # تبدیل تاریخ‌ها به رشته
+    return [str(date) for date in results]
+
+# اندپوینت ۲: دریافت لیست بیماران/پرداخت‌های منتظر در یک تاریخ خاص
+@router.get("/not-seen/by-date/{date_str}", response_model=list[DatePaymentListRead]) # ممکن است نیاز به اسکیمای بهتری داشته باشد
+async def get_pending_payments_by_date(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PAYMENT_LIST, required_permission=PermissionAction.DELETE)),
+
+        date_str: date,
+        session: AsyncSession = Depends(get_session),
+):
+    """
+    Returns a list of pending payments for a specific date, including patient info.
+    """
+    statement = (
+        select(PaymentList)
+        .join(Order)
+        .options(selectinload(PaymentList.order).selectinload(Order.patient)) # برای دسترسی به بیمار
+        .where(PaymentList.payment_status == PaymentStatusEnum.NOT_SEEN)
+        .where(func.cast(Order.created_at,Date) == date_str)
+    )
+    result = await session.exec(statement)
+    payments = result.all()
+    return payments
+
