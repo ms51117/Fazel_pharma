@@ -5,6 +5,7 @@ from starlette.requests import Request
 from sqlalchemy import func, select
 from datetime import date
 
+from admin_panel.dependencies import admin_instance
 # --- ایمپورت‌های لازم ---
 from database import async_session_maker
 from app.models.user import User
@@ -13,39 +14,65 @@ from app.models.drug import Drug
 from app.models.order import Order
 from app.models.order_list import OrderList
 
+from jinja2 import Environment, ChoiceLoader, FileSystemLoader
 
-# --- صفحه سفارشی داشبورد ---
+# admin_panel/views.py
+
+import os
+import jinja2
+import sqladmin
+from starlette.templating import Jinja2Templates
+from sqladmin import BaseView, expose
+from starlette.requests import Request
+from sqlalchemy import func, select
+from datetime import date
+
+# (مسیرها را از فایل database.py خودتان کپی کنید)
+from database import async_session_maker
+from app.models.order import Order
+from app.models.order_list import OrderList
+from pathlib import Path
+
+
+# --- بخش جدید: ساخت موتور تمپلیت هوشمند (نسخه اصلاح شده) ---
+
+# 1. مسیر پوشه تمپلیت‌های داخلی کتابخانه sqladmin را پیدا می‌کنیم
+sqladmin_templates_path = Path(sqladmin.__file__).parent / "templates"/ "sqladmin"
+user_templates_path = Path(__file__).parent / "templates"/"admin"
+
+env = Environment(
+    loader=ChoiceLoader([
+        FileSystemLoader(str(user_templates_path)),
+        FileSystemLoader(str(sqladmin_templates_path)),
+    ])
+)
+
+# اگر فیلتر سفارشی داری (مثلا format_price)، اینجا می‌تونی اضافه کنی:
+# env.filters["format_price"] = lambda x: f"{x:,.0f} تومان"
+
+templates = Jinja2Templates(env=env)
+
+
 class DashboardView(BaseView):
-    name = "داشبورد"
-    icon = "fa-solid fa-gauge"
+    name = "Dashboard"
+    icon = "fa fa-chart-line"   # آیکون در sidebar
 
-    @expose("/dashboard", methods=["GET"])
+    @expose("/admin/dashboard", methods=["GET"])
     async def dashboard_page(self, request: Request):
-        async with async_session_maker() as session:
-            stmt_orders_count = select(func.count(Order.order_id)).where(
-                func.date(Order.created_at) == date.today()
-            )
-            result_orders_count = await session.execute(stmt_orders_count)
-            today_orders_count = result_orders_count.scalar_one_or_none() or 0
+        # اینجا داده‌ها رو آماده کن
+        total_users = 125
+        total_orders = 53
+        total_drugs = 18
 
-            stmt_sales = (
-                select(func.sum(OrderList.price * OrderList.qty))
-                .join(Order, OrderList.order_id == Order.order_id)
-                .where(func.date(Order.created_at) == date.today())
-            )
-            result_sales = await session.execute(stmt_sales)
-            today_sales = result_sales.scalar_one_or_none() or 0.0
+        context = {
+            "request": request,
+            "admin": admin_instance,  # الزامی برای sidebar و navbar
+            "total_users": total_users,
+            "total_orders": total_orders,
+            "total_drugs": total_drugs,
+        }
 
-            stats = {
-                "today_orders_count": today_orders_count,
-                "today_sales": int(today_sales),
-            }
-
-        return await self.templates.TemplateResponse(
-            request, "admin/dashboard.html", {"stats": stats}
-        )
-
-
+        return await templates.TemplateResponse("admin/dashboard.html", context)
 # --- نماهای مربوط به مدل‌ها ---
 class UsersAdmin(ModelView, model=User):
     column_list = [User.user_id, User.full_name, User.is_active, User.mobile_number]
