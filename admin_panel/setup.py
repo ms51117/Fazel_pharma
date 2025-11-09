@@ -7,7 +7,8 @@ from sqladmin import Admin
 import os
 
 from fastapi.staticfiles import StaticFiles
-
+from admin_panel.dependencies import admin_instance
+from admin_panel import views
 from .admin_auth import AdminAuth
 from .views import DashboardView, UsersAdmin, DrugsAdmin, PatientsAdmin
 
@@ -36,7 +37,7 @@ def init_admin(app: FastAPI, engine):
         templates_dir="admin_panel/templates"  # <-- تغییر: استفاده از پارامتر قدیمی
 
     )
-    admin_instance = admin  # ← این خط رو به‌صورت جدا لازم داری
+    views.admin_instance = admin  # 🔥 مهم‌ترین خط (رجیسترکردن instance)
 
     # --- مرحله ۲: تزریق فیلتر سفارشی پس از ساخت آبجکت ---
     # حالا که آبجکت admin ساخته شده، به محیط Jinja2 داخلی آن دسترسی پیدا کرده
