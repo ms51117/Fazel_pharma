@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}داشبورد{% endblock %}
+
+{% block content_header %}
+<div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1>داشبورد</h1>
+        </div>
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ url_for('admin:index') }}">خانه</a></li>
+                <li class="breadcrumb-item active">داشبورد</li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        <!-- جعبه‌های آمار -->
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <!-- جعبه کوچک -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ stats.today_orders_count }}</h3>
+                        <p>سفارشات امروز</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fas fa-arrow-circle-left"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-6 col-md-6">
+                <!-- جعبه کوچک -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{ stats.today_sales | int | format_price }}<sup style="font-size: 20px"> تومان</sup></h3>
+                        <p>فروش امروز</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fas fa-arrow-circle-left"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- می‌توانید نمودارها و جداول دیگر را اینجا اضافه کنید -->
+
+    </div><!-- /.container-fluid -->
+</section>
+{% endblock %}

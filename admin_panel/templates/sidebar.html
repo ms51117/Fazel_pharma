@@ -1,0 +1,43 @@
+<!--{# admin_panel/templates/sidebar.html - VERSION 6 (Final & Correct Logic) #}-->
+
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+            {% for view in admin.views %}
+                <li class="nav-item">
+
+                    {# ---- شروع تغییرات نهایی بر اساس کشف جدید ---- #}
+                    {% if view.model is defined %}
+                        {# این یک ModelView است #}
+                        {# ۱. هویت را از روی نام کلاسِ خودِ View می‌سازیم (مثلا UsersAdmin -> usersadmin) #}
+                        {% set view_class_identity = view.__class__.__name__ | lower %}
+
+                        {# ۲. نام روت و URL لیست را با هویت صحیح می‌سازیم #}
+                        {% set list_route_name = 'admin:' + view_class_identity + ':list' %}
+                        {% set list_url = url_for(list_route_name) %}
+
+                        {# ۳. مسیر پایه را برای تشخیص 'active' بودن با هویت صحیح می‌سازیم #}
+                        {% set base_path = '/admin/' + view_class_identity %}
+
+                        <a class="nav-link {% if request.url.path.startswith(base_path) %}active{% endif %}" href="{{ list_url }}">
+                            <i class="{{ view.icon }}"></i>
+                            {{ view.name_plural if view.name_plural else view.name }}
+                        </a>
+                    {% else %}
+                        {# این یک BaseView است (Dashboard) #}
+                        {# منطق قبلی برای این بخش درست بود چون هویت آن به شکل دیگری تعریف می‌شود #}
+                        {% set view_route_name = 'admin:' + view.identity %}
+                        {% set view_url = url_for(view_route_name) %}
+
+                        <a class="nav-link {% if request.url.path == view_url %}active{% endif %}" href="{{ view_url }}">
+                            <i class="{{ view.icon }}"></i>
+                            {{ view.name }}
+                        </a>
+                    {% endif %}
+                    {# ---- پایان تغییرات ---- #}
+
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

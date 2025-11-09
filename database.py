@@ -18,6 +18,10 @@ DATABASE_URL = settings.ASYNC_DATABASE_URI
 # Create the async engine with the URL
 engine = create_async_engine(DATABASE_URL, echo=True, future=True)
 
+
+async_session_maker = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+
 async def init_db():
     """
     Initialize the database and create tables.

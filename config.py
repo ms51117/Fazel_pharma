@@ -1,6 +1,3 @@
-from datetime import datetime
-
-from fastapi import FastAPI
 from app.routes import user
 from app.routes import patient
 from app.routes import user_role_permission
@@ -15,8 +12,28 @@ from app.routes import message
 from app.routes import login
 from contextlib import asynccontextmanager
 
+
+# -------------تست
+from dotenv import load_dotenv
+import os
+
+from fastapi.staticfiles import StaticFiles
+from admin_panel.setup import init_admin
+
+from starlette.middleware.sessions import SessionMiddleware # برای فعال کردن session
+from fastapi import FastAPI
+from database import engine  # engine را از فایل دیتابیس خود ایمپورت کنید
+
+
+
 import logging
 from app.core.logging_config import setup_logging
+
+
+
+load_dotenv()  # این تابع متغیرها را از فایل .env بارگذاری می‌کند
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # ------------- mange life span ------------------
 
@@ -29,6 +46,8 @@ async def event_life_span(app: FastAPI):
     # Get our custom logger
     logger = logging.getLogger("app")
     logger.info("Application startup......................................")
+    # setup_admin(app, engine)
+
     yield
     logger.info("Application shutdown.....................................")
 
@@ -44,6 +63,7 @@ app = FastAPI(
     swagger_ui_oauth2_redirect_url="/oauth2-redirect",
 )
 
+app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY)
 
 
 
@@ -63,7 +83,11 @@ app.include_router(login.router, prefix="/login", tags=["login"])
 
 
 
+# ---------------------------------
 
 
 
+# app.mount("/admin_panel/static", StaticFiles(directory="static"), name="static")
+
+init_admin(app, engine)
 
