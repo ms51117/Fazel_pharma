@@ -2085,3 +2085,1005 @@ starlette.routing.NoMatchFound: No route exists for name "admin_static:static" a
 2025-11-10 21:24:06,238 - app - INFO - config:52 - Application shutdown.....................................
 2025-11-10 21:24:06,239 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-11-10 21:24:06,240 - uvicorn.error - INFO - server:94 - Finished server process [5992]
+2025-11-10 21:30:20,612 - app - INFO - config:48 - Application startup......................................
+2025-11-10 21:30:20,617 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 21:30:24,139 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60928 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 21:30:24,189 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60928 - "GET /admin_panel/static/css/custom_admin.css HTTP/1.1" 304
+2025-11-10 21:30:25,538 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60928 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 21:30:34,285 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60929 - "GET /admin/user/details/8 HTTP/1.1" 200
+2025-11-10 21:31:43,194 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:61271 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 21:31:45,436 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:61271 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 21:37:28,964 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:37:29,072 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:37:29,073 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:37:29,075 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:37:29,077 - uvicorn.error - INFO - server:94 - Finished server process [14556]
+2025-11-10 21:39:13,971 - app - INFO - config:48 - Application startup......................................
+2025-11-10 21:39:13,975 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 21:39:20,504 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63177 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 21:39:20,546 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63177 - "GET /admin_panel/static/css/custom_admin.css HTTP/1.1" 304
+2025-11-10 21:39:29,084 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63178 - "GET /admin/user/edit/8 HTTP/1.1" 200
+2025-11-10 21:40:06,704 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:40:06,813 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:40:06,816 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:40:06,818 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:40:06,819 - uvicorn.error - INFO - server:94 - Finished server process [17332]
+2025-11-11 00:01:43,901 - app - INFO - config:48 - Application startup......................................
+2025-11-11 00:01:43,905 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 00:01:46,303 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52802 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-11 00:01:46,371 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52803 - "GET /admin/statics/js/jquery.min.js HTTP/1.1" 304
+2025-11-11 00:01:46,375 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52802 - "GET /admin_panel/static/css/custom_admin.css HTTP/1.1" 304
+2025-11-11 00:01:46,380 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52807 - "GET /admin/statics/js/bootstrap.min.js HTTP/1.1" 304
+2025-11-11 00:01:46,382 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52808 - "GET /admin/statics/js/select2.full.min.js HTTP/1.1" 304
+2025-11-11 00:01:46,386 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52805 - "GET /admin/statics/js/tabler.min.js HTTP/1.1" 304
+2025-11-11 00:01:46,388 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52806 - "GET /admin/statics/js/popper.min.js HTTP/1.1" 304
+2025-11-11 00:01:46,394 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52803 - "GET /admin/statics/js/flatpickr.min.js HTTP/1.1" 304
+2025-11-11 00:01:46,398 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52802 - "GET /admin/statics/js/main.js HTTP/1.1" 304
+2025-11-11 00:01:46,451 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52802 - "GET /admin_panel/static/webfonts/Inter-Regular.woff2 HTTP/1.1" 200
+2025-11-11 00:01:47,974 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52802 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-11 00:02:01,346 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52892 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-11 00:02:02,468 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52892 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-11 00:02:05,367 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52892 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-11 00:03:06,202 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53177 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-11 00:03:12,318 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53178 - "GET /admin/user/export/csv HTTP/1.1" 200
+2025-11-11 01:25:03,679 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 01:25:03,789 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 01:25:03,790 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 01:25:03,793 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 01:25:03,794 - uvicorn.error - INFO - server:94 - Finished server process [16600]
+2025-11-11 01:29:01,532 - app - INFO - config:48 - Application startup......................................
+2025-11-11 01:29:01,536 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 01:29:06,113 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54627 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-11 01:29:06,160 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54627 - "GET /admin_panel/static/css/custom_admin.css HTTP/1.1" 304
+2025-11-11 01:29:58,717 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 01:29:58,825 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 01:29:58,826 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 01:29:58,827 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 01:29:58,828 - uvicorn.error - INFO - server:94 - Finished server process [16880]
+2025-11-11 01:31:15,341 - app - INFO - config:48 - Application startup......................................
+2025-11-11 01:31:15,345 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 01:31:17,157 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55306 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-11 01:31:52,267 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 01:31:52,375 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 01:31:52,376 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 01:31:52,377 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 01:31:52,378 - uvicorn.error - INFO - server:94 - Finished server process [10244]
+2025-11-11 01:32:02,777 - app - INFO - config:48 - Application startup......................................
+2025-11-11 01:32:02,781 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 01:32:06,327 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55577 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-11 01:32:12,148 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55578 - "GET /admin/user/details/8 HTTP/1.1" 200
+2025-11-11 01:32:39,527 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 01:32:39,636 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 01:32:39,637 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 01:32:39,638 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 01:32:39,639 - uvicorn.error - INFO - server:94 - Finished server process [16016]
+2025-11-11 01:38:16,720 - app - INFO - config:48 - Application startup......................................
+2025-11-11 01:38:16,724 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 01:38:25,140 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57565 - "GET /admin/user/edit/8 HTTP/1.1" 200
+2025-11-11 01:39:10,006 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 01:39:10,118 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 01:39:10,119 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 01:39:10,120 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 01:39:10,121 - uvicorn.error - INFO - server:94 - Finished server process [20664]
+2025-11-11 02:01:02,592 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:01:02,597 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:01:07,356 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64627 - "GET /admin/user/edit/8 HTTP/1.1" 500
+2025-11-11 02:01:07,358 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 565, in edit
+    await self._edit(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 314, in _edit
+    if not model_view.can_edit or not model_view.is_accessible(request):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\views.py", line 53, in is_accessible
+    permission = get_permission_for_table(request, self.model.__tablename__)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\admin_permissions.py", line 15, in get_permission_for_table
+    if not user or not user.role or not user.role.permissions:
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 569, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1096, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1131, in _fire_loader_callables
+    return self.callable_(state, passive)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategies.py", line 922, in _load_for_state
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Parent instance <User at 0x2f565aa22a0> is not bound to a Session; lazy load operation of attribute 'role' cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-11-11 02:01:32,628 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64628 - "GET /admin/logout HTTP/1.1" 302
+2025-11-11 02:01:32,632 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64628 - "GET /admin/ HTTP/1.1" 302
+2025-11-11 02:01:32,658 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64628 - "GET /admin/login HTTP/1.1" 200
+2025-11-11 02:01:32,705 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64628 - "GET /admin_panel/static/css/custom_admin.css HTTP/1.1" 304
+2025-11-11 02:01:42,329 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64733 - "POST /admin/login HTTP/1.1" 302
+2025-11-11 02:01:42,368 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64733 - "GET /admin/ HTTP/1.1" 500
+2025-11-11 02:01:42,369 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 444, in index
+    return await self.templates.TemplateResponse(request, "sqladmin/index.html")
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "admin_panel\templates\sqladmin\index.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 2, in top-level template code
+    {% from 'sqladmin/_macros.html' import display_menu %}
+  File "admin_panel\templates\sqladmin\base.html", line 64, in top-level template code
+    {% block body %}
+  File "admin_panel\templates\sqladmin\layout.html", line 22, in block 'body'
+    {{ display_menu(admin._menu, request) }}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\async_utils.py", line 68, in auto_await
+    return await t.cast("t.Awaitable[V]", value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\runtime.py", line 773, in _async_invoke
+    rv = await self._func(*arguments)  # type: ignore
+  File "admin_panel\templates\sqladmin\_macros.html", line 49, in template
+    {{ menu_item(item, request) }}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\async_utils.py", line 68, in auto_await
+    return await t.cast("t.Awaitable[V]", value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\runtime.py", line 773, in _async_invoke
+    rv = await self._func(*arguments)  # type: ignore
+  File "admin_panel\templates\sqladmin\_macros.html", line 33, in template
+    {% if menu.is_visible(request) and menu.is_accessible(request) %}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\_menu.py", line 69, in is_accessible
+    return self.view.is_accessible(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\views.py", line 53, in is_accessible
+    permission = get_permission_for_table(request, self.model.__tablename__)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\admin_permissions.py", line 15, in get_permission_for_table
+    if not user or not user.role or not user.role.permissions:
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 569, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1096, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1131, in _fire_loader_callables
+    return self.callable_(state, passive)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategies.py", line 922, in _load_for_state
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Parent instance <User at 0x2f565a4fa60> is not bound to a Session; lazy load operation of attribute 'role' cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-11-11 02:10:30,203 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:10:30,312 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:10:30,313 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:10:30,314 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:10:30,315 - uvicorn.error - INFO - server:94 - Finished server process [20404]
+2025-11-11 02:10:31,691 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:10:31,695 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:10:31,754 - uvicorn.error - ERROR - on:134 - Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\_compat.py", line 53, in asyncio_run
+    return loop.run_until_complete(main)
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 628, in run_until_complete
+    self.run_forever()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 595, in run_forever
+    self._run_once()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1881, in _run_once
+    handle._run()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\server.py", line 70, in serve
+    with self.capture_signals():
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 142, in __exit__
+    next(self.gen)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\server.py", line 331, in capture_signals
+    signal.raise_signal(captured_signal)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+2025-11-11 02:10:33,251 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:10:33,255 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:10:37,575 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:10:37,581 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:10:39,087 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51518 - "GET /admin/ HTTP/1.1" 500
+2025-11-11 02:10:39,089 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 65, in wrapper_decorator
+    response = await auth_backend.authenticate(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\admin_auth.py", line 62, in authenticate
+    result = await session.exec(statement)
+AttributeError: 'SelectOfScalar' object has no attribute 'exec'
+2025-11-11 02:12:55,318 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:12:55,426 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:12:55,427 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:12:55,428 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:12:55,429 - uvicorn.error - INFO - server:94 - Finished server process [20748]
+2025-11-11 02:12:59,977 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:12:59,982 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:13:01,272 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:52270 - "GET /admin/ HTTP/1.1" 500
+2025-11-11 02:13:01,273 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 65, in wrapper_decorator
+    response = await auth_backend.authenticate(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\admin_auth.py", line 63, in authenticate
+    result = await session.exec(statement)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\ext\asyncio\session.py", line 98, in exec
+    result = await greenlet_spawn(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\orm\session.py", line 83, in exec
+    results = super().execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1633, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 715, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 1446, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 886, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 932, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\visitors.py", line 138, in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 4781, in visit_select
+    compile_state = select_stmt._compile_state_factory(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\base.py", line 701, in create_for_statement
+    return klass.create_for_statement(statement, compiler, **kw)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 447, in create_for_statement
+    return cls._create_orm_context(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 1215, in _create_orm_context
+    opt.process_compile_state(self)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 915, in process_compile_state
+    self._process(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 1143, in _process
+    loader.process_compile_state(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 1717, in process_compile_state
+    keys = self._prepare_for_compile_state(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 2077, in _prepare_for_compile_state
+    self._raise_for_no_match(parent_loader, mapper_entities)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 1627, in _raise_for_no_match
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Mapped class Mapper[UserRole(tbl_UserRole)] does not apply to any of the root entities in this query, e.g. Mapper[User(tbl_User)]. Please specify the full path from one of the root entities to the target attribute. 
+2025-11-11 02:16:19,534 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:16:19,646 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:16:19,647 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:16:19,648 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:16:19,649 - uvicorn.error - INFO - server:94 - Finished server process [13960]
+2025-11-11 02:16:47,008 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:16:47,014 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:16:50,436 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53473 - "GET /admin/ HTTP/1.1" 500
+2025-11-11 02:16:50,437 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 65, in wrapper_decorator
+    response = await auth_backend.authenticate(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\admin_auth.py", line 62, in authenticate
+    result = await session.exec(statement)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\ext\asyncio\session.py", line 98, in exec
+    result = await greenlet_spawn(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlmodel\orm\session.py", line 83, in exec
+    results = super().execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1633, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 715, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 1446, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 886, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 932, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\visitors.py", line 138, in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 4781, in visit_select
+    compile_state = select_stmt._compile_state_factory(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\sql\base.py", line 701, in create_for_statement
+    return klass.create_for_statement(statement, compiler, **kw)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 447, in create_for_statement
+    return cls._create_orm_context(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 1215, in _create_orm_context
+    opt.process_compile_state(self)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 915, in process_compile_state
+    self._process(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 1143, in _process
+    loader.process_compile_state(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 1717, in process_compile_state
+    keys = self._prepare_for_compile_state(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 2077, in _prepare_for_compile_state
+    self._raise_for_no_match(parent_loader, mapper_entities)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqlalchemy\orm\strategy_options.py", line 1627, in _raise_for_no_match
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Mapped class Mapper[UserRole(tbl_UserRole)] does not apply to any of the root entities in this query, e.g. Mapper[User(tbl_User)]. Please specify the full path from one of the root entities to the target attribute. 
+2025-11-11 02:17:44,143 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:17:44,253 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:17:44,254 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:17:44,255 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:17:44,256 - uvicorn.error - INFO - server:94 - Finished server process [19316]
+2025-11-11 02:17:48,715 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:17:48,719 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:17:53,382 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:53827 - "GET /admin/ HTTP/1.1" 500
+2025-11-11 02:17:53,384 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 444, in index
+    return await self.templates.TemplateResponse(request, "sqladmin/index.html")
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "admin_panel\templates\sqladmin\index.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 2, in top-level template code
+    {% from 'sqladmin/_macros.html' import display_menu %}
+  File "admin_panel\templates\sqladmin\base.html", line 64, in top-level template code
+    {% block body %}
+  File "admin_panel\templates\sqladmin\layout.html", line 22, in block 'body'
+    {{ display_menu(admin._menu, request) }}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\async_utils.py", line 68, in auto_await
+    return await t.cast("t.Awaitable[V]", value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\runtime.py", line 773, in _async_invoke
+    rv = await self._func(*arguments)  # type: ignore
+  File "admin_panel\templates\sqladmin\_macros.html", line 49, in template
+    {{ menu_item(item, request) }}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\async_utils.py", line 68, in auto_await
+    return await t.cast("t.Awaitable[V]", value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\runtime.py", line 773, in _async_invoke
+    rv = await self._func(*arguments)  # type: ignore
+  File "admin_panel\templates\sqladmin\_macros.html", line 33, in template
+    {% if menu.is_visible(request) and menu.is_accessible(request) %}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\_menu.py", line 69, in is_accessible
+    return self.view.is_accessible(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\views.py", line 53, in is_accessible
+    permission = get_permission_for_table(request, self.model.__tablename__)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\admin_permissions.py", line 15, in get_permission_for_table
+    if not user or not user.role or not user.role.permissions:
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\pydantic\main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'UserRole' object has no attribute 'permissions'
+2025-11-11 02:20:30,342 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:20:30,449 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:20:30,452 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:20:30,457 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:20:30,459 - uvicorn.error - INFO - server:94 - Finished server process [19764]
+2025-11-11 02:25:37,535 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:25:37,540 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:25:40,113 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56381 - "GET /admin/ HTTP/1.1" 200
+2025-11-11 02:25:40,159 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56381 - "GET /admin_panel/static/css/tabler.min.css HTTP/1.1" 304
+2025-11-11 02:25:40,161 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56385 - "GET /admin_panel/static/css/fontawesome.min.css HTTP/1.1" 304
+2025-11-11 02:25:40,163 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56388 - "GET /admin_panel/static/css/main.css HTTP/1.1" 304
+2025-11-11 02:25:40,168 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56387 - "GET /admin_panel/static/css/flatpickr.min.css HTTP/1.1" 304
+2025-11-11 02:25:40,170 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56386 - "GET /admin_panel/static/css/select2.min.css HTTP/1.1" 304
+2025-11-11 02:25:40,171 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56382 - "GET /admin_panel/static/css/tabler-icons.min.css HTTP/1.1" 304
+2025-11-11 02:25:40,196 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56382 - "GET /admin_panel/static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304
+2025-11-11 02:27:14,054 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:27:14,162 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:27:14,163 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:27:14,164 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:27:14,165 - uvicorn.error - INFO - server:94 - Finished server process [13848]
+2025-11-11 02:30:24,482 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:30:24,487 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:30:30,477 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57932 - "GET /admin/ HTTP/1.1" 200
+2025-11-11 02:30:31,727 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57932 - "GET /admin/ HTTP/1.1" 200
+2025-11-11 02:30:36,678 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57932 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-11 02:30:39,004 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57932 - "GET /admin/logout HTTP/1.1" 302
+2025-11-11 02:30:39,008 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57932 - "GET /admin/ HTTP/1.1" 302
+2025-11-11 02:30:39,016 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57932 - "GET /admin/login HTTP/1.1" 200
+2025-11-11 02:30:48,599 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57933 - "POST /admin/login HTTP/1.1" 302
+2025-11-11 02:30:48,612 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57933 - "GET /admin/ HTTP/1.1" 200
+2025-11-11 02:33:20,861 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:33:20,970 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:33:20,971 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:33:20,972 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:33:20,973 - uvicorn.error - INFO - server:94 - Finished server process [19312]
+2025-11-11 02:37:54,823 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:37:54,828 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:38:00,221 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60346 - "GET /admin/ HTTP/1.1" 500
+2025-11-11 02:38:00,223 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 444, in index
+    return await self.templates.TemplateResponse(request, "sqladmin/index.html")
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "admin_panel\templates\sqladmin\index.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 2, in top-level template code
+    {% from 'sqladmin/_macros.html' import display_menu %}
+  File "admin_panel\templates\sqladmin\base.html", line 64, in top-level template code
+    {% block body %}
+  File "admin_panel\templates\sqladmin\layout.html", line 22, in block 'body'
+    {{ display_menu(admin._menu, request) }}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\async_utils.py", line 68, in auto_await
+    return await t.cast("t.Awaitable[V]", value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\runtime.py", line 773, in _async_invoke
+    rv = await self._func(*arguments)  # type: ignore
+  File "admin_panel\templates\sqladmin\_macros.html", line 49, in template
+    {{ menu_item(item, request) }}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\async_utils.py", line 68, in auto_await
+    return await t.cast("t.Awaitable[V]", value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\runtime.py", line 773, in _async_invoke
+    rv = await self._func(*arguments)  # type: ignore
+  File "admin_panel\templates\sqladmin\_macros.html", line 33, in template
+    {% if menu.is_visible(request) and menu.is_accessible(request) %}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\_menu.py", line 69, in is_accessible
+    return self.view.is_accessible(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\views.py", line 53, in is_accessible
+    permission = get_permission_for_table(request, self.model.__tablename__)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\admin_permissions.py", line 13, in get_permission_for_table
+    if perm.table_name == table_name:  # <--- خط بحرانی
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\pydantic\main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'UserRolePermission' object has no attribute 'table_name'
+2025-11-11 02:38:23,330 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:38:23,440 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:38:23,441 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:38:23,442 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:38:23,443 - uvicorn.error - INFO - server:94 - Finished server process [1448]
+2025-11-11 02:38:27,437 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:38:27,441 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:38:28,991 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60499 - "GET /admin/ HTTP/1.1" 200
+2025-11-11 02:38:29,034 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60499 - "GET /admin_panel/static/css/custom_admin.css HTTP/1.1" 304
+2025-11-11 02:39:06,136 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:39:06,244 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:39:06,246 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:39:06,247 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:39:06,247 - uvicorn.error - INFO - server:94 - Finished server process [19872]
+2025-11-11 02:39:10,027 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:39:10,031 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:39:15,296 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60738 - "GET /admin/ HTTP/1.1" 200
+2025-11-11 02:40:28,219 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:40:28,328 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:40:28,329 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:40:28,330 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:40:28,331 - uvicorn.error - INFO - server:94 - Finished server process [13832]
+2025-11-11 02:40:31,489 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:40:31,493 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:40:34,553 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:61171 - "GET /admin/ HTTP/1.1" 500
+2025-11-11 02:40:34,554 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 444, in index
+    return await self.templates.TemplateResponse(request, "sqladmin/index.html")
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "admin_panel\templates\sqladmin\index.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 2, in top-level template code
+    {% from 'sqladmin/_macros.html' import display_menu %}
+  File "admin_panel\templates\sqladmin\base.html", line 64, in top-level template code
+    {% block body %}
+  File "admin_panel\templates\sqladmin\layout.html", line 22, in block 'body'
+    {{ display_menu(admin._menu, request) }}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\async_utils.py", line 68, in auto_await
+    return await t.cast("t.Awaitable[V]", value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\runtime.py", line 773, in _async_invoke
+    rv = await self._func(*arguments)  # type: ignore
+  File "admin_panel\templates\sqladmin\_macros.html", line 49, in template
+    {{ menu_item(item, request) }}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\async_utils.py", line 68, in auto_await
+    return await t.cast("t.Awaitable[V]", value)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\runtime.py", line 773, in _async_invoke
+    rv = await self._func(*arguments)  # type: ignore
+  File "admin_panel\templates\sqladmin\_macros.html", line 33, in template
+    {% if menu.is_visible(request) and menu.is_accessible(request) %}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\_menu.py", line 69, in is_accessible
+    return self.view.is_accessible(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\admin_panel\views.py", line 55, in is_accessible
+    return permission is not None and permission.can_view
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\pydantic\main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'UserRolePermission' object has no attribute 'can_view'
+2025-11-11 02:44:18,534 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:44:18,641 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:44:18,642 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:44:18,643 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:44:18,644 - uvicorn.error - INFO - server:94 - Finished server process [15004]
+2025-11-11 02:44:19,936 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:44:19,941 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:44:38,879 - app - INFO - config:48 - Application startup......................................
+2025-11-11 02:44:38,883 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-11 02:44:45,487 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62571 - "GET /admin/ HTTP/1.1" 200
+2025-11-11 02:44:47,737 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62571 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-11 02:44:49,046 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62571 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-11 02:44:50,030 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62571 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-11 02:44:51,534 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62571 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-11 02:44:56,566 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62571 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-11 02:44:59,473 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62571 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-11 02:45:00,024 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62571 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-11 02:45:08,879 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-11 02:45:08,986 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-11 02:45:08,987 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-11 02:45:08,988 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-11 02:45:08,989 - uvicorn.error - INFO - server:94 - Finished server process [17752]

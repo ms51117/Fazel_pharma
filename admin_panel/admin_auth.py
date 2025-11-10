@@ -2,10 +2,12 @@
 
 from typing import Optional
 from sqladmin.authentication import AuthenticationBackend
+from sqlalchemy.orm import selectinload
 from starlette.requests import Request
 from starlette.responses import RedirectResponse
 from sqlmodel import select  # ایمپورت کردن select از sqlmodel
 
+from app.models import UserRole
 # ایمپورت کردن session_maker که در مرحله قبل ساختیم
 from database import async_session_maker
 from app.models.user import User
@@ -55,7 +57,8 @@ class AdminAuth(AuthenticationBackend):
 
         # تغییر کلیدی: استفاده از async with و کوئری جدید
         async with async_session_maker() as session:
-            statement = select(User).where(User.mobile_number == mobile_number)
+            statement = select(User).where(User.mobile_number == mobile_number).options(selectinload(User.role).selectinload(UserRole.user_role_permission))
+
             result = await session.exec(statement)
             user = result.first()
 
