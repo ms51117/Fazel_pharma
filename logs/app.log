@@ -1218,3 +1218,192 @@ TypeError: object _TemplateResponse can't be used in 'await' expression
 2025-11-09 23:35:21,669 - app - INFO - config:52 - Application shutdown.....................................
 2025-11-09 23:35:21,672 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-11-09 23:35:21,673 - uvicorn.error - INFO - server:94 - Finished server process [18624]
+2025-11-09 23:37:11,345 - app - INFO - config:48 - Application startup......................................
+2025-11-09 23:37:11,349 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-09 23:37:26,438 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63133 - "GET /admin/ HTTP/1.1" 200
+2025-11-09 23:37:31,608 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63134 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-09 23:37:33,542 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63134 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-09 23:38:30,318 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-09 23:38:30,427 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-09 23:38:30,428 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-09 23:38:30,429 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-09 23:38:30,430 - uvicorn.error - INFO - server:94 - Finished server process [14828]
+2025-11-09 23:48:46,104 - app - INFO - config:48 - Application startup......................................
+2025-11-09 23:48:46,109 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-09 23:48:50,137 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63253 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-09 23:48:50,210 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63253 - "GET /admin/statics/webfonts/fa-solid-900.woff2 HTTP/1.1" 304
+2025-11-09 23:54:04,254 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-09 23:54:04,362 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-09 23:54:04,365 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-09 23:54:04,368 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-09 23:54:04,369 - uvicorn.error - INFO - server:94 - Finished server process [3740]
+2025-11-09 23:54:08,158 - app - INFO - config:48 - Application startup......................................
+2025-11-09 23:54:08,162 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-09 23:54:15,672 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63305 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-09 23:54:17,076 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63305 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-09 23:54:17,795 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63305 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-09 23:54:18,215 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63305 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-09 23:54:18,559 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63305 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-09 23:55:26,343 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-09 23:55:26,450 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-09 23:55:26,451 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-09 23:55:26,452 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-09 23:55:26,453 - uvicorn.error - INFO - server:94 - Finished server process [5172]
+2025-11-09 23:58:40,235 - app - INFO - config:48 - Application startup......................................
+2025-11-09 23:58:40,239 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-09 23:58:44,412 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63344 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-09 23:58:57,603 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63345 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-09 23:58:58,677 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:63345 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 17:58:04,695 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 17:58:04,802 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 17:58:04,804 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 17:58:04,805 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 17:58:04,806 - uvicorn.error - INFO - server:94 - Finished server process [14224]
+2025-11-10 17:58:11,030 - app - INFO - config:48 - Application startup......................................
+2025-11-10 17:58:11,035 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 17:58:12,934 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56111 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 17:58:12,984 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56111 - "GET /admin/statics/css/tabler.min.css HTTP/1.1" 304
+2025-11-10 17:58:12,989 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56112 - "GET /admin/statics/css/tabler-icons.min.css HTTP/1.1" 304
+2025-11-10 17:58:12,995 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56116 - "GET /admin/statics/css/fontawesome.min.css HTTP/1.1" 304
+2025-11-10 17:58:12,997 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56119 - "GET /admin/statics/css/main.css HTTP/1.1" 304
+2025-11-10 17:58:12,999 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56117 - "GET /admin/statics/css/select2.min.css HTTP/1.1" 304
+2025-11-10 17:58:13,001 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56118 - "GET /admin/statics/css/flatpickr.min.css HTTP/1.1" 304
+2025-11-10 17:58:13,004 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56111 - "GET /admin/statics/js/jquery.min.js HTTP/1.1" 304
+2025-11-10 17:58:13,006 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56112 - "GET /admin/statics/js/tabler.min.js HTTP/1.1" 304
+2025-11-10 17:58:13,016 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56116 - "GET /admin/statics/js/popper.min.js HTTP/1.1" 304
+2025-11-10 17:58:13,019 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56117 - "GET /admin/statics/js/select2.full.min.js HTTP/1.1" 304
+2025-11-10 17:58:13,022 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56118 - "GET /admin/statics/js/flatpickr.min.js HTTP/1.1" 304
+2025-11-10 17:58:13,026 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56119 - "GET /admin/statics/js/bootstrap.min.js HTTP/1.1" 304
+2025-11-10 17:58:13,031 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56111 - "GET /admin/statics/js/main.js HTTP/1.1" 304
+2025-11-10 17:58:13,038 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56111 - "GET /admin/statics/webfonts/fa-solid-900.woff2 HTTP/1.1" 304
+2025-11-10 17:58:15,295 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56111 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 17:58:16,481 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56111 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:02:02,848 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 18:02:07,313 - app - INFO - config:48 - Application startup......................................
+2025-11-10 18:02:07,318 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 18:02:37,698 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57148 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:02:38,963 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57148 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:02:58,691 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57149 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:02:59,323 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57149 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:02:59,502 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57149 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:03:05,223 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57227 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:03:08,630 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57227 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-10 18:03:10,086 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57227 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:03:10,950 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57227 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:03:11,580 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57227 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 18:13:02,925 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 18:13:03,035 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 18:13:03,036 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 18:13:03,037 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 18:13:03,038 - uvicorn.error - INFO - server:94 - Finished server process [9624]
+2025-11-10 18:14:59,202 - app - INFO - config:48 - Application startup......................................
+2025-11-10 18:14:59,206 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 18:15:02,821 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60148 - "GET /admin/patient/list HTTP/1.1" 500
+2025-11-10 18:15:02,822 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 466, in list
+    return await self.templates.TemplateResponse(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "admin_panel\templates\sqladmin\list.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 1, in top-level template code
+    {% extends "sqladmin/base.html" %}
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "admin_panel\templates\sqladmin\base.html", line 74, in template
+    {% block head %}{% endblock %}
+jinja2.exceptions.TemplateAssertionError: block 'head' defined twice
+2025-11-10 18:15:50,074 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 18:15:50,182 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 18:15:50,185 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 18:15:50,186 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 18:15:50,186 - uvicorn.error - INFO - server:94 - Finished server process [11528]
+2025-11-10 18:15:54,137 - app - INFO - config:48 - Application startup......................................
+2025-11-10 18:15:54,141 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 18:15:55,813 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:60362 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 18:19:01,038 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 18:19:01,150 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 18:19:01,151 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 18:19:01,152 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 18:19:01,153 - uvicorn.error - INFO - server:94 - Finished server process [21116]
+2025-11-10 18:19:06,381 - app - INFO - config:48 - Application startup......................................
+2025-11-10 18:19:06,385 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 18:19:32,784 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:61237 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 18:20:12,691 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 18:20:12,800 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 18:20:12,803 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 18:20:12,806 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 18:20:12,807 - uvicorn.error - INFO - server:94 - Finished server process [1652]
+2025-11-10 18:23:18,027 - app - INFO - config:48 - Application startup......................................
+2025-11-10 18:23:18,031 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 18:23:21,032 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62157 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 18:24:42,664 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 18:24:42,773 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 18:24:42,775 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 18:24:42,777 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 18:24:42,778 - uvicorn.error - INFO - server:94 - Finished server process [15180]
