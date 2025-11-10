@@ -47,7 +47,7 @@ def init_admin(app: FastAPI, engine):
 
     # اتصال فایل‌های استاتیک ادمین (این بخش بدون تغییر باقی می‌ماند)
     app.mount(
-        "/admin/static",
+        "/admin_panel/static",
         StaticFiles(directory="admin_panel/static"),
         name="admin_static"
     )

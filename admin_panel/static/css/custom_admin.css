@@ -1,0 +1,47 @@
+/* static/css/custom_admin.css */
+
+/* 1. تعریف فونت وزیرمتن برای استفاده در سایت */
+@font-face {
+font-family: 'Vazirmatn';
+src: url('../webfonts/Vazir-Medium.woff2') format('woff2'); /* مسیر نسبت به فایل CSS */
+font-weight: normal;
+font-style: normal;
+font-display: swap; /* باعث می‌شود متن سریع‌تر نمایش داده شود */
+}
+
+/* (اختیاری) تعریف نسخه Bold فونت وزیرمتن */
+@font-face {
+font-family: 'Vazirmatn';
+src: url('../webfonts/Vazir-Bold.woff2') format('woff2');
+font-weight: bold;
+font-style: normal;
+font-display: swap;
+}
+
+/* 2. تعریف فونت Inter برای حروف انگلیسی */
+@font-face {
+font-family: 'Inter';
+src: url('../webfonts/Inter-Regular.woff2') format('woff2'); /* یا هر فرمتی که دانلود کردید */
+font-weight: normal;
+font-style: normal;
+font-display: swap;
+}
+
+
+/* 3. اعمال فونت‌ها به کل پنل ادمین */
+body, h1, h2, h3, h4, h5, h6, .main-sidebar, .content-wrapper, input, button, select, textarea, .card-title, .table {
+/*
+اولویت‌بندی فونت:
+1. برای حروف فارسی، از Vazirmatn استفاده کن.
+2. برای حروف انگلیسی و اعداد، از Inter استفاده کن.
+3. اگر هیچکدام نبود، از فونت‌های پیش‌فرض sans-serif مرورگر استفاده کن.
+*/
+font-family: 'Vazirmatn', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+/* رفع مشکل نمایش اعداد در فونت‌های فارسی (اختیاری ولی پیشنهادی) */
+body {
+-moz-font-feature-settings: "ss02";
+-webkit-font-feature-settings: "ss02";
+font-feature-settings: "ss02";
+}

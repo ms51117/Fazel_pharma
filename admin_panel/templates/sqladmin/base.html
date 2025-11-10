@@ -1,21 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <link rel="stylesheet" href="{{ url_for('admin:statics', path='css/tabler.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('admin:statics', path='css/tabler-icons.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('admin:statics', path='css/fontawesome.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('admin:statics', path='css/select2.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('admin:statics', path='css/flatpickr.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('admin:statics', path='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('admin_static', path='css/tabler.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('admin_static', path='css/tabler-icons.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('admin_static', path='css/fontawesome.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('admin_static', path='css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('admin_static', path='css/flatpickr.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('admin_static', path='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('admin_static', path='css/custom_admin.css') }}">
+
   {% if admin.favicon_url %}
   <link rel="icon" href="{{ admin.favicon_url }}">
   {% endif %}
   {% block head %}
   {% endblock %}
   <title>{{ admin.title }}</title>
+  <style>
+        body {
+          direction: rtl;
+          text-align: right;
+        }
+
+        .main-sidebar {
+          right: 0;
+          left: auto;
+        }
+
+        .content-wrapper,
+        .main-header,
+        .main-footer {
+          margin-right: 250px; /* This should match the sidebar width */
+          margin-left: 0;
+        }
+
+        .nav-sidebar .nav-link i {
+          margin-right: 0;
+          margin-left: .5rem;
+        }
+
+        .brand-link .brand-image {
+            margin-right: 0;
+            margin-left: .5rem;
+        }
+
+        .content-header h1 {
+          float: right;
+        }
+
+        .content-header .breadcrumb {
+          float: left;
+        }
+
+        .text-right {
+            text-align: left !important;
+        }
+  </style>
 </head>
 
 <body>

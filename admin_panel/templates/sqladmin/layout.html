@@ -2,7 +2,7 @@
 {% from 'sqladmin/_macros.html' import display_menu %}
 {% block body %}
 <div class="wrapper">
-  <aside class="navbar navbar-expand-lg navbar-vertical navbar-expand-md navbar-dark">
+  <aside class="navbar navbar-expand-lg navbar-vertical navbar-expand-md navbar-dark navbar-right">
     <div class="container-fluid">
       <h1 class="navbar-brand navbar-brand-autodark">
         <a href="{{ url_for('admin:index') }}">
@@ -25,7 +25,7 @@
       {% if admin.authentication_backend %}
       <a href="{{ request.url_for('admin:logout') }}" class="btn btn-secondary btn-icon">
         <i class="fa fa-sign-out"></i>
-        <span>Logout</span>
+        <span> خروج </span>
       </a>
       {% endif %}
     </div>

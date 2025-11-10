@@ -93,7 +93,7 @@
                   <tr>
                     <th class="w-1"><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select all"
                         id="select-all"></th>
-                    <th class="w-1"></th>
+
                     {% for name in model_view._list_prop_names %}
                     {% set label = model_view._column_labels.get(name, name) %}
                     <th>
@@ -112,6 +112,7 @@
                       {% endif %}
                     </th>
                     {% endfor %}
+                    <th class="w-1"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -121,6 +122,27 @@
                       <input type="hidden" value="{{ get_object_identifier(row) }}">
                       <input class="form-check-input m-0 align-middle select-box" type="checkbox" aria-label="Select item">
                     </td>
+
+                    {% for name in model_view._list_prop_names %}
+                    {% set value, formatted_value = model_view.get_list_value(row, name) %}
+                    {% if name in model_view._relation_names %}
+                    {% if is_list( value ) %}
+                    <td>
+                      {% for elem, formatted_elem in zip(value, formatted_value) %}
+                        {% if model_view.show_compact_lists %}
+                          <a href="{{ model_view._build_url_for('admin:details', request, elem) }}">({{ formatted_elem }})</a>
+                        {% else %}
+                          <a href="{{ model_view._build_url_for('admin:details', request, elem) }}">{{ formatted_elem }}</a><br/>
+                        {% endif %}
+                      {% endfor %}
+                    </td>
+                    {% else %}
+                    <td><a href="{{ model_view._url_for_details_with_prop(request, row, name) }}">{{ formatted_value }}</a></td>
+                    {% endif %}
+                    {% else %}
+                    <td>{{ formatted_value }}</td>
+                    {% endif %}
+                    {% endfor %}
                     <td class="text-end">
                       {% if model_view.can_view_details %}
                       <a href="{{ model_view._build_url_for('admin:details', request, row) }}" data-bs-toggle="tooltip"
@@ -142,26 +164,6 @@
                       </a>
                       {% endif %}
                     </td>
-                    {% for name in model_view._list_prop_names %}
-                    {% set value, formatted_value = model_view.get_list_value(row, name) %}
-                    {% if name in model_view._relation_names %}
-                    {% if is_list( value ) %}
-                    <td>
-                      {% for elem, formatted_elem in zip(value, formatted_value) %}
-                        {% if model_view.show_compact_lists %}
-                          <a href="{{ model_view._build_url_for('admin:details', request, elem) }}">({{ formatted_elem }})</a>
-                        {% else %}
-                          <a href="{{ model_view._build_url_for('admin:details', request, elem) }}">{{ formatted_elem }}</a><br/>
-                        {% endif %}
-                      {% endfor %}
-                    </td>
-                    {% else %}
-                    <td><a href="{{ model_view._url_for_details_with_prop(request, row, name) }}">{{ formatted_value }}</a></td>
-                    {% endif %}
-                    {% else %}
-                    <td>{{ formatted_value }}</td>
-                    {% endif %}
-                    {% endfor %}
                   </tr>
                   {% endfor %}
                 </tbody>

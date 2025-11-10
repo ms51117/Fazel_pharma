@@ -1407,3 +1407,681 @@ jinja2.exceptions.TemplateAssertionError: block 'head' defined twice
 2025-11-10 18:24:42,775 - app - INFO - config:52 - Application shutdown.....................................
 2025-11-10 18:24:42,777 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-11-10 18:24:42,778 - uvicorn.error - INFO - server:94 - Finished server process [15180]
+2025-11-10 18:33:06,836 - app - INFO - config:48 - Application startup......................................
+2025-11-10 18:33:06,841 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 18:33:09,040 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64578 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 18:38:17,527 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:38:18,412 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:38:20,879 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 18:38:21,966 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:38:22,885 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:38:23,629 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:38:25,691 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 18:38:26,449 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:38:27,527 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:38:31,559 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:38:31,671 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49369 - "GET /admin/statics/css/tabler-icons.min.css.map HTTP/1.1" 200
+2025-11-10 18:44:25,092 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 18:44:25,205 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 18:44:25,206 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 18:44:25,207 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 18:44:25,208 - uvicorn.error - INFO - server:94 - Finished server process [19228]
+2025-11-10 18:44:30,128 - app - INFO - config:48 - Application startup......................................
+2025-11-10 18:44:30,132 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 18:44:33,520 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51325 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:44:33,541 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51325 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:06,829 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 18:57:06,937 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 18:57:06,940 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 18:57:06,942 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 18:57:06,943 - uvicorn.error - INFO - server:94 - Finished server process [3532]
+2025-11-10 18:57:10,914 - app - INFO - config:48 - Application startup......................................
+2025-11-10 18:57:10,919 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 18:57:13,069 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:13,103 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:15,500 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:15,518 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:16,908 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:16,925 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:18,059 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:18,077 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:18,822 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:18,836 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54772 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:27,479 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:27,493 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:29,631 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:57:29,650 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:33,377 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:33,396 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:34,193 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-10 18:57:34,214 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:35,312 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:57:35,332 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:35,982 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:57:35,996 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:37,072 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-10 18:57:37,092 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:38,475 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:38,495 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:39,547 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 18:57:39,571 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:44,102 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 18:57:44,122 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:57:45,270 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:57:45,292 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:54773 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:29,640 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:29,654 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:31,001 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:31,015 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:31,512 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:31,528 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:31,978 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:31,992 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:32,590 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:32,605 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:33,095 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:33,109 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:33,582 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:33,597 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:34,014 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:34,028 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:34,617 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:34,631 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:35,120 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:35,135 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:35,341 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:35,359 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:35,568 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:35,600 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:35,762 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:35,783 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 18:58:36,027 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 18:58:36,041 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:55150 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:03:10,068 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 19:03:10,177 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 19:03:10,178 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 19:03:10,181 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 19:03:10,183 - uvicorn.error - INFO - server:94 - Finished server process [17356]
+2025-11-10 19:03:14,088 - app - INFO - config:48 - Application startup......................................
+2025-11-10 19:03:14,093 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 19:03:15,472 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:03:15,489 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:03:20,348 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:03:20,363 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:03:21,368 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:03:21,382 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:03:22,508 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:03:22,525 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:03:23,453 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:03:23,468 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56414 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:03:49,395 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 19:03:49,505 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 19:03:49,506 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 19:03:49,507 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 19:03:49,508 - uvicorn.error - INFO - server:94 - Finished server process [20896]
+2025-11-10 19:03:53,720 - app - INFO - config:48 - Application startup......................................
+2025-11-10 19:03:53,724 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 19:03:56,579 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56614 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:03:56,593 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56614 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:07:31,338 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 19:07:31,449 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 19:07:31,450 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 19:07:31,452 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 19:07:31,452 - uvicorn.error - INFO - server:94 - Finished server process [19612]
+2025-11-10 19:07:35,215 - app - INFO - config:48 - Application startup......................................
+2025-11-10 19:07:35,220 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 19:07:38,076 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57591 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:07:38,094 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57591 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:07:39,601 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57591 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:07:39,618 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:57591 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:09:05,252 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 19:09:05,360 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 19:09:05,361 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 19:09:05,362 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 19:09:05,363 - uvicorn.error - INFO - server:94 - Finished server process [3304]
+2025-11-10 19:10:02,454 - app - INFO - config:48 - Application startup......................................
+2025-11-10 19:10:02,458 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 19:10:03,856 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58270 - "GET /admin/dashboard HTTP/1.1" 200
+2025-11-10 19:10:03,876 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58270 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:12,059 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:10:12,076 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:13,755 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 19:10:13,771 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:14,934 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 19:10:14,953 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:17,526 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 19:10:17,546 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:17,948 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:10:17,969 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:18,484 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 19:10:18,503 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:19,934 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/patient/list HTTP/1.1" 200
+2025-11-10 19:10:19,957 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:21,145 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 19:10:21,169 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:21,570 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:10:21,594 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58271 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
+2025-11-10 19:10:34,720 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 19:10:34,829 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 19:10:34,830 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 19:10:34,831 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 19:10:34,832 - uvicorn.error - INFO - server:94 - Finished server process [6448]
+2025-11-10 19:36:01,541 - app - INFO - config:48 - Application startup......................................
+2025-11-10 19:36:01,546 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 19:36:03,193 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64509 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:36:37,088 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 19:36:37,198 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 19:36:37,201 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 19:36:37,204 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 19:36:37,205 - uvicorn.error - INFO - server:94 - Finished server process [20276]
+2025-11-10 19:36:41,193 - app - INFO - config:48 - Application startup......................................
+2025-11-10 19:36:41,198 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 19:36:43,550 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64672 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:36:44,756 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64672 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:36:45,569 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64672 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:36:46,009 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64672 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:36:46,206 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64672 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:36:46,360 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64672 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:36:46,549 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64672 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:36:47,144 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64672 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 19:37:32,142 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:64673 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 19:39:10,377 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65289 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 19:44:11,728 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:50408 - "GET /admin/drug/details/1 HTTP/1.1" 200
+2025-11-10 19:44:41,784 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:50410 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 19:49:31,676 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 19:49:31,786 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 19:49:31,787 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 19:49:31,788 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 19:49:31,789 - uvicorn.error - INFO - server:94 - Finished server process [20440]
+2025-11-10 19:49:35,868 - app - INFO - config:48 - Application startup......................................
+2025-11-10 19:49:35,873 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 19:49:42,646 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51749 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 19:54:40,595 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 19:54:40,707 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 19:54:40,708 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 19:54:40,710 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 19:54:40,711 - uvicorn.error - INFO - server:94 - Finished server process [15256]
+2025-11-10 20:29:26,280 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:29:26,285 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:29:29,247 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:61697 - "GET /admin/drug/list HTTP/1.1" 500
+2025-11-10 20:29:29,249 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 466, in list
+    return await self.templates.TemplateResponse(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templates\sqladmin\list.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 2, in top-level template code
+    {% from 'sqladmin/_macros.html' import display_menu %}
+  File "admin_panel\templates\sqladmin\base.html", line 13, in top-level template code
+    <link rel="stylesheet" href="{{ url_for('admin:static', path='css/custom_admin.css') }}">
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 49, in url_for
+    return request.url_for(__name, **path_params)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\requests.py", line 187, in url_for
+    url_path = url_path_provider.url_path_for(name, **path_params)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 663, in url_path_for
+    raise NoMatchFound(name, path_params)
+starlette.routing.NoMatchFound: No route exists for name "admin:static" and params "path".
+2025-11-10 20:30:18,540 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 20:30:18,648 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 20:30:18,649 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 20:30:18,650 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 20:30:18,651 - uvicorn.error - INFO - server:94 - Finished server process [744]
+2025-11-10 20:30:22,154 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:30:22,158 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:30:25,245 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:61946 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:30:25,277 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:61946 - "GET /admin/statics/css/custom_admin.css HTTP/1.1" 404
+2025-11-10 20:31:30,962 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 20:31:31,071 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 20:31:31,072 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 20:31:31,073 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 20:31:31,074 - uvicorn.error - INFO - server:94 - Finished server process [14864]
+2025-11-10 20:31:34,791 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:31:34,795 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:31:36,486 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62228 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:31:36,508 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62228 - "GET /admin/statics/css/custom_admin.css HTTP/1.1" 404
+2025-11-10 20:31:38,098 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62228 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:31:38,113 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62228 - "GET /admin/statics/css/custom_admin.css HTTP/1.1" 404
+2025-11-10 20:31:38,607 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62228 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:31:38,624 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62228 - "GET /admin/statics/css/custom_admin.css HTTP/1.1" 404
+2025-11-10 20:31:38,795 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62228 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:31:38,814 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62228 - "GET /admin/statics/css/custom_admin.css HTTP/1.1" 404
+2025-11-10 20:32:48,200 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 20:32:48,307 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 20:32:48,308 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 20:32:48,309 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 20:32:48,310 - uvicorn.error - INFO - server:94 - Finished server process [1832]
+2025-11-10 20:32:51,969 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:32:51,974 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:32:53,041 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62534 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:32:54,106 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62534 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:32:54,522 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62534 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:32:54,716 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:62534 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:37:10,378 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 20:37:10,489 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 20:37:10,490 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 20:37:10,491 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 20:37:10,492 - uvicorn.error - INFO - server:94 - Finished server process [12920]
+2025-11-10 20:42:17,042 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:42:17,046 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:42:27,158 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65070 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:42:28,576 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65070 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:42:29,000 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65070 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:42:29,229 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65070 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:42:29,414 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65070 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:42:29,591 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65070 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:42:29,752 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65070 - "GET /admin/drug/list HTTP/1.1" 200
+2025-11-10 20:42:35,731 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:65071 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 20:44:19,925 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 20:44:20,035 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 20:44:20,037 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 20:44:20,039 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 20:44:20,040 - uvicorn.error - INFO - server:94 - Finished server process [13328]
+2025-11-10 20:44:23,548 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:44:23,552 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:44:24,375 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49187 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 20:45:43,071 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 20:45:43,181 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 20:45:43,182 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 20:45:43,183 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 20:45:43,184 - uvicorn.error - INFO - server:94 - Finished server process [18120]
+2025-11-10 20:45:46,634 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:45:46,638 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:45:50,489 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:49835 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 20:47:21,834 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:50226 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 20:47:22,623 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:50226 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 20:48:11,716 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 20:48:11,825 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 20:48:11,826 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 20:48:11,827 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 20:48:11,828 - uvicorn.error - INFO - server:94 - Finished server process [10780]
+2025-11-10 20:48:15,829 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:48:15,834 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:48:17,136 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:50471 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 20:48:46,082 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 20:48:46,192 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 20:48:46,193 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 20:48:46,194 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 20:48:46,195 - uvicorn.error - INFO - server:94 - Finished server process [16644]
+2025-11-10 20:50:21,120 - app - INFO - config:48 - Application startup......................................
+2025-11-10 20:50:21,126 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 20:50:24,706 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:51021 - "GET /admin/user/list HTTP/1.1" 500
+2025-11-10 20:50:24,707 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 466, in list
+    return await self.templates.TemplateResponse(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "admin_panel\templates\sqladmin\list.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 2, in top-level template code
+    {% from 'sqladmin/_macros.html' import display_menu %}
+  File "admin_panel\templates\sqladmin\base.html", line 13, in top-level template code
+    <link rel="stylesheet" href="{{ url_for('static', path='css/custom_admin.css') }}">
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 49, in url_for
+    return request.url_for(__name, **path_params)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\requests.py", line 187, in url_for
+    url_path = url_path_provider.url_path_for(name, **path_params)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 663, in url_path_for
+    raise NoMatchFound(name, path_params)
+starlette.routing.NoMatchFound: No route exists for name "static" and params "path".
+2025-11-10 21:10:34,534 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:10:34,641 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:10:34,644 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:10:34,645 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:10:34,646 - uvicorn.error - INFO - server:94 - Finished server process [7904]
+2025-11-10 21:11:06,867 - app - INFO - config:48 - Application startup......................................
+2025-11-10 21:11:06,872 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 21:11:10,800 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56067 - "GET /admin/user/list HTTP/1.1" 500
+2025-11-10 21:11:10,802 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 466, in list
+    return await self.templates.TemplateResponse(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "admin_panel\templates\sqladmin\list.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 2, in top-level template code
+    {% from 'sqladmin/_macros.html' import display_menu %}
+  File "admin_panel\templates\sqladmin\base.html", line 13, in top-level template code
+    <link rel="stylesheet" href="{{ url_for('admin_static:static', path='css/custom_admin.css') }}">
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 49, in url_for
+    return request.url_for(__name, **path_params)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\requests.py", line 187, in url_for
+    url_path = url_path_provider.url_path_for(name, **path_params)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 663, in url_path_for
+    raise NoMatchFound(name, path_params)
+starlette.routing.NoMatchFound: No route exists for name "admin_static:static" and params "path".
+2025-11-10 21:12:48,152 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:12:48,261 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:12:48,262 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:12:48,263 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:12:48,264 - uvicorn.error - INFO - server:94 - Finished server process [19312]
+2025-11-10 21:12:51,609 - app - INFO - config:48 - Application startup......................................
+2025-11-10 21:12:51,614 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 21:12:53,634 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56518 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 21:12:53,652 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56518 - "GET /admin/static/css/custom_admin.css HTTP/1.1" 404
+2025-11-10 21:20:05,256 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:20:05,365 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:20:05,366 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:20:05,367 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:20:05,368 - uvicorn.error - INFO - server:94 - Finished server process [16524]
+2025-11-10 21:20:08,655 - app - INFO - config:48 - Application startup......................................
+2025-11-10 21:20:08,659 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 21:20:14,287 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58313 - "GET /admin/user/list HTTP/1.1" 500
+2025-11-10 21:20:14,288 - uvicorn.error - ERROR - httptools_impl:414 - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\applications.py", line 1133, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\sessions.py", line 85, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\authentication.py", line 72, in wrapper_decorator
+    return await func(*args, **kwargs)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\application.py", line 466, in list
+    return await self.templates.TemplateResponse(
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 65, in TemplateResponse
+    content = await template.render_async(context)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1318, in render_async
+    return self.environment.handle_exception()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\jinja2\environment.py", line 1315, in <listcomp>
+    [n async for n in self.root_render_func(ctx)]  # type: ignore
+  File "admin_panel\templates\sqladmin\list.html", line 1, in top-level template code
+    {% extends "sqladmin/layout.html" %}
+  File "admin_panel\templates\sqladmin\layout.html", line 2, in top-level template code
+    {% from 'sqladmin/_macros.html' import display_menu %}
+  File "admin_panel\templates\sqladmin\base.html", line 13, in top-level template code
+    <link rel="stylesheet" href="{{ url_for('admin_static:static', path='css/custom_admin.css') }}">
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\sqladmin\templating.py", line 49, in url_for
+    return request.url_for(__name, **path_params)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\requests.py", line 187, in url_for
+    url_path = url_path_provider.url_path_for(name, **path_params)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 663, in url_path_for
+    raise NoMatchFound(name, path_params)
+starlette.routing.NoMatchFound: No route exists for name "admin_static:static" and params "path".
+2025-11-10 21:21:23,638 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:21:23,745 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:21:23,746 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:21:23,748 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:21:23,748 - uvicorn.error - INFO - server:94 - Finished server process [14036]
+2025-11-10 21:21:32,385 - app - INFO - config:48 - Application startup......................................
+2025-11-10 21:21:32,389 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 21:21:37,246 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58662 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 21:21:37,267 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58662 - "GET /admin/static/css/custom_admin.css HTTP/1.1" 404
+2025-11-10 21:22:09,020 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:22:09,130 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:22:09,131 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:22:09,132 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:22:09,133 - uvicorn.error - INFO - server:94 - Finished server process [16484]
+2025-11-10 21:22:12,616 - app - INFO - config:48 - Application startup......................................
+2025-11-10 21:22:12,621 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 21:22:13,818 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58821 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 21:22:13,862 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58821 - "GET /admin_panel/static/css/custom_admin.css HTTP/1.1" 200
+2025-11-10 21:22:13,885 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58821 - "GET /admin_panel/static/webfonts/Vazir-Bold.woff2 HTTP/1.1" 200
+2025-11-10 21:22:13,889 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:58822 - "GET /admin_panel/static/webfonts/Vazir-Medium.woff2 HTTP/1.1" 200
+2025-11-10 21:23:07,151 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:23:07,259 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:23:07,260 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:23:07,261 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:23:07,262 - uvicorn.error - INFO - server:94 - Finished server process [10304]
+2025-11-10 21:23:10,940 - app - INFO - config:48 - Application startup......................................
+2025-11-10 21:23:10,945 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-11-10 21:23:14,312 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59084 - "GET /admin/user/list HTTP/1.1" 200
+2025-11-10 21:23:14,356 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59085 - "GET /admin_panel/static/css/tabler-icons.min.css HTTP/1.1" 200
+2025-11-10 21:23:14,358 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59089 - "GET /admin_panel/static/css/flatpickr.min.css HTTP/1.1" 200
+2025-11-10 21:23:14,360 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59084 - "GET /admin_panel/static/css/tabler.min.css HTTP/1.1" 200
+2025-11-10 21:23:14,362 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59088 - "GET /admin_panel/static/css/select2.min.css HTTP/1.1" 200
+2025-11-10 21:23:14,363 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59090 - "GET /admin_panel/static/css/main.css HTTP/1.1" 200
+2025-11-10 21:23:14,365 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59087 - "GET /admin_panel/static/css/fontawesome.min.css HTTP/1.1" 200
+2025-11-10 21:23:14,416 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:59084 - "GET /admin_panel/static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200
+2025-11-10 21:24:06,126 - uvicorn.error - INFO - server:264 - Shutting down
+2025-11-10 21:24:06,237 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-11-10 21:24:06,238 - app - INFO - config:52 - Application shutdown.....................................
+2025-11-10 21:24:06,239 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-11-10 21:24:06,240 - uvicorn.error - INFO - server:94 - Finished server process [5992]
