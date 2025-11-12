@@ -36,4 +36,10 @@ class DiseaseType(DiseaseTypeBase, BaseDates, table=True):
 
     # Relationships
     drug: list["Drug"] = Relationship(back_populates="disease_type", link_model=DrugMap)
+    def __str__(self) -> str:
+        """
+        این متد به پایتون و sqladmin می‌گوید که هرگاه خواستید یک نمونه
+        از این کلاس را به صورت رشته نمایش دهید، فقط مقدار role_name را برگردانید.
+        """
+        return self.diseases_name
 

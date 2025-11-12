@@ -113,5 +113,12 @@ class User(UserBase, BaseDates, table=True):
     order: Optional["Order"]=Relationship(back_populates="user")
     messages: Optional["Message"] = Relationship(back_populates="user")
 
+    def __str__(self) -> str:
+        """
+        این متد به پایتون و sqladmin می‌گوید که هرگاه خواستید یک نمونه
+        از این کلاس را به صورت رشته نمایش دهید، فقط مقدار role_name را برگردانید.
+        """
+        return self.full_name
+
 
 

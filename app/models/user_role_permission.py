@@ -52,3 +52,9 @@ class UserRolePermission(UserRolePermissionBase, BaseDates, table=True):
 
     # relationship
     user_role: "UserRole" = Relationship(back_populates="user_role_permission")
+    def __str__(self) -> str:
+        """
+        این متد به پایتون و sqladmin می‌گوید که هرگاه خواستید یک نمونه
+        از این کلاس را به صورت رشته نمایش دهید، فقط مقدار role_name را برگردانید.
+        """
+        return self.form_name

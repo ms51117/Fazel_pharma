@@ -14,8 +14,8 @@
         <table class="table card-table table-vcenter text-nowrap table-hover table-bordered">
           <thead>
             <tr>
-              <th class="w-1">Column</th>
-              <th class="w-1">Value</th>
+              <th class="w-1">ستون</th>
+              <th class="w-1">مقدار</th>
             </tr>
           </thead>
           <tbody>
@@ -51,7 +51,7 @@
         <div class="row">
           <div class="col-md-1">
             <a href="{{ url_for('admin:list', identity=model_view.identity) }}" class="btn">
-              Go Back
+              برگشت
             </a>
           </div>
           {% if model_view.can_delete %}
@@ -59,14 +59,14 @@
             <a href="#" data-name="{{ model_view.name }}" data-pk="{{ get_object_identifier(model) }}"
               data-url="{{ model_view._url_for_delete(request, model) }}" data-bs-toggle="modal"
               data-bs-target="#modal-delete" class="btn btn-danger">
-              Delete
+              حذف
             </a>
           </div>
           {% endif %}
           {% if model_view.can_edit %}
           <div class="col-md-1">
             <a href="{{ model_view._build_url_for('admin:edit', request, model) }}" class="btn btn-primary">
-              Edit
+              ویرایش
             </a>
           </div>
           {% endif %}

@@ -77,5 +77,11 @@ class PaymentList(PaymentListBase, BaseDates, table=True):
     # Relationships
     order: "Order" = Relationship(back_populates="payment_list")
     user: "User" = Relationship(back_populates="payment_list")
+    def __str__(self) -> str:
+        """
+        این متد به پایتون و sqladmin می‌گوید که هرگاه خواستید یک نمونه
+        از این کلاس را به صورت رشته نمایش دهید، فقط مقدار role_name را برگردانید.
+        """
+        return str(self.payment_list_id)
 
 
