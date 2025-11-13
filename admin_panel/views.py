@@ -237,19 +237,7 @@ class DrugsAdmin(PermissionAwareModelView, model=Drug):
                                                                                     name) is not None else "وارد نشده"
     }
 
-class PatientsAdmin(PermissionAwareModelView, model=Patient):
-    column_list = [Patient.patient_id, Patient.full_name, Patient.telegram_id]
-    column_labels = {Patient.patient_id: "ایدی بیمار", Patient.full_name: "نام بیمار"}
-    name = "بیمار"
-    name_plural = "بیماران"
-    icon = "fa-solid fa-user-injured"
 
-# ... هر ModelView جدیدی که می‌خواهید اضافه کنید را اینجا قرار دهید
-
-
-# admin_panel/views.py
-
-# ... سایر کلاس‌های ادمین شما ...
 
 class OrderListAdmin(ModelView, model=OrderList):
     """
@@ -257,43 +245,70 @@ class OrderListAdmin(ModelView, model=OrderList):
     در منوی اصلی نمایش داده نخواهد شد.
     """
     exclude_from_menu = False
+    list_template = "sqladmin/custom_orderList_list.html"
+    name = "اقلام سفارش"
+    name_plural = "اقلام سفارش‌ها"
 
+    def is_visible(self, request: Request) -> bool:
+        """
+        این متد به SQLAdmin می‌گوید که این View نباید در منوی کناری نمایش داده شود.
+        """
+        return False
 
-    # ستون‌هایی که در فرم inline نمایش داده می‌شوند
+    # =====> این خط جادویی، آیتم را از منو مخفی می‌کند <=====
+    # این کلاس d-none یک کلاس استاندارد بوت‌استرپ برای display:none است.
+    menu_class_name = "d-none"
+
+    # ستون‌هایی که می‌خواهیم در این صفحه نمایش داده شوند
     column_list = [
-        OrderList.order_id,
-        "drug.drug_lname",  # نمایش نام دارو از طریق رابطه
-        OrderList.qty,
-        OrderList.price
+        "order_list_id",
+        "order_id",
+        "drug.drug_lname",  # فرض بر وجود رابطه drug
+        "drug.drug_pname",
+        "qty",
+        "unit",
+        "price",
     ]
     column_labels = {
-        OrderList.order_id: "برای سفارش شماره",
-        "drug.drug_lname": "نام دارو",
-        OrderList.qty: "تعداد",
-        OrderList.price: "قیمت واحد"
+        "order_list_id": "شناسه",
+        "order_id": "شناسه سفارش",
+        "drug.drug_lname": "نام لاتین دارو",
+        "drug.drug_pname":"نام فارسی دارو",
+        "qty": "تعداد",
+        "unit":"واحد",
+        "price": "قیمت",
+        OrderList.drug :"دارو"
     }
-    column_searchable_list = [
-        OrderList.order_id
-    ]
-    # اجازه تمام عملیات‌ها روی اقلام سفارش
-    can_create = False
-    # can_create = True
-    # can_edit = True
-    # can_delete = True
-    #
-    # # برای اینکه فیلد "دارو" به صورت جستجوی ایجکس کار کند
-    # form_ajax_refs = {
-    #     'drug': {
-    #         'fields': ('drug_pname', 'drug_lname'),  # با این فیلدها جستجو کن
-    #         'order_by': 'drugs_id'
-    #     }
-    # }
+
+    # =====> این خط بسیار مهم است <=====
+    # به sqladmin می‌گوید که می‌تواند این لیست را بر اساس ستون order_id فیلتر کند.
+    column_searchable_list = [OrderList.order_id]
+
+    form_columns = ["order_id","qty","price"]
+    column_details_exclude_list = [OrderList.updated_at,OrderList.created_at,OrderList.order,OrderList.drug_id]
+
+    column_formatters = {
+        OrderList.price: lambda model, name: f"{int(getattr(model, name)):,}" if getattr(model,
+                                                                                    name) is not None else "وارد نشده"
+    }
+
+    column_formatters_detail = {
+        OrderList.price: lambda model, name: f"{int(getattr(model, name)):,}" if getattr(model,
+                                                                                    name) is not None else "وارد نشده"
+    }
+
+
+    can_create = True
+    can_edit = True
+    can_delete = True
 
 
 class OrdersAdmin(PermissionAwareModelView, model=Order):
     name = "سفارش"
     name_plural = "سفارشات"
     icon = "fa-solid fa-cart-shopping"
+
+
 
     # ستون‌هایی که در لیست اصلی نمایش داده می‌شوند
     column_list = [
@@ -308,7 +323,9 @@ class OrdersAdmin(PermissionAwareModelView, model=Order):
     column_formatters = {
         'items_link': lambda model, name: Markup(
             f'<a href="/admin/order-list/list?search={model.order_id}" class="btn btn-sm btn-info">مشاهده اقلام</a>'
-        )
+        ),
+        Order.created_at: lambda model, name: getattr(model, name).strftime("%Y-%m-%d %H:%M") if getattr(model,
+                                                                                                         name) else ""
     }
     # برچسب‌های فارسی برای ستون‌ها
     column_labels = {
@@ -317,6 +334,7 @@ class OrdersAdmin(PermissionAwareModelView, model=Order):
         "user.full_name": "ثبت کننده",
         Order.order_status: "وضعیت سفارش",
         Order.created_at: "تاریخ ثبت",
+        "items_link" : "اقلام"
     }
 
     # ستون‌هایی که می‌توان بر اساس آنها مرتب‌سازی کرد
@@ -328,16 +346,6 @@ class OrdersAdmin(PermissionAwareModelView, model=Order):
         "user.full_name",
     ]
 
-    # # فرمت‌دهی تاریخ برای نمایش بهتر
-    # column_formatters = {
-    #     # Order.created_at: lambda m, a: getattr(m, a.key).strftime("%Y-%m-%d %H:%M")
-    #     Order.created_at: lambda model, name: getattr(model, name).strftime("%Y-%m-%d %H:%M") if getattr(model,
-    #                                                                                                      name) else ""
-    # }
-
-    # +++ بخش کلیدی: اضافه کردن اقلام سفارش به صورت inline +++
-
-    inlines = [OrderListAdmin]
 
     # ستون‌هایی که در فرم ایجاد/ویرایش سفارش نمایش داده می‌شوند
     form_columns = [
@@ -357,3 +365,5 @@ class OrdersAdmin(PermissionAwareModelView, model=Order):
             'order_by': 'user_id',
         }
     }
+
+

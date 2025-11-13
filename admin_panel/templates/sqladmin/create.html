@@ -4,7 +4,7 @@
 <div class="col-12">
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">New {{ model_view.name }}</h3>
+      <h3 class="card-title">{{ model_view.name }} جدید</h3>
     </div>
     <div class="card-body border-bottom py-3">
       <form action="{{ url_for('admin:create', identity=model_view.identity) }}" method="POST"
@@ -25,9 +25,9 @@
           </div>
           <div class="col-md-6">
             <div class="btn-group flex-wrap" data-toggle="buttons">
-              <input type="submit" name="save" value="Save" class="btn">
-              <input type="submit" name="save" value="Save and continue editing" class="btn">
-              <input type="submit" name="save" value="Save and add another" class="btn">
+              <input type="submit" name="save" value="ذخیره" class="btn m-1">
+              <input type="submit" name="save" value="ذخیره و ادامه ویرایش" class="btn m-1">
+              <input type="submit" name="save" value="ذخیره و اضافه کردن بعدی" class="btn m-1">
             </div>
           </div>
         </div>

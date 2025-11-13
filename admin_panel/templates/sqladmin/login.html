@@ -1,11 +1,11 @@
 {% extends "sqladmin/base.html" %}
 {% block body %}
 <div class="d-flex align-items-center justify-content-center vh-100">
-  <form class="Fcol-lg-6 col-md-6 card card-md" action="{{ url_for('admin:login') }}" method="POST" autocomplete="off">
+  <form class="Fcol-lg-3 col-md-3 card card-md" action="{{ url_for('admin:login') }}" method="POST" autocomplete="off">
     <div class="card-body">
       <h2 class="card-title text-center mb-4">Login to {{ admin.title }}</h2>
       <div class="mb-3">
-        <label class="form-label">Username</label>
+        <label class="form-label">نام کاربری</label>
         {% if error %}
         <input name="username" type="text" class="form-control is-invalid" placeholder="Enter username"
           autocomplete="off">
@@ -16,7 +16,7 @@
       </div>
       <div class="mb-2">
         <label class="form-label">
-          Password
+          رمز عبور
         </label>
         <div class="input-group input-group-flat">
           {% if error %}
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="form-footer">
-        <button type="submit" class="btn btn-primary w-100">Login</button>
+        <button type="submit" class="btn btn-primary w-100">ورود</button>
       </div>
     </div>
   </form>
