@@ -10,6 +10,7 @@ from .payment_list import PaymentList
 from .message import Message
 from .drug_map import DrugMap
 from .user_role_permission import UserRolePermission
+from .bot_message import BotMessage
 
 # This allows: from app.models import User, Role, etc.
 __all__ = [
@@ -23,7 +24,9 @@ __all__ = [
     "Order",
     "PaymentList",
     "Message",
-    "DrugMap"
+    "DrugMap",
+    "BotMessage"
+
 ]
 
 

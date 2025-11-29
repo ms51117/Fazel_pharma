@@ -43,6 +43,8 @@ class FormName(str, Enum):
     DRUG = "Drug"
     DISEASE_TYPE = "DiseaseType"
     DRUG_MAP = "DrugMap"
+    BOT_MESSAGE = "BotMessage"
+
 
     # ... سایر فرم‌ها را به همین ترتیب اضافه کنید
 

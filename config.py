@@ -10,6 +10,8 @@ from app.routes import drug
 from app.routes import drug_map
 from app.routes import message
 from app.routes import login
+from app.routes import bot_message
+
 from contextlib import asynccontextmanager
 
 
@@ -80,6 +82,9 @@ app.include_router(drug.router, prefix="/drug", tags=["Drugs"])
 app.include_router(drug_map.router, prefix="/drug-map", tags=["Drugs-Map"])
 app.include_router(message.router, prefix="/message", tags=["Messages"])
 app.include_router(login.router, prefix="/login", tags=["login"])
+
+app.include_router(bot_message.router, prefix="/bot-message", tags=["BotContent"])
+
 
 
 

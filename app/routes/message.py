@@ -56,7 +56,7 @@ async def create_message(
     return db_message
 
 
-@router.get("/", response_model=List[MessageReadWithDetails])
+@router.get("/", response_model=List[MessageRead])
 async def read_messages(
         *,
         current_user: User = Depends(get_current_active_user),
@@ -69,13 +69,13 @@ async def read_messages(
     """
     دریافت لیست پیام‌ها همراه با اطلاعات بیمار.
     """
-    statement = select(Message).options(selectinload(Message.patient)).order_by(Message.message_id.desc()).offset(
+    statement = select(Message).order_by(Message.created_at.desc()).offset(
         skip).limit(limit)
     messages = (await session.exec(statement)).all()
     return messages
 
 
-@router.get("/{message_id}", response_model=MessageReadWithDetails)
+@router.get("/{message_id}", response_model=MessageRead)
 async def read_message_by_id(
         *,
         current_user: User = Depends(get_current_active_user),
@@ -87,7 +87,7 @@ async def read_message_by_id(
     """
     دریافت اطلاعات یک پیام با شناسه (ID) به همراه اطلاعات بیمار.
     """
-    statement = select(Message).where(Message.message_id == message_id).options(selectinload(Message.patient))
+    statement = select(Message).where(Message.message_id == message_id).order_by(Message.created_at.desc())
     message = (await session.exec(statement)).one_or_none()
 
     if not message:
@@ -178,4 +178,28 @@ async def get_unread_message_dates(
 
     # 4. برگرداندن نتیجه در قالب schema تعریف شده
     return UnreadDatesResponse(dates=unread_dates)
+
+@router.get("/history/{patient_id}", response_model=List[MessageRead])
+async def read_history_by_id(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.MESSAGE, required_permission=PermissionAction.VIEW)),
+        patient_id: int,
+        session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    دریافت اطلاعات یک پیام با شناسه (ID) به همراه اطلاعات بیمار.
+    """
+    statement = select(Message).where(Message.patient_id == patient_id).order_by(Message.created_at.desc())
+    message = await session.exec(statement)
+    response = message.all()
+
+
+    if not response:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Message for patient with ID {patient_id} not found",
+        )
+    return response
 

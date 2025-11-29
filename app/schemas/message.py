@@ -30,10 +30,7 @@ class MessageUpdate(SQLModel):
 # 4. اسکیمای پایه برای خواندن (Read) - بدون روابط
 # ---------------------------------------------------------------------------
 class MessageRead(MessageBase):
-    user_id: Optional[int] = None
-    patient_id: Optional[int]= None
-    created_at: Optional[datetime] = None  # این فیلد در مدل Message وجود دارد
-
+    messages_id: Optional[int] = None
 
 # ---------------------------------------------------------------------------
 # 5. اسکیمای کامل برای خواندن (Read) - با جزئیات بیمار

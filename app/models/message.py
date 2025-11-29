@@ -26,7 +26,7 @@ class MessageBase(SQLModel):
     )
     messages: Optional[str] = Field(
         max_length=2000,
-        nullable=False,
+        nullable=True,
         description="Message content"
     )
 
