@@ -9,7 +9,6 @@ def get_permission_for_table(request: Request, table_name: str) -> dict:
     user: User = request.state.user
     DEFAULT_PERMISSIONS = {"create": False, "edit": False, "delete": False, "view": False}
     permissions_list = user.role.user_role_permission
-    print(table_name)
     for perm in permissions_list:
         if perm.form_name == table_name:  # <--- خط بحرانی
             return perm

@@ -205,5 +205,35 @@ async def get_pending_payments_by_date(
     )
     result = await session.exec(statement)
     payments = result.all()
-    return payments
+
+    # --- بخش اصلاح شده: ساخت دستی خروجی ---
+    output_list = []
+    for pay in payments:
+        # 1. استخراج آبجکت بیمار از داخل اردر
+        # بررسی می‌کنیم که اردر و بیمار وجود داشته باشند تا ارور ندهد
+        patient = pay.order.patient if (pay.order and pay.order.patient) else None
+
+        # 2. ساخت نام کامل
+        if patient:
+            full_name_str = patient.full_name or ""
+            tg_id = str(patient.telegram_id) if patient.telegram_id else None
+        else:
+            full_name_str = "ناشناس"
+            tg_id = None
+
+        if not full_name_str:  # اگر نام و فامیل خالی بود
+            full_name_str = f"کاربر {tg_id}" if tg_id else "ناشناس"
+
+        # 3. تبدیل آبجکت دیتابیس به دیکشنری و اضافه کردن فیلدهای دستی
+        # model_dump() اطلاعات خودِ جدول PaymentList را دیکشنری می‌کند
+        pay_dict = pay.model_dump()
+
+        # فیلدهای اضافه مدل DatePaymentListRead را پر می‌کنیم
+        pay_dict["full_name"] = full_name_str
+        pay_dict["telegram_id"] = tg_id
+
+        # اضافه کردن به لیست خروجی
+        output_list.append(pay_dict)
+
+    return output_list
 

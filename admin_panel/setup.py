@@ -10,7 +10,7 @@ from fastapi.staticfiles import StaticFiles
 from admin_panel.dependencies import admin_instance
 from admin_panel import views
 from .admin_auth import AdminAuth
-from .views import DashboardView, UsersAdmin, DrugsAdmin, DiseaseTypeAdmin, OrdersAdmin, OrderListAdmin
+from .views import DashboardView, UsersAdmin, DrugsAdmin, DiseaseTypeAdmin, OrdersAdmin, OrderListAdmin,BotMessageAdmin
 
 
 def format_price_filter(value: float) -> str:
@@ -59,6 +59,8 @@ def init_admin(app: FastAPI, engine):
     admin.add_view(DiseaseTypeAdmin)
     admin.add_view(OrdersAdmin)
     admin.add_view(OrderListAdmin)
+    admin.add_view(BotMessageAdmin)
+
 
 
 

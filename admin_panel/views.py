@@ -17,6 +17,8 @@ from app.models.order import Order
 from app.models.order_list import OrderList
 from app.core.enums import OrderStatusEnum
 from markupsafe import Markup
+from app.models.bot_message import BotMessage
+
 
 from sqladmin.widgets import AjaxSelect2Widget
 from app.models.disease_type import DiseaseType
@@ -367,3 +369,52 @@ class OrdersAdmin(PermissionAwareModelView, model=Order):
     }
 
 
+class BotMessageAdmin(PermissionAwareModelView, model=BotMessage):
+
+
+    # --- تنظیمات ظاهری ---
+    name = "پیام ربات"
+    name_plural = "مدیریت متن‌های ربات"
+    icon = "fa-solid fa-comments"  # آیکون از FontAwesome
+
+    # --- تنظیمات لیست (جدول نمایش داده‌ها) ---
+    column_list = [
+        # BotMessage.message_key,
+        BotMessage.description,
+        # BotMessage.message_text, # متن معمولا طولانی است، شاید نخواهید در لیست اصلی باشد
+    ]
+    column_labels = {
+        BotMessage.message_key:"کلید پیام",
+        BotMessage.description:"توضیحات",
+        BotMessage.message_text:"متن پیام"
+    }
+
+    # قابلیت جستجو بر اساس کلید پیام و توضیحات
+    column_searchable_list = [
+        BotMessage.message_key,
+        BotMessage.description
+    ]
+
+    # قابلیت مرتب‌سازی
+    column_sortable_list = [
+        BotMessage.message_key
+    ]
+
+    # --- تنظیمات فرم (افزودن / ویرایش) ---
+    form_columns = [
+        BotMessage.message_key,
+        BotMessage.message_text,
+        BotMessage.description
+    ]
+
+    # تبدیل فیلد متن به حالت TextArea (چون متن پیام ممکن است چند خطی باشد)
+    form_widget_args = {
+        "message_text": {
+            "rows": 10,
+            "style": "direction: rtl; font-family: Tahoma, sans-serif;"  # راست‌چین کردن برای راحتی تایپ فارسی
+        },
+        "description": {
+            "rows": 2,
+            "style": "direction: rtl;"
+        }
+    }
