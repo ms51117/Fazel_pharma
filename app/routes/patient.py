@@ -235,3 +235,25 @@ async def get_awaiting_for_consultation_by_date(
 
     # 4. برگرداندن نتیجه در قالب schema تعریف شده
     return AwaitingForConsultationPatientsResponse(patients=results)
+
+
+
+@router.get("/by-id/{patient_id}", response_model=PatientRead)
+async def read_patient(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        session: AsyncSession = Depends(get_session),
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PATIENT, required_permission=PermissionAction.VIEW)),
+        patient_id: int
+) -> Patient:
+    """
+    دریافت اطلاعات یک بیمار خاص با استفاده از شناسه (ID).
+    """
+    statement = select(Patient).where(Patient.patient_id == patient_id)
+
+    db_patient = (await session.exec(statement)).one_or_none()
+
+    if not db_patient:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Patient not found")
+    return db_patient

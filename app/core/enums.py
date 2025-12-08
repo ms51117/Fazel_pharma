@@ -43,3 +43,10 @@ class PaymentStatusEnum(str, enum.Enum):
     ACCEPTED = "Accepted"
     REJECTED = "Rejected"
 
+
+class PackageTypeEnum(str, enum.Enum):
+    """
+    نوع پکیج درمانی بیمار
+    """
+    ECONOMIC = "economic"   # اقتصادی
+    PREMIUM = "premium"     # پریمیوم (ویژه)

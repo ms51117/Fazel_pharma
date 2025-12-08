@@ -237,3 +237,31 @@ async def get_pending_payments_by_date(
 
     return output_list
 
+
+@router.get("/by-order/{order_id}", response_model=List[PaymentListRead])
+async def read_payments_by_order_id(
+        *,
+        current_user: User = Depends(get_current_active_user),
+        order_id: int,
+        _permission_check: None = Depends(
+            RoleChecker(form_name=FormName.PAYMENT_LIST, required_permission=PermissionAction.VIEW)),
+        session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    دریافت تمام پرداختی‌های مرتبط با یک سفارش خاص.
+    خروجی لیستی از پرداخت‌هاست (ممکن است خالی باشد).
+    """
+    statement = select(PaymentList).where(PaymentList.order_id == order_id)
+    result = await session.exec(statement)
+    payments = result.all()  # <--- تغییر مهم: دریافت لیست نتایج از Result
+
+    # اگر می‌خواهید در صورت نبودن هیچ پرداختی، لیست خالی برگردد (توصیه می‌شود):
+    return payments
+
+    # اگر حتماً می‌خواهید ارور 404 بدهد (وقتی هیچ پرداختی نیست):
+    # if not payments:
+    #     raise HTTPException(
+    #         status_code=status.HTTP_404_NOT_FOUND,
+    #         detail=f"No payments found for order ID {order_id}",
+    #     )
+    # return payments

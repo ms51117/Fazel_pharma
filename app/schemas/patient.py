@@ -3,6 +3,8 @@
 from typing import Optional, List
 from sqlmodel import SQLModel
 from datetime import datetime,date
+
+from app.core.enums import PackageTypeEnum
 from app.models.patient import PatientBase,GenderEnum,PatientStatus # مدل پایه را برای استفاده مجدد وارد می‌کنیم
 
 # ------------------- CREATE SCHEMA -------------------
@@ -40,6 +42,8 @@ class PatientUpdate(SQLModel):
     consultant_type: Optional[str] = None
     patient_status: Optional[PatientStatus] = None
     updated_at: Optional[datetime] = None
+    package_type: Optional[PackageTypeEnum] = None
+
 
 
 class WaitingForConsultantDatesResponse(SQLModel):

@@ -8,6 +8,7 @@ from sqlalchemy import Column
 from sqlalchemy.types import Enum as SQLAlchemyEnum # ایمپورت Enum از SQLAlchemy
 from app.models.base import Base
 import sqlalchemy as sa
+from app.core.enums import GenderEnum, PatientStatus, PackageTypeEnum # <--- ایمپورت جدید
 
 
 import enum
@@ -19,34 +20,6 @@ if TYPE_CHECKING:
 
 
 
-
-class PatientStatus(str, enum.Enum):
-    """
-    وضعیت‌های مختلف بیمار در چرخه حیات سیستم.
-    """
-    AWAITING_PROFILE_COMPLETION = "awaiting_profile_completion" # در حال پر کردن اطلاعات اولیه.
-    PROFILE_COMPLETED = "profile_completed"     # اطلاعات اولیه تکمیل شده، منتظر ارسال درخواست مشاوره.
-    AWAITING_CONSULTATION = "awaiting_consultation" # درخواست مشاوره ثبت شده، منتظر پاسخ مشاور.
-    AWAITING_INVOICE_APPROVAL = "awaiting_invoice_approval" # فاکتور توسط مشاور صادر شده، منتظر تایید بیمار.
-    AWAITING_PAYMENT = "awaiting_payment"     # فاکتور تایید شده، منتظر پرداخت.
-    PAYMENT_COMPLETED = "payment_completed"     # پرداخت انجام شده، منتظر تایید صندوق‌دار.
-    PAYMENT_CONFIRMED = "payment_confirmed"
-    AWAITING_SHIPMENT = "awaiting_shipment"   # تایید صندوق‌دار انجام شده، منتظر ارسال.
-    SHIPPED = "shipped"                       # بسته ارسال شده.
-    COMPLETED = "completed"                   # فرآیند برای این سفارش تمام شده.
-    CANCELLED = "cancelled"                   # فرآیند توسط کاربر یا سیستم لغو شد
-
-
-
-
-class GenderEnum(str, enum.Enum):
-    """
-    Enumeration for gender.
-    Values are stored as strings in the database.
-    """
-    MALE = "male"
-    FEMALE = "female"
-    UNKNOWN = "unknown"
 
 class PatientBase(SQLModel):
     """Base model for Patient shared properties"""
@@ -61,7 +34,11 @@ class PatientBase(SQLModel):
         nullable=False,
         description="sex of patient"
     )
-
+    package_type: Optional[PackageTypeEnum] = Field(
+        default=PackageTypeEnum.ECONOMIC,
+        nullable=True,
+        description="type of patient package"
+    )
     age: Optional[int] = Field(
         default=None,
         description="Age in years"

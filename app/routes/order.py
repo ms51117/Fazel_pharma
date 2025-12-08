@@ -60,34 +60,37 @@ async def create_order(
     await session.commit()
     await session.refresh(db_order)
 
-    statement = select(Drug).where(Drug.drugs_id.in_(order_in.drug_ids))
-    result = await session.execute(statement)
-    drugs_to_add = result.scalars().all()
+    target_drug_ids = [item.drug_id for item in order_in.items]
 
-    # Map drug_id to its price for easy lookup
-    drug_price_map = {drug.drugs_id: drug.price for drug in drugs_to_add}
+    statement = select(Drug).where(Drug.drugs_id.in_(target_drug_ids))
+    result = await session.execute(statement)
+    found_drugs = result.scalars().all()
+
+    # ب) ساخت مپ قیمت (ID -> Price)
+    drug_price_map = {drug.drugs_id: drug.price for drug in found_drugs}
 
     items_to_add = []
-    for drug_id in order_in.drug_ids:
-        price = drug_price_map.get(drug_id)
+
+    # ج) حلقه روی آیتم‌های ورودی (که شامل qty هستند)
+    for item in order_in.items:
+        price = drug_price_map.get(item.drug_id)
+
         if price is None:
-            # اگر به هر دلیلی دارویی یافت نشد، از آن صرف نظر کن
-            # می‌توانید اینجا لاگ هم ثبت کنید
+            # اگر دارو پیدا نشد (مثلاً آیدی اشتباه بود)، لاگ کنید و رد شوید
             continue
 
         order_list_item = OrderList(
             order_id=db_order.order_id,
-            drug_id=drug_id,
-            qty=1,  # فعلا تعداد را ۱ در نظر می‌گیریم
+            drug_id=item.drug_id,
+            qty=item.qty,  # <--- استفاده از مقدار qty ارسالی
             price=price
         )
         items_to_add.append(order_list_item)
 
     if items_to_add:
-        session.add_all(items_to_add)  # استفاده از add_all برای کارایی بیشتر
+        session.add_all(items_to_add)
         await session.commit()
 
-    # Refresh the order object to load the newly created order_list items
     await session.refresh(db_order, attribute_names=["order_list"])
 
     return db_order

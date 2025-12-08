@@ -13,11 +13,15 @@ from app.models.order import OrderBase,OrderStatusEnum
 # ---------------------------------------------------------------------------
 # 1. اسکیمای پایه و ورودی برای ایجاد سفارش (CREATE)
 # ---------------------------------------------------------------------------
+class OrderItemInput(SQLModel):
+    drug_id: int
+    qty: int = 1  # پیش‌فرض 1 باشد
 
 class OrderCreate(OrderBase):
     # فیلد `date` به صورت خودکار در مدل مقداردهی می‌شود، پس در ورودی نیاز نیست.
     pass
-    drug_ids: List[int]
+    items: List[OrderItemInput]
+
     order_status: Optional[OrderStatusEnum] = None
 
 # ---------------------------------------------------------------------------

@@ -191,7 +191,7 @@ async def read_history_by_id(
     """
     دریافت اطلاعات یک پیام با شناسه (ID) به همراه اطلاعات بیمار.
     """
-    statement = select(Message).where(Message.patient_id == patient_id).order_by(Message.created_at.desc())
+    statement = select(Message).where(Message.patient_id == patient_id).order_by(Message.created_at.asc())
     message = await session.exec(statement)
     response = message.all()
 
