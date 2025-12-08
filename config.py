@@ -1,3 +1,4 @@
+from app.core.middleware import global_rate_limit_middleware
 from app.routes import user
 from app.routes import patient
 from app.routes import user_role_permission
@@ -64,6 +65,7 @@ app = FastAPI(
     },
     swagger_ui_oauth2_redirect_url="/oauth2-redirect",
 )
+app.middleware("http")(global_rate_limit_middleware)
 
 app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY)
 

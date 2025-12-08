@@ -1332,3 +1332,161 @@ asyncio.exceptions.CancelledError
 2025-12-08 14:12:25,561 - app - INFO - config:54 - Application shutdown.....................................
 2025-12-08 14:12:25,562 - uvicorn.error - INFO - on:76 - Application shutdown complete.
 2025-12-08 14:12:25,563 - uvicorn.error - INFO - server:94 - Finished server process [16244]
+2025-12-08 15:15:50,608 - app - INFO - config:56 - Application startup......................................
+2025-12-08 15:15:50,611 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-12-08 15:16:06,822 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56525 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 403
+2025-12-08 15:16:26,554 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56528 - "POST /login/access-token HTTP/1.1" 200
+2025-12-08 15:17:05,329 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56539 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:17:11,136 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:17:11,703 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:17:12,181 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:17:12,512 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:17:12,682 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:12,840 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:13,020 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:13,189 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:13,363 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:13,533 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:13,694 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:13,876 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:14,031 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:14,191 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:14,348 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:14,521 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:14,698 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:14,871 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:15,058 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:15,212 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:15,356 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:15,530 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:15,703 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:15,885 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:16,057 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:16,252 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:16,432 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:16,606 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:16,792 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:16,968 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:17,182 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:17,412 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:17,605 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:17,804 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:18,006 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:18,207 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:18,415 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:19,945 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:20,138 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:20,335 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:20,730 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:21,360 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:22,059 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:22,633 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:23,199 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:23,668 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:24,302 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:25,464 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:26,147 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:26,532 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:26,945 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:27,218 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:27,396 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:27,582 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:27,754 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:27,923 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:28,084 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:28,251 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:28,417 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:28,580 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:28,723 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:28,918 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:29,070 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56540 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:34,571 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56541 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:46,493 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56543 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:48,265 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56543 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:50,944 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56543 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:51,935 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56543 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:53,555 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56543 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:54,371 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56543 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:55,115 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56543 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:17:55,864 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56543 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:18:08,493 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56548 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:18:23,040 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:18:24,395 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:18:24,570 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:18:24,730 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:18:24,883 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:18:25,038 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:18:25,183 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:18:25,339 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:18:25,480 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:18:30,367 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56549 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:24,976 - uvicorn.error - INFO - server:264 - Shutting down
+2025-12-08 15:33:25,084 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-12-08 15:33:25,085 - app - INFO - config:60 - Application shutdown.....................................
+2025-12-08 15:33:25,086 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-12-08 15:33:25,087 - uvicorn.error - INFO - server:94 - Finished server process [17532]
+2025-12-08 15:33:26,586 - app - INFO - config:53 - Application startup......................................
+2025-12-08 15:33:26,590 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-12-08 15:33:26,643 - uvicorn.error - ERROR - on:134 - Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\_compat.py", line 53, in asyncio_run
+    return loop.run_until_complete(main)
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 628, in run_until_complete
+    self.run_forever()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 595, in run_forever
+    self._run_once()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1881, in _run_once
+    handle._run()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\server.py", line 70, in serve
+    with self.capture_signals():
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 142, in __exit__
+    next(self.gen)
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\server.py", line 331, in capture_signals
+    signal.raise_signal(captured_signal)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "C:\Users\MS511\Desktop\Customers\Dr_Fazel\Project2\Fazel_Pharma\.venv\lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+  File "C:\Users\MS511\AppData\Local\Programs\Python\Python310\lib\asyncio\queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+2025-12-08 15:33:30,698 - app - INFO - config:51 - Application startup......................................
+2025-12-08 15:33:30,702 - uvicorn.error - INFO - on:62 - Application startup complete.
+2025-12-08 15:33:35,186 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:36,497 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:36,684 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:36,855 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:37,017 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:37,180 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:37,339 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:37,527 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:37,887 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:38,146 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 200
+2025-12-08 15:33:38,325 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:38,546 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:38,671 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:38,831 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:39,022 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:39,469 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:39,920 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:40,311 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:40,755 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:43,178 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:43,697 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:44,206 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:44,534 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:44,786 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:45,269 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:33:45,985 - uvicorn.access - INFO - httptools_impl:476 - 127.0.0.1:56645 - "GET /drug/?skip=0&limit=100 HTTP/1.1" 429
+2025-12-08 15:34:47,257 - uvicorn.error - INFO - server:264 - Shutting down
+2025-12-08 15:34:47,366 - uvicorn.error - INFO - on:67 - Waiting for application shutdown.
+2025-12-08 15:34:47,367 - app - INFO - config:55 - Application shutdown.....................................
+2025-12-08 15:34:47,368 - uvicorn.error - INFO - on:76 - Application shutdown complete.
+2025-12-08 15:34:47,368 - uvicorn.error - INFO - server:94 - Finished server process [10636]
